@@ -20,6 +20,7 @@ var cameraRoot #Follows the ball around. rotates around global Y only to track t
 var cameraArm #Child of camera root. Rotates around its local X to raise/lower the camera angle
 var camera #Main camera. Looks backwords along the "camera arm" vector, directly at the ball.
 var powerVisual #Swing power visualizer. child of camera root so that it always points "forwards"
+var readyVisual #Visualizer to indicate they player can hit the ball again.
 var golfBall #The golf ball. Has physics, can roll freely.
 var checkpoint #Stores the last stopped position of the ball in case they go OOB.
 
@@ -38,6 +39,7 @@ func _ready():
 	camera = get_node("CameraRoot/CameraArm/Camera3D")
 	golfBall = get_node("GolfBall")
 	powerVisual = get_node("CameraRoot/PowerVisualizer")
+	readyVisual = get_node("CameraRoot/ReadyVisualizer")
 	checkpoint = get_node("Checkpoint")
 
 func _physics_process(delta):
@@ -51,6 +53,7 @@ func _physics_process(delta):
 		if stoppedTime >= 0.2:
 			isRolling = false
 			checkpoint.set_position(golfBall.get_position())
+			readyVisual.visible = true
 
 
 func _process(delta):
@@ -86,12 +89,11 @@ func _input(event):
 			
 func rotateCamera(delta):
 	cameraRoot.rotate(Vector3(0,1,0), -1 * camLookSensitivityX * delta.x)
-	var current_vertical_rot = cameraArm.get_rotation_degrees().x
-	if (current_vertical_rot >= maxCameraElevation and delta.y < 0) \
-	or (current_vertical_rot <= minCameraElevation and delta.y > 0):
+	var targetRot = cameraArm.get_rotation_degrees().x + rad_to_deg(camLookSensitivityY * delta.y)
+	print("BEFORE: ", cameraArm.get_rotation_degrees(), "AFTER:",  targetRot)
+	if (targetRot >= maxCameraElevation and targetRot <= minCameraElevation):
 		cameraArm.rotate_object_local(Vector3(1,0,0), camLookSensitivityY * delta.y)
-	print("BEFORE: ", cameraArm.get_rotation_degrees(), delta)
-	#TODO: prevent rotating past true up/down which can be disorienting
+	
 
 func zoomIn():
 	var targetDist = max(camera.transform.origin.z - camZoomSpeed, camMinDist)
@@ -111,5 +113,6 @@ func hitBall():
 	isSwinging = false
 	swingPower = 0;
 	powerVisual.visible = false
+	readyVisual.visible = false
 	isRolling = true
 	stoppedTime = 0
