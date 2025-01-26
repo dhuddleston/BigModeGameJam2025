@@ -1,8 +1,6 @@
 extends Node3D
 
-#TODO: prevent hitting the ball while it's still rolling
 #TODO: reset the ball if it falls out of the map or doesn't stop rolling
-#TODO: prevent flipping the camera upside down
 #TODO: pull the camera closer in if it would be moved into an obstacle
 
 #Constants
@@ -14,6 +12,8 @@ const camLookSensitivityX = 0.005 #Horizontal look sensitivity
 const camLookSensitivityY = 0.005 #Vertical look sensitivity
 const swingGainSensitivity = 0.1 #Mouse movement to power gauge adjustment sensitivity
 const swingCoefficient = 0.75 #Conversion constant from swing power (1-100) to physics force
+const maxCameraElevation = -85 #Maximum allowed elevation of the camera (in degrees)
+const minCameraElevation = -5 #Minimum allowed elevation of the camera (in degrees)
 
 #Subnodes
 var cameraRoot #Follows the ball around. rotates around global Y only to track the "forward" look direction
@@ -21,10 +21,13 @@ var cameraArm #Child of camera root. Rotates around its local X to raise/lower t
 var camera #Main camera. Looks backwords along the "camera arm" vector, directly at the ball.
 var powerVisual #Swing power visualizer. child of camera root so that it always points "forwards"
 var golfBall #The golf ball. Has physics, can roll freely.
+var checkpoint #Stores the last stopped position of the ball in case they go OOB.
 
 #Vars
 var isLooking = false;
 var isSwinging = false;
+var isRolling = false;
+var stoppedTime = 0;
 var swingPower = 0;
 const swingMaxPower = 100;
 
@@ -35,17 +38,28 @@ func _ready():
 	camera = get_node("CameraRoot/CameraArm/Camera3D")
 	golfBall = get_node("GolfBall")
 	powerVisual = get_node("CameraRoot/PowerVisualizer")
+	checkpoint = get_node("Checkpoint")
 
 func _physics_process(delta):
 	cameraRoot.set_position(golfBall.get_position())
-	
+	if isRolling:
+		if golfBall.get_linear_velocity().length_squared() < 0.0001:
+			stoppedTime += delta
+		else:
+			stoppedTime = 0
+		
+		if stoppedTime >= 0.2:
+			isRolling = false
+			checkpoint.set_position(golfBall.get_position())
+
+
 func _process(delta):
 	powerVisual.set_scale(Vector3(1,1,swingPower/100.0))
 
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.is_pressed():
+			if event.is_pressed() and !isRolling:
 				isSwinging = true
 				powerVisual.visible = true
 			elif event.is_released() and isSwinging:
@@ -72,7 +86,11 @@ func _input(event):
 			
 func rotateCamera(delta):
 	cameraRoot.rotate(Vector3(0,1,0), -1 * camLookSensitivityX * delta.x)
-	cameraArm.rotate_object_local(Vector3(1,0,0), camLookSensitivityY * delta.y)
+	var current_vertical_rot = cameraArm.get_rotation_degrees().x
+	if (current_vertical_rot >= maxCameraElevation and delta.y < 0) \
+	or (current_vertical_rot <= minCameraElevation and delta.y > 0):
+		cameraArm.rotate_object_local(Vector3(1,0,0), camLookSensitivityY * delta.y)
+	print("BEFORE: ", cameraArm.get_rotation_degrees(), delta)
 	#TODO: prevent rotating past true up/down which can be disorienting
 
 func zoomIn():
@@ -93,3 +111,5 @@ func hitBall():
 	isSwinging = false
 	swingPower = 0;
 	powerVisual.visible = false
+	isRolling = true
+	stoppedTime = 0

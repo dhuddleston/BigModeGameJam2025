@@ -24,7 +24,7 @@ background_mode = 1
 [sub_resource type="PrismMesh" id="PrismMesh_10uax"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uw5mr"]
-albedo_color = Color(1, 0, 0, 1)
+albedo_color = Color(1, 0, 0.301961, 1)
 metallic_specular = 0.0
 emission_enabled = true
 emission = Color(1, 0, 0, 1)
@@ -74,7 +74,7 @@ skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_sdtb4")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="PlayerController/GolfBall"]
-light_size = 10.0
+light_size = 3.0
 light_specular = 0.0
 distance_fade_begin = 1.0
 distance_fade_length = 1.0
@@ -84,6 +84,7 @@ omni_attenuation = 0.0
 [node name="CameraRoot" type="Node3D" parent="PlayerController"]
 
 [node name="CameraArm" type="Node3D" parent="PlayerController/CameraRoot"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="PlayerController/CameraRoot/CameraArm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
