@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://cc2qtlonu3kjy"]
+[gd_scene load_steps=21 format=3 uid="uid://cc2qtlonu3kjy"]
 
 [ext_resource type="Script" path="res://Scripts/player_controller.gd" id="1_b3j7p"]
 [ext_resource type="PhysicsMaterial" uid="uid://cfru8dkauad3i" path="res://PhysMats/ground_standard.tres" id="2_ru4nu"]
 [ext_resource type="Material" uid="uid://brk32xxt11xlq" path="res://Shaders/pixelate.tres" id="3_job2l"]
 [ext_resource type="Material" uid="uid://dhx4ofxlsc56i" path="res://Shaders/quantize.tres" id="4_ne0pl"]
+[ext_resource type="Material" uid="uid://c0eyq16e63ikx" path="res://Shaders/dither.tres" id="5_7iyac"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gpcva"]
 friction = 0.2
@@ -44,8 +45,9 @@ bounce = 0.5
 [sub_resource type="PlaneMesh" id="PlaneMesh_jcsg1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qy6h"]
-albedo_color = Color(0, 0.894118, 0.211765, 1)
+albedo_color = Color(0, 1, 0.233333, 1)
 metallic_specular = 0.0
+roughness = 0.0
 
 [node name="BallTestScene" type="Node3D"]
 
@@ -72,11 +74,12 @@ skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_sdtb4")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="PlayerController/GolfBall"]
-light_energy = 5.818
-light_indirect_energy = 0.0
+light_size = 10.0
+light_specular = 0.0
 distance_fade_begin = 1.0
 distance_fade_length = 1.0
-omni_range = 6.86788
+omni_range = 4.0
+omni_attenuation = 0.0
 
 [node name="CameraRoot" type="Node3D" parent="PlayerController"]
 
@@ -287,8 +290,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Quantize" type="ColorRect" parent="CanvasLayer"]
+[node name="Palette Quantize" type="ColorRect" parent="CanvasLayer"]
+visible = false
 material = ExtResource("4_ne0pl")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Palette Dither" type="ColorRect" parent="CanvasLayer"]
+material = ExtResource("5_7iyac")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
