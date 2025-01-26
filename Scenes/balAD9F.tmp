@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://cc2qtlonu3kjy"]
+
+[ext_resource type="Script" path="res://Scripts/player_controller.gd" id="1_b3j7p"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jcsg1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qy6h"]
+albedo_color = Color(1.42587e-06, 0.234607, 0.0034516, 1)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bypn"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gpcva"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0ujoa"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_jngx2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7atu5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3nibx"]
+
+[node name="BallTestScene" type="Node3D"]
+
+[node name="GroundPlane" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_jcsg1")
+surface_material_override/0 = SubResource("StandardMaterial3D_5qy6h")
+
+[node name="GroundMesh" type="StaticBody3D" parent="GroundPlane"]
+
+[node name="GroundCollider" type="CollisionShape3D" parent="GroundPlane/GroundMesh"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_7bypn")
+
+[node name="PlayerController" type="Node3D" parent="."]
+script = ExtResource("1_b3j7p")
+
+[node name="CameraRoot" type="Node3D" parent="PlayerController"]
+
+[node name="Camera3D" type="Camera3D" parent="PlayerController/CameraRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="Checkpoint" type="Node3D" parent="PlayerController"]
+
+[node name="GolfBall" type="RigidBody3D" parent="PlayerController"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39256, 0)
+physics_material_override = SubResource("PhysicsMaterial_gpcva")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerController/GolfBall"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+shape = SubResource("SphereShape3D_0ujoa")
+
+[node name="BallMesh" type="MeshInstance3D" parent="PlayerController/GolfBall"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = SubResource("SphereMesh_jngx2")
+skeleton = NodePath("../../..")
+
+[node name="Obstacle" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle"]
+transform = Transform3D(0.139301, 0, 3.82551, 0, 2.15564, 0, -0.200241, 0, 2.66128, -2.59283, 0.827178, 4.81714)
+mesh = SubResource("BoxMesh_3nibx")
