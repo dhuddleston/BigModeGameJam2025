@@ -5,3 +5,4 @@
 [resource]
 shader = ExtResource("1_5rkq5")
 shader_parameter/size = Vector2(32, 28)
+shader_parameter/subdivide = 8.0
