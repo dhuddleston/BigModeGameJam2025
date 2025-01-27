@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfqhqhlyb3w5v"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="1_fvta0"]
+[ext_resource type="ArrayMesh" uid="uid://dtop2g8myfy3w" path="res://Models/Root Scene_Stair_002.res" id="2_vfmrr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gx7t7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dambx"]
+
+[node name="ObstacleStairCornerUp" type="StaticBody3D"]
+physics_material_override = ExtResource("1_fvta0")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+mesh = ExtResource("2_vfmrr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.5, 0.125, 0.25)
+shape = SubResource("BoxShape3D_gx7t7")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.25, 0.125, 0.75)
+shape = SubResource("BoxShape3D_dambx")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.75, 0.375, 0.75)
+shape = SubResource("BoxShape3D_dambx")
