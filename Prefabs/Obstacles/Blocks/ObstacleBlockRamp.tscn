@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsolo0ghl134k"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="1_lo5r4"]
+[ext_resource type="ArrayMesh" uid="uid://dpuc7yarhgyeq" path="res://Models/Root Scene_Ramp.res" id="2_oyvnr"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i34qw"]
+points = PackedVector3Array(0.5, 0, -0.25, 0.5, 0, 0.25, -0.5, 0, -0.25, -0.5, 0, 0.25, -0.5, 0.5, -0.25, -0.5, 0.5, 0.25)
+
+[node name="ObstacleBlockRamp" type="StaticBody3D"]
+physics_material_override = ExtResource("1_lo5r4")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_oyvnr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_i34qw")
