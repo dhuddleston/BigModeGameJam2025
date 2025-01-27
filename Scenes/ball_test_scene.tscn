@@ -1,13 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://cc2qtlonu3kjy"]
+[gd_scene load_steps=14 format=3 uid="uid://cc2qtlonu3kjy"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="3_1k2k1"]
 [ext_resource type="Material" uid="uid://brk32xxt11xlq" path="res://Shaders/pixelate.tres" id="3_job2l"]
 [ext_resource type="Material" uid="uid://dhx4ofxlsc56i" path="res://Shaders/quantize.tres" id="4_ne0pl"]
 [ext_resource type="Material" uid="uid://c0eyq16e63ikx" path="res://Shaders/dither.tres" id="5_7iyac"]
 [ext_resource type="PackedScene" uid="uid://uuu0lldfmxi2" path="res://Prefabs/Floors/Flat/FloorFlat4x4.tscn" id="6_4w6cb"]
-[ext_resource type="PackedScene" uid="uid://cyeckytrn2v3p" path="res://Prefabs/player_controller_fab.tscn" id="6_cntky"]
+[ext_resource type="PackedScene" uid="uid://cyeckytrn2v3p" path="res://Prefabs/Gameplay/player_controller_fab.tscn" id="6_cntky"]
 [ext_resource type="PackedScene" uid="uid://e8rexjmxsd0w" path="res://Prefabs/Floors/Flat/FloorFlat1x1.tscn" id="6_xh33y"]
 [ext_resource type="PackedScene" uid="uid://rfk1togee3x8" path="res://Prefabs/Floors/Ramp/FloorRampBottom1x1.tscn" id="8_cdodo"]
+[ext_resource type="ArrayMesh" uid="uid://bqhvjlmfjl246" path="res://Models/Root Scene_Ground_014.res" id="9_klruw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7atu5"]
 
@@ -240,6 +241,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
 
 [node name="FloorRampBottom1x1n" parent="." instance=ExtResource("8_cdodo")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -3)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="FloorRampBottom1x1n"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)
+mesh = ExtResource("9_klruw")
 
 [node name="FloorRampBottom1x1n2" parent="." instance=ExtResource("8_cdodo")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)

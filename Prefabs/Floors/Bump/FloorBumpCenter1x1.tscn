@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://d000gkka7puci"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://cfru8dkauad3i" path="res://PhysMats/ground_standard.tres" id="1_1k0eo"]
+[ext_resource type="ArrayMesh" uid="uid://cryr46nnpcek0" path="res://Models/Root Scene_Ground_004.res" id="2_aun5e"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ec82p"]
+points = PackedVector3Array(0.5, 0, -0.5, 0.5, -0.01, -0.5, 0, 0.25, 0, 0, 0.24, 0, -0.5, 0, -0.5, -0.5, -0.01, -0.5)
+
+[node name="FloorBumpCenter1x1n" type="StaticBody3D"]
+physics_material_override = ExtResource("1_1k0eo")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5)
+mesh = ExtResource("2_aun5e")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+shape = SubResource("ConvexPolygonShape3D_ec82p")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5)
+shape = SubResource("ConvexPolygonShape3D_ec82p")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.5, 0, 0.5)
+shape = SubResource("ConvexPolygonShape3D_ec82p")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0, 0.5)
+shape = SubResource("ConvexPolygonShape3D_ec82p")

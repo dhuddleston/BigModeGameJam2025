@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bft2081b0o8od"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://cfru8dkauad3i" path="res://PhysMats/ground_standard.tres" id="1_ooioy"]
+[ext_resource type="ArrayMesh" uid="uid://gwopdgt4wxd" path="res://Models/Root Scene_Ground_007.res" id="2_micjw"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gi647"]
+points = PackedVector3Array(0.5, 0, -0.5, 0.5, -0.01, -0.5, 0.5, 0.25, 0, 0.5, 0.24, 0, -0.5, 0, -0.5, -0.5, -0.01, -0.5, -0.5, 0.25, 0, -0.5, 0.24, 0)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_478p8"]
+points = PackedVector3Array(0.5, 0, -0.5, 0.5, -0.01, -0.5, -0.5, 0.25, 0, -0.5, 0.24, 0, -0.5, 0, -0.5, -0.5, -0.01, -0.5, 0.5, 0.25, 0, 0.5, 0.24, 0)
+
+[node name="FloorRidge1x1n" type="StaticBody3D"]
+physics_material_override = ExtResource("1_ooioy")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5)
+mesh = ExtResource("2_micjw")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5)
+shape = SubResource("ConvexPolygonShape3D_gi647")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0, 0.5)
+shape = SubResource("ConvexPolygonShape3D_478p8")
