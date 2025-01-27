@@ -5,7 +5,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gx7t7"]
 
-[node name="ObstacleCornerTriple" type="StaticBody3D"]
+[node name="ObstacleCornerQuad" type="StaticBody3D"]
 physics_material_override = ExtResource("1_k3prk")
 metadata/_edit_group_ = true
 
