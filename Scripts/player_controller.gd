@@ -50,8 +50,10 @@ func _ready():
 	readyVisual = get_node("CameraRoot/ReadyVisualizer")
 	checkpoint = get_node("Checkpoint")
 	
-	ballLight.omni_range = ballLight.omni_range
-	ballLight.light_size = ballLight.light_size
+	ballLight.omni_range = baseLightRange
+	ballLight.light_size = baseLightSize
+	
+	checkpoint.set_position(golfBall.get_position())
 
 func _physics_process(delta):
 	cameraRoot.set_position(golfBall.get_position())
@@ -67,6 +69,9 @@ func _physics_process(delta):
 			readyVisual.visible = true
 			lightRange = baseLightRange
 			lightSize = baseLightSize
+	
+	if golfBall.global_position.y < -5:
+		respawn()
 
 
 func _process(delta):
@@ -132,3 +137,12 @@ func hitBall():
 	readyVisual.visible = false
 	isRolling = true
 	stoppedTime = 0
+
+func respawn():
+	golfBall.set_linear_velocity(Vector3(0,0,0))
+	golfBall.set_angular_velocity(Vector3(0,0,0))
+	golfBall.set_position(checkpoint.get_position())
+	ballLight.omni_range = baseLightRange
+	ballLight.light_size = baseLightSize
+	isRolling = false
+	readyVisual.visible = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cc2qtlonu3kjy"]
+[gd_scene load_steps=15 format=3 uid="uid://cc2qtlonu3kjy"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="3_1k2k1"]
 [ext_resource type="Material" uid="uid://c0eyq16e63ikx" path="res://Shaders/dither.tres" id="5_7iyac"]
@@ -8,12 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://rfk1togee3x8" path="res://Prefabs/Floors/Ramp/FloorRampBottom1x1.tscn" id="8_cdodo"]
 [ext_resource type="PhysicsMaterial" uid="uid://cfru8dkauad3i" path="res://PhysMats/ground_standard.tres" id="8_xn7ex"]
 [ext_resource type="ArrayMesh" uid="uid://dv6b7egi3oot" path="res://Models/Root Scene_Ground_011.res" id="9_7k64p"]
-[ext_resource type="ArrayMesh" uid="uid://udn6koxew45v" path="res://Models/Root Scene_Stair.res" id="10_skjgn"]
-[ext_resource type="ArrayMesh" uid="uid://vw15nl8oy61m" path="res://Models/Root Scene_Stair_001.res" id="11_4td1j"]
-[ext_resource type="ArrayMesh" uid="uid://dtop2g8myfy3w" path="res://Models/Root Scene_Stair_002.res" id="12_732k1"]
-[ext_resource type="ArrayMesh" uid="uid://dadwiurwp888x" path="res://Models/Root Scene_Stair_003.res" id="13_p3wny"]
-[ext_resource type="ArrayMesh" uid="uid://bufcp7ks7rgwh" path="res://Models/Root Scene_Stair_004.res" id="14_78ihk"]
-[ext_resource type="ArrayMesh" uid="uid://b8mi5kxlo7ui0" path="res://Models/Root Scene_Stair_005.res" id="15_i05x3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7atu5"]
 
@@ -244,30 +238,6 @@ shape = SubResource("BoxShape3D_eu50g")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="FloorRampBottom1x1n"]
 shape = SubResource("ConvexPolygonShape3D_ec82p")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="FloorRampBottom1x1n"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1, 0)
-mesh = ExtResource("10_skjgn")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="FloorRampBottom1x1n"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, 0)
-mesh = ExtResource("11_4td1j")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="FloorRampBottom1x1n"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 1, 0)
-mesh = ExtResource("12_732k1")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="FloorRampBottom1x1n"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, 0)
-mesh = ExtResource("13_p3wny")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="FloorRampBottom1x1n"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 1, 0)
-mesh = ExtResource("14_78ihk")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="FloorRampBottom1x1n"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 1, 0)
-mesh = ExtResource("15_i05x3")
 
 [node name="FloorRampBottom1x1n2" parent="." instance=ExtResource("8_cdodo")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
