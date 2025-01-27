@@ -11,9 +11,12 @@ const camZoomSpeed = 0.08 #Zoom scroll rate
 const camLookSensitivityX = 0.005 #Horizontal look sensitivity
 const camLookSensitivityY = 0.005 #Vertical look sensitivity
 const swingGainSensitivity = 0.1 #Mouse movement to power gauge adjustment sensitivity
-const swingCoefficient = 0.75 #Conversion constant from swing power (1-100) to physics force
+const swingCoefficient = 0.5 #Conversion constant from swing power (1-100) to physics force
 const maxCameraElevation = -85 #Maximum allowed elevation of the camera (in degrees)
-const minCameraElevation = -5 #Minimum allowed elevation of the camera (in degrees)
+const minCameraElevation = -10 #Minimum allowed elevation of the camera (in degrees)
+
+const baseLightRange = 3.0 #How far the light is allowed to shine
+const baseLightSize = 2.4 #How large the light radius is before falloff takes effect
 
 #Subnodes
 var cameraRoot #Follows the ball around. rotates around global Y only to track the "forward" look direction
@@ -22,6 +25,7 @@ var camera #Main camera. Looks backwords along the "camera arm" vector, directly
 var powerVisual #Swing power visualizer. child of camera root so that it always points "forwards"
 var readyVisual #Visualizer to indicate they player can hit the ball again.
 var golfBall #The golf ball. Has physics, can roll freely.
+var ballLight #Light source of the ball.
 var checkpoint #Stores the last stopped position of the ball in case they go OOB.
 
 #Vars
@@ -32,32 +36,43 @@ var stoppedTime = 0;
 var swingPower = 0;
 const swingMaxPower = 100;
 
+var lightRange = baseLightRange
+var lightSize = baseLightSize
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	cameraRoot = get_node("CameraRoot")
 	cameraArm = get_node("CameraRoot/CameraArm")
 	camera = get_node("CameraRoot/CameraArm/Camera3D")
 	golfBall = get_node("GolfBall")
+	ballLight = get_node("GolfBall/BallLight")
 	powerVisual = get_node("CameraRoot/PowerVisualizer")
 	readyVisual = get_node("CameraRoot/ReadyVisualizer")
 	checkpoint = get_node("Checkpoint")
+	
+	ballLight.omni_range = ballLight.omni_range
+	ballLight.light_size = ballLight.light_size
 
 func _physics_process(delta):
 	cameraRoot.set_position(golfBall.get_position())
 	if isRolling:
-		if golfBall.get_linear_velocity().length_squared() < 0.0001:
+		if golfBall.get_linear_velocity().length_squared() < 0.0005:
 			stoppedTime += delta
 		else:
 			stoppedTime = 0
 		
-		if stoppedTime >= 0.2:
+		if stoppedTime >= 0.15:
 			isRolling = false
 			checkpoint.set_position(golfBall.get_position())
 			readyVisual.visible = true
+			lightRange = baseLightRange
+			lightSize = baseLightSize
 
 
 func _process(delta):
 	powerVisual.set_scale(Vector3(1,1,swingPower/100.0))
+	ballLight.omni_range = lerp(ballLight.omni_range, lightRange, delta)
+	ballLight.light_size = lerp(ballLight.light_size, lightSize, delta)
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -110,6 +125,8 @@ func adjustSwing(delta):
 func hitBall():
 	var forward = -cameraRoot.global_transform.basis.z
 	golfBall.apply_impulse(forward * swingPower * swingCoefficient)
+	lightRange = baseLightRange * (1 + swingPower / 25.0) # +4% per swing power
+	lightSize = baseLightSize * (1 + swingPower / 25.0) # +4% per swing power
 	isSwinging = false
 	swingPower = 0;
 	powerVisual.visible = false

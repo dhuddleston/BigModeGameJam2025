@@ -24,8 +24,8 @@ background_mode = 1
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_0riom"]
 material = ExtResource("3_glcwq")
-top_radius = 0.1
-bottom_radius = 0.1
+top_radius = 0.24
+bottom_radius = 0.24
 height = 0.02
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7atu5"]
@@ -62,16 +62,16 @@ angular_damp_mode = 1
 angular_damp = 0.4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerController/GolfBall"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 shape = SubResource("SphereShape3D_0ujoa")
 
 [node name="BallMesh" type="MeshInstance3D" parent="PlayerController/GolfBall"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 mesh = SubResource("SphereMesh_jngx2")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_sdtb4")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="PlayerController/GolfBall"]
+[node name="BallLight" type="OmniLight3D" parent="PlayerController/GolfBall"]
 light_size = 3.0
 light_specular = 0.0
 distance_fade_begin = 1.0
@@ -89,15 +89,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 environment = SubResource("Environment_wmfqj")
 
 [node name="PowerVisualizer" type="Node3D" parent="PlayerController/CameraRoot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerController/CameraRoot/PowerVisualizer"]
-transform = Transform3D(0.12, 0, 0, 0, -4.37114e-07, 0.029, 0, -10, -1.26763e-09, 0, 0, -5)
+transform = Transform3D(0.24, 0, 0, 0, -4.37114e-07, 0.029, 0, -10, -1.26763e-09, 0, 0, -5)
 mesh = SubResource("PrismMesh_10uax")
 surface_material_override/0 = ExtResource("3_glcwq")
 
 [node name="ReadyVisualizer" type="MeshInstance3D" parent="PlayerController/CameraRoot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 mesh = SubResource("CylinderMesh_0riom")
 
 [node name="Obstacle" type="StaticBody3D" parent="."]
