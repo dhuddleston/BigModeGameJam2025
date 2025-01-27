@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0eeyfnd744y0"
-path.s3tc="res://.godot/imported/GreenX1.png-34906fc83246b23886a9a6fc222cb3fb.s3tc.ctex"
+path="res://.godot/imported/GreenX1.png-34906fc83246b23886a9a6fc222cb3fb.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Textures/GreenX1.png"
-dest_files=["res://.godot/imported/GreenX1.png-34906fc83246b23886a9a6fc222cb3fb.s3tc.ctex"]
+dest_files=["res://.godot/imported/GreenX1.png-34906fc83246b23886a9a6fc222cb3fb.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

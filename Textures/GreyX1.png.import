@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://efkqd5r6kkc"
-path.s3tc="res://.godot/imported/GreyX1.png-131c1495e299c7da4d9ddea94c8db294.s3tc.ctex"
+path="res://.godot/imported/GreyX1.png-131c1495e299c7da4d9ddea94c8db294.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Textures/GreyX1.png"
-dest_files=["res://.godot/imported/GreyX1.png-131c1495e299c7da4d9ddea94c8db294.s3tc.ctex"]
+dest_files=["res://.godot/imported/GreyX1.png-131c1495e299c7da4d9ddea94c8db294.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
