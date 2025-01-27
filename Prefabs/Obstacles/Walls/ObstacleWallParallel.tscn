@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d330ca6ulwp61"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="1_fwska"]
+[ext_resource type="ArrayMesh" uid="uid://bc8u6h84nl234" path="res://Models/Root Scene_Rim_003.res" id="2_0kicl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gx7t7"]
+
+[node name="ObstacleWallParallel" type="StaticBody3D"]
+physics_material_override = ExtResource("1_fwska")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, -0.5)
+mesh = ExtResource("2_0kicl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.75, 0, 0.125, -0.5)
+shape = SubResource("BoxShape3D_gx7t7")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.75, 1, 0.125, -0.5)
+shape = SubResource("BoxShape3D_gx7t7")

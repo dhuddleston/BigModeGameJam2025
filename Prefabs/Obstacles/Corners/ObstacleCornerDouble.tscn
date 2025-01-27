@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://w30dkhh6eigx"]
 
-[ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="1_t3d3v"]
-[ext_resource type="ArrayMesh" uid="uid://d3lj3sueyliqh" path="res://Models/Root Scene_Corner_002.res" id="2_s025a"]
+[ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="1_l03hp"]
+[ext_resource type="ArrayMesh" uid="uid://d3lj3sueyliqh" path="res://Models/Root Scene_Corner_002.res" id="2_hqeki"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gx7t7"]
 
 [node name="ObstacleCornerDouble" type="StaticBody3D"]
-physics_material_override = ExtResource("1_t3d3v")
+physics_material_override = ExtResource("1_l03hp")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
-mesh = ExtResource("2_s025a")
+mesh = ExtResource("2_hqeki")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.5, 0, 0, 0, 0.25, 0, 0.25, 0)

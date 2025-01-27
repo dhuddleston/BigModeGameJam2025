@@ -4,9 +4,9 @@
 [ext_resource type="Material" uid="uid://brk32xxt11xlq" path="res://Shaders/pixelate.tres" id="3_job2l"]
 [ext_resource type="Material" uid="uid://dhx4ofxlsc56i" path="res://Shaders/quantize.tres" id="4_ne0pl"]
 [ext_resource type="Material" uid="uid://c0eyq16e63ikx" path="res://Shaders/dither.tres" id="5_7iyac"]
-[ext_resource type="PackedScene" uid="uid://uuu0lldfmxi2" path="res://Prefabs/Floors/FloorFlat4x4.tscn" id="6_4w6cb"]
+[ext_resource type="PackedScene" uid="uid://uuu0lldfmxi2" path="res://Prefabs/Floors/Flat/FloorFlat4x4.tscn" id="6_4w6cb"]
 [ext_resource type="PackedScene" uid="uid://cyeckytrn2v3p" path="res://Prefabs/player_controller_fab.tscn" id="6_cntky"]
-[ext_resource type="PackedScene" uid="uid://e8rexjmxsd0w" path="res://Prefabs/Floors/FloorFlat1x1.tscn" id="6_xh33y"]
+[ext_resource type="PackedScene" uid="uid://e8rexjmxsd0w" path="res://Prefabs/Floors/Flat/FloorFlat1x1.tscn" id="6_xh33y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7atu5"]
 
