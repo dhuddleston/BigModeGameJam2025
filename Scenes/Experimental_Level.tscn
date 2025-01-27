@@ -1,0 +1,511 @@
+[gd_scene load_steps=16 format=3 uid="uid://baeg468m0tlym"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="1_gqeqf"]
+[ext_resource type="PhysicsMaterial" uid="uid://cfru8dkauad3i" path="res://PhysMats/ground_standard.tres" id="2_17xpp"]
+[ext_resource type="Material" uid="uid://brk32xxt11xlq" path="res://Shaders/pixelate.tres" id="3_hw4nm"]
+[ext_resource type="Material" uid="uid://dhx4ofxlsc56i" path="res://Shaders/quantize.tres" id="4_iu7kv"]
+[ext_resource type="Material" uid="uid://c0eyq16e63ikx" path="res://Shaders/dither.tres" id="5_kf5eo"]
+[ext_resource type="PackedScene" uid="uid://cyeckytrn2v3p" path="res://Prefabs/player_controller_fab.tscn" id="6_4xod5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7atu5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3nibx"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dkji4"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_w5iey"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vvr0y"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jcsg1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qy6h"]
+albedo_color = Color(0, 1, 0.233333, 1)
+metallic_specular = 0.0
+roughness = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8vtsn"]
+lightmap_size_hint = Vector2i(11, 11)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r30hj"]
+albedo_color = Color(0.599497, 0.293265, 0, 1)
+metallic_specular = 0.0
+roughness = 0.0
+
+[node name="BallTestScene" type="Node3D"]
+
+[node name="Obstacle" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.0040929, 0, 3.41858, 0, 2.15564, 0, -0.245034, 0, -0.057102, -0.092504, -0.812851, 1.56481)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle16" type="StaticBody3D" parent="."]
+transform = Transform3D(0.243896, 0, -0.163601, 0, 3.95385, 0, 0.0031335, 0, 12.7354, -5.01404, -1.0343, -19.4446)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle16"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle16"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle21" type="StaticBody3D" parent="."]
+transform = Transform3D(0.243896, 0, -0.163601, 0, 3.95385, 0, 0.0031335, 0, 12.7354, -1.57617, -2.32651, -19.4005)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle21"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle21"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle17" type="StaticBody3D" parent="."]
+transform = Transform3D(0.593182, 0, -12.5156, 0, 3, 0, 2.94077, 0, 2.52452, 0.305915, -4.3547, -2.71796)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle17"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle17"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle13" type="StaticBody3D" parent="."]
+transform = Transform3D(0.571072, 0, 0.8209, 0, 1, 0, -0.8209, 0, 0.571072, 3.75732, -0.614405, -5.70572)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle13"]
+shape = SubResource("CylinderShape3D_dkji4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle13"]
+mesh = SubResource("CylinderMesh_w5iey")
+
+[node name="Obstacle14" type="StaticBody3D" parent="."]
+transform = Transform3D(1.71322, 0, 2.4627, 0, 3, 0, -2.4627, 0, 1.71322, 5.77589, -2.55448, -2.78378)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle14"]
+shape = SubResource("CylinderShape3D_dkji4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle14"]
+mesh = SubResource("CylinderMesh_w5iey")
+
+[node name="Obstacle15" type="StaticBody3D" parent="."]
+transform = Transform3D(1.14214, 0, 1.6418, 0, 2, 0, -1.6418, 0, 1.14214, 6.63302, -1.60307, -6.80414)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle15"]
+shape = SubResource("CylinderShape3D_dkji4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle15"]
+mesh = SubResource("CylinderMesh_w5iey")
+
+[node name="Obstacle4" type="StaticBody3D" parent="."]
+transform = Transform3D(0.243928, 0, -0.0148715, 0, 2.15564, 0, 0.000187304, 0, 19.3682, -1.63927, -4.61201, -4.06321)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle4"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle4"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle24" type="StaticBody3D" parent="."]
+transform = Transform3D(0.243928, 0, -0.0148715, 0, 2.15564, 0, 0.000187304, 0, 19.3682, -5.23332, -4.61201, -5.31486)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle24"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle24"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle7" type="StaticBody3D" parent="."]
+transform = Transform3D(0.243928, 0, -0.0148715, 0, 2.15564, 0, 0.000187304, 0, 19.3682, 9.87319, -0.663493, -0.0867653)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle7"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle7"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle8" type="StaticBody3D" parent="."]
+transform = Transform3D(0.244323, 0, -0.0155832, 0, 2.83839, 0, 0.000187607, 0, 20.2953, -1.69185, -1.16419, -8.55878)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle8"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle8"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle9" type="StaticBody3D" parent="."]
+transform = Transform3D(0.244527, 0, -0.0196919, 0, 3.99739, 0, 0.000187764, 0, 25.6464, 1.49706, -1.72651, -11.1949)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle9"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle9"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle25" type="StaticBody3D" parent="."]
+transform = Transform3D(0.244527, -0.00037035, -0.0195481, 0, 3.96818, -3.09441, 0.000187764, 0.482311, 25.459, 1.49637, -1.98628, -11.4632)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle25"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle25"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle10" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.152637, 0, -2.36126, 0, 2.15564, 0, 0.19027, 0, -1.89423, -1.83921, -0.663493, -3.42867)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle10"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle10"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle22" type="StaticBody3D" parent="."]
+transform = Transform3D(0.000375323, -0.00113014, -3.02714, -0.243537, 0.121941, -0.00474001, 0.0137988, 2.15219, -0.00132103, -0.0643657, -0.336065, -13.1105)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle22"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle22"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle23" type="StaticBody3D" parent="."]
+transform = Transform3D(0.000375323, -0.00113014, -3.02714, -0.243503, -0.127172, -0.00455595, -0.0143904, 2.15189, -0.00185907, -3.46976, -4.01133, -13.2576)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle23"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle23"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle19" type="StaticBody3D" parent="."]
+transform = Transform3D(0.19027, 0, -1.89423, 0, 2.15564, 0, 0.152637, 0, 2.36126, -0.968176, -0.663493, -5.41482)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle19"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle19"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle18" type="StaticBody3D" parent="."]
+transform = Transform3D(0.158752, 0, 0.911968, 0, 2.15564, 0, -0.185199, 0, 0.781734, 0.213121, -0.663493, -2.97645)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle18"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle18"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle20" type="StaticBody3D" parent="."]
+transform = Transform3D(0.185199, 0, -0.781734, 0, 2.15564, 0, 0.158752, 0, 0.911968, 0.725353, -0.663493, -5.45607)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle20"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle20"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle5" type="StaticBody3D" parent="."]
+transform = Transform3D(0.00357607, 0, -19.3662, 0, 2.15564, 0, 0.243902, 0, 0.283946, -0.510009, 0.508729, -23.9358)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle5"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle5"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle6" type="StaticBody3D" parent="."]
+transform = Transform3D(0.00357607, 0, -19.3662, 0, 2.15564, 0, 0.243902, 0, 0.283946, 0.372096, -0.663494, 9.44273)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle6"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle6"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle2" type="StaticBody3D" parent="."]
+transform = Transform3D(0.139301, 0, 3.82551, 0, 2.15564, 0, -0.200241, 0, 2.66128, -8.19266, -0.663495, 8.70452)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle2"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle2"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle3" type="StaticBody3D" parent="."]
+transform = Transform3D(0.139301, 0, 3.82551, 0, 2.15564, 0, -0.200241, 0, 2.66128, 8.56433, -0.663495, -9.09778)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle3"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle3"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle11" type="StaticBody3D" parent="."]
+transform = Transform3D(0.139301, 0, 3.82551, 0, 2.15564, 0, -0.200241, 0, 2.66128, 9.11752, -0.663495, 2.70057)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle11"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle11"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="Obstacle12" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.131246, 0, 3.92809, 0, 2.15564, 0, -0.20561, 0, -2.50739, 9.23192, -0.663495, 0.202242)
+physics_material_override = ExtResource("1_gqeqf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle12"]
+shape = SubResource("BoxShape3D_7atu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle12"]
+mesh = SubResource("BoxMesh_3nibx")
+
+[node name="GroundPlane" type="StaticBody3D" parent="."]
+transform = Transform3D(1.70056, 0, 0, 0, 10, 0, 0, 0, 6.10698, 0, 0, -4.53019)
+physics_material_override = ExtResource("2_17xpp")
+metadata/_edit_group_ = true
+
+[node name="GroundCollider" type="CollisionShape3D" parent="GroundPlane"]
+transform = Transform3D(2, 0, 0, 0, 0.01, 0, 0, 0, 2, 0, -0.005, 0)
+shape = SubResource("BoxShape3D_vvr0y")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="GroundPlane"]
+mesh = SubResource("PlaneMesh_jcsg1")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_5qy6h")
+
+[node name="GroundPlane9" type="StaticBody3D" parent="."]
+transform = Transform3D(4.25472, 0, 0, 0, 10, 0, 0, 0, 6.10698, -1.1352, -3.95069, -8.51928)
+physics_material_override = ExtResource("2_17xpp")
+metadata/_edit_group_ = true
+
+[node name="GroundCollider" type="CollisionShape3D" parent="GroundPlane9"]
+transform = Transform3D(2, 0, 0, 0, 0.01, 0, 0, 0, 2, 0, -0.005, 0)
+shape = SubResource("BoxShape3D_vvr0y")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="GroundPlane9"]
+mesh = SubResource("PlaneMesh_jcsg1")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_5qy6h")
+
+[node name="GroundPlane12" type="StaticBody3D" parent="."]
+transform = Transform3D(1.90061, 0, 0, 0, 10, 0, 0, 0, 6.10698, 0.190047, -3.49148, -8.51928)
+physics_material_override = ExtResource("2_17xpp")
+metadata/_edit_group_ = true
+
+[node name="GroundCollider" type="CollisionShape3D" parent="GroundPlane12"]
+transform = Transform3D(2, 0, 0, 0, 0.01, 0, 0, 0, 2, 0, -0.005, 0)
+shape = SubResource("BoxShape3D_vvr0y")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="GroundPlane12"]
+mesh = SubResource("PlaneMesh_jcsg1")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_5qy6h")
+
+[node name="GroundPlane3" type="StaticBody3D" parent="."]
+transform = Transform3D(1.70056, 0, 0, 0, 9.65926, -0.33183, 0, 2.58819, 1.2384, -0.00238514, -4.76837e-07, -9.77531)
+physics_material_override = ExtResource("2_17xpp")
+metadata/_edit_group_ = true
+
+[node name="GroundCollider" type="CollisionShape3D" parent="GroundPlane3"]
+transform = Transform3D(2, 0, 0, 0, 0.01, 0, 0, 0, 2, 0, -0.005, 0)
+shape = SubResource("BoxShape3D_vvr0y")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="GroundPlane3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 1.19209e-07, 1, 0, 0, 0)
+mesh = SubResource("PlaneMesh_8vtsn")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_r30hj")
+
+[node name="GroundPlane10" type="StaticBody3D" parent="."]
+transform = Transform3D(0.060199, 0, 0, 0, 7.15256e-07, 1.28209, 0, -10, -2.98023e-08, -3.51206, -3.77487, -4.55076)
+physics_material_override = ExtResource("2_17xpp")
+metadata/_edit_group_ = true
+
+[node name="GroundCollider" type="CollisionShape3D" parent="GroundPlane10"]
+transform = Transform3D(2, 0, 0, 0, 0.01, 0, 0, 0, 2, 0, -0.005, 0)
+shape = SubResource("BoxShape3D_vvr0y")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="GroundPlane10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 1.19209e-07, 1, 0, 0, 0)
+mesh = SubResource("PlaneMesh_8vtsn")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_r30hj")
+
+[node name="GroundPlane11" type="StaticBody3D" parent="."]
+transform = Transform3D(-7.5493e-09, -7.15256e-07, -0.292461, 0.172708, -4.90284e-14, -1.27839e-08, 0, -10, -6.79829e-09, -3.85255, -2.66662, -4.55076)
+physics_material_override = ExtResource("2_17xpp")
+metadata/_edit_group_ = true
+
+[node name="GroundCollider" type="CollisionShape3D" parent="GroundPlane11"]
+transform = Transform3D(2, 0, 0, 0, 0.01, 0, 0, 0, 2, 0, -0.005, 0)
+shape = SubResource("BoxShape3D_vvr0y")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="GroundPlane11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 1.19209e-07, 1, 0, 0, 0)
+mesh = SubResource("PlaneMesh_8vtsn")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_r30hj")
+
+[node name="GroundPlane2" type="StaticBody3D" parent="."]
+transform = Transform3D(1.70056, 0, 0, 0, 10, 0, 0, 0, 6.10698, 0, -0.267112, -18.0102)
+physics_material_override = ExtResource("2_17xpp")
+metadata/_edit_group_ = true
+
+[node name="GroundCollider" type="CollisionShape3D" parent="GroundPlane2"]
+transform = Transform3D(2, 0, 0, 0, 0.01, 0, 0, 0, 2, 0, -0.005, 0)
+shape = SubResource("BoxShape3D_vvr0y")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="GroundPlane2"]
+mesh = SubResource("PlaneMesh_jcsg1")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_5qy6h")
+
+[node name="GroundPlane5" type="StaticBody3D" parent="."]
+transform = Transform3D(1.70056, 0, 0, 0, 9.81319, -0.469956, 0, 1.92385, 2.39716, 0, -1.45406, -10.4501)
+physics_material_override = ExtResource("2_17xpp")
+metadata/_edit_group_ = true
+
+[node name="GroundCollider" type="CollisionShape3D" parent="GroundPlane5"]
+transform = Transform3D(2, 0, 0, 0, 0.01, 0, 0, 0, 2, 0, -0.005, 0)
+shape = SubResource("BoxShape3D_vvr0y")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="GroundPlane5"]
+mesh = SubResource("PlaneMesh_jcsg1")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_5qy6h")
+
+[node name="GroundPlane4" type="StaticBody3D" parent="."]
+transform = Transform3D(1.94609, -1.98013, -0.212544, 0.327951, 9.40869, -0.726389, 0.279375, 2.74875, 2.33324, 0.443872, 0.0358976, -22.2906)
+physics_material_override = ExtResource("2_17xpp")
+metadata/_edit_group_ = true
+
+[node name="GroundCollider" type="CollisionShape3D" parent="GroundPlane4"]
+transform = Transform3D(2, 0, 0, 0, 0.01, 0, 0, 0, 2, 0, -0.005, 0)
+shape = SubResource("BoxShape3D_vvr0y")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="GroundPlane4"]
+mesh = SubResource("PlaneMesh_jcsg1")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_5qy6h")
+
+[node name="GroundPlane6" type="StaticBody3D" parent="."]
+transform = Transform3D(-2.57729e-07, 2.42415e-07, 2.45293, 1.2831, 8.66025, 0, -2.2224, 5, 2.38419e-07, -2.40147, -0.35253, -22.887)
+physics_material_override = ExtResource("2_17xpp")
+metadata/_edit_group_ = true
+
+[node name="GroundCollider" type="CollisionShape3D" parent="GroundPlane6"]
+transform = Transform3D(2, 0, 0, 0, 0.01, 0, 0, 0, 2, 0, -0.005, 0)
+shape = SubResource("BoxShape3D_vvr0y")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="GroundPlane6"]
+mesh = SubResource("PlaneMesh_jcsg1")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_5qy6h")
+
+[node name="GroundPlane7" type="StaticBody3D" parent="."]
+transform = Transform3D(-2.29497, 1.44023, 1.28553, 0.7222, 9.50815, 0.396855, -1.29867, 2.74241, -2.05104, -4.13075, -0.795766, -21.0979)
+physics_material_override = ExtResource("2_17xpp")
+metadata/_edit_group_ = true
+
+[node name="GroundCollider" type="CollisionShape3D" parent="GroundPlane7"]
+transform = Transform3D(2, 0, 0, 0, 0.01, 0, 0, 0, 2, 0, -0.005, 0)
+shape = SubResource("BoxShape3D_vvr0y")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="GroundPlane7"]
+mesh = SubResource("PlaneMesh_jcsg1")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_5qy6h")
+
+[node name="GroundPlane8" type="StaticBody3D" parent="."]
+transform = Transform3D(-2.96105, -7.15256e-07, 4.85145e-07, 2.22654e-21, 10, 1.29994e-07, 2.68632e-07, -5.96046e-07, -3.44493, -3.41249, -1.33126, -19.3329)
+physics_material_override = ExtResource("2_17xpp")
+metadata/_edit_group_ = true
+
+[node name="GroundCollider" type="CollisionShape3D" parent="GroundPlane8"]
+transform = Transform3D(2, 0, 0, 0, 0.01, 0, 0, 0, 2, 0, -0.005, 0)
+shape = SubResource("BoxShape3D_vvr0y")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="GroundPlane8"]
+mesh = SubResource("PlaneMesh_jcsg1")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_5qy6h")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pixelate" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = ExtResource("3_hw4nm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Palette Quantize" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = ExtResource("4_iu7kv")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Palette Dither" type="ColorRect" parent="CanvasLayer"]
+material = ExtResource("5_kf5eo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerController" parent="." instance=ExtResource("6_4xod5")]
