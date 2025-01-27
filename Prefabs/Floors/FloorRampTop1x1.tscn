@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dndcrv6lubqi0"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://cfru8dkauad3i" path="res://PhysMats/ground_standard.tres" id="1_cyqjs"]
+[ext_resource type="ArrayMesh" uid="uid://0u06vdq8464" path="res://Models/Root Scene_Ground_001.res" id="2_wpyb5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eu50g"]
+
+[node name="FloorRampTop1x1n" type="StaticBody3D"]
+physics_material_override = ExtResource("1_cyqjs")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+mesh = ExtResource("2_wpyb5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.01, 0, 0, 0, 0.5, 0.5, 0.245, 0.25)
+shape = SubResource("BoxShape3D_eu50g")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.00894154, -0.250297, 0, 0.00447759, 0.499832, 0.5, 0.12, 0.748)
+shape = SubResource("BoxShape3D_eu50g")
