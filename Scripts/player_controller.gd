@@ -9,7 +9,7 @@ const camMaxDist = 6.0 #Maximum camera distance from the ball when zooming out
 const camZoomSpeed = 0.08 #Zoom scroll rate
 
 const camLookSensitivityX = 0.005 #Horizontal look sensitivity
-const camLookSensitivityY = 0.005 #Vertical look sensitivity
+const camLookSensitivityY = -0.005 #Vertical look sensitivity
 const swingGainSensitivity = 0.1 #Mouse movement to power gauge adjustment sensitivity
 const swingCoefficient = 0.5 #Conversion constant from swing power (1-100) to physics force
 const maxCameraElevation = -85 #Maximum allowed elevation of the camera (in degrees)
