@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyeckytrn2v3p"]
+
+[ext_resource type="Script" path="res://Scripts/player_controller.gd" id="1_nv0vu"]
+[ext_resource type="PhysicsMaterial" uid="uid://bjqrehal88572" path="res://PhysMats/ball.tres" id="2_jcgso"]
+[ext_resource type="Material" uid="uid://be0w0a33lrpw4" path="res://Materials/IndicatorMat.tres" id="3_1tfm4"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0ujoa"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_jngx2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdtb4"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="Environment" id="Environment_wmfqj"]
+background_mode = 1
+
+[sub_resource type="PrismMesh" id="PrismMesh_10uax"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0riom"]
+material = ExtResource("3_1tfm4")
+top_radius = 0.24
+bottom_radius = 0.24
+height = 0.02
+
+[node name="PlayerController" type="Node3D"]
+script = ExtResource("1_nv0vu")
+
+[node name="Checkpoint" type="Node3D" parent="."]
+
+[node name="GolfBall" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+physics_material_override = ExtResource("2_jcgso")
+continuous_cd = true
+linear_damp_mode = 1
+linear_damp = 0.4
+angular_damp_mode = 1
+angular_damp = 0.4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GolfBall"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+shape = SubResource("SphereShape3D_0ujoa")
+
+[node name="BallMesh" type="MeshInstance3D" parent="GolfBall"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("SphereMesh_jngx2")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sdtb4")
+
+[node name="BallLight" type="OmniLight3D" parent="GolfBall"]
+light_size = 3.0
+light_specular = 0.0
+distance_fade_begin = 1.0
+distance_fade_length = 1.0
+omni_range = 4.0
+omni_attenuation = 0.0
+
+[node name="CameraRoot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="CameraArm" type="Node3D" parent="CameraRoot"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraRoot/CameraArm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+environment = SubResource("Environment_wmfqj")
+
+[node name="PowerVisualizer" type="Node3D" parent="CameraRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CameraRoot/PowerVisualizer"]
+transform = Transform3D(0.24, 0, 0, 0, -4.37114e-07, 0.029, 0, -10, -1.26763e-09, 0, 0, -5)
+mesh = SubResource("PrismMesh_10uax")
+surface_material_override/0 = ExtResource("3_1tfm4")
+
+[node name="ReadyVisualizer" type="MeshInstance3D" parent="CameraRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+mesh = SubResource("CylinderMesh_0riom")

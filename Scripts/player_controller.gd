@@ -105,7 +105,6 @@ func _input(event):
 func rotateCamera(delta):
 	cameraRoot.rotate(Vector3(0,1,0), -1 * camLookSensitivityX * delta.x)
 	var targetRot = cameraArm.get_rotation_degrees().x + rad_to_deg(camLookSensitivityY * delta.y)
-	print("BEFORE: ", cameraArm.get_rotation_degrees(), "AFTER:",  targetRot)
 	if (targetRot >= maxCameraElevation and targetRot <= minCameraElevation):
 		cameraArm.rotate_object_local(Vector3(1,0,0), camLookSensitivityY * delta.y)
 	

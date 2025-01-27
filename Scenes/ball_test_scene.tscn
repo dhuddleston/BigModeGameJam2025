@@ -1,32 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://cc2qtlonu3kjy"]
+[gd_scene load_steps=11 format=3 uid="uid://cc2qtlonu3kjy"]
 
-[ext_resource type="Script" path="res://Scripts/player_controller.gd" id="1_b3j7p"]
-[ext_resource type="PhysicsMaterial" uid="uid://bjqrehal88572" path="res://PhysMats/ball.tres" id="2_dnxe2"]
-[ext_resource type="PhysicsMaterial" uid="uid://cfru8dkauad3i" path="res://PhysMats/ground_standard.tres" id="2_ru4nu"]
+[ext_resource type="PackedScene" uid="uid://8p8kxh35wcp2" path="res://Prefabs/generic_ground_fab.tscn" id="2_ckkoi"]
 [ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="3_1k2k1"]
-[ext_resource type="Material" uid="uid://be0w0a33lrpw4" path="res://Materials/IndicatorMat.tres" id="3_glcwq"]
 [ext_resource type="Material" uid="uid://brk32xxt11xlq" path="res://Shaders/pixelate.tres" id="3_job2l"]
 [ext_resource type="Material" uid="uid://dhx4ofxlsc56i" path="res://Shaders/quantize.tres" id="4_ne0pl"]
 [ext_resource type="Material" uid="uid://c0eyq16e63ikx" path="res://Shaders/dither.tres" id="5_7iyac"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_0ujoa"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_jngx2"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdtb4"]
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
-
-[sub_resource type="Environment" id="Environment_wmfqj"]
-background_mode = 1
-
-[sub_resource type="PrismMesh" id="PrismMesh_10uax"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_0riom"]
-material = ExtResource("3_glcwq")
-top_radius = 0.24
-bottom_radius = 0.24
-height = 0.02
+[ext_resource type="PackedScene" uid="uid://cyeckytrn2v3p" path="res://Prefabs/player_controller_fab.tscn" id="6_cntky"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7atu5"]
 
@@ -36,69 +15,7 @@ height = 0.02
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_w5iey"]
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7bypn"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_jcsg1"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qy6h"]
-albedo_color = Color(0, 1, 0.233333, 1)
-metallic_specular = 0.0
-roughness = 0.0
-
 [node name="BallTestScene" type="Node3D"]
-
-[node name="PlayerController" type="Node3D" parent="."]
-script = ExtResource("1_b3j7p")
-
-[node name="Checkpoint" type="Node3D" parent="PlayerController"]
-
-[node name="GolfBall" type="RigidBody3D" parent="PlayerController"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39256, 0)
-physics_material_override = ExtResource("2_dnxe2")
-continuous_cd = true
-linear_damp_mode = 1
-linear_damp = 0.4
-angular_damp_mode = 1
-angular_damp = 0.4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerController/GolfBall"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-shape = SubResource("SphereShape3D_0ujoa")
-
-[node name="BallMesh" type="MeshInstance3D" parent="PlayerController/GolfBall"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-mesh = SubResource("SphereMesh_jngx2")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_sdtb4")
-
-[node name="BallLight" type="OmniLight3D" parent="PlayerController/GolfBall"]
-light_size = 3.0
-light_specular = 0.0
-distance_fade_begin = 1.0
-distance_fade_length = 1.0
-omni_range = 4.0
-omni_attenuation = 0.0
-
-[node name="CameraRoot" type="Node3D" parent="PlayerController"]
-
-[node name="CameraArm" type="Node3D" parent="PlayerController/CameraRoot"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
-
-[node name="Camera3D" type="Camera3D" parent="PlayerController/CameraRoot/CameraArm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
-environment = SubResource("Environment_wmfqj")
-
-[node name="PowerVisualizer" type="Node3D" parent="PlayerController/CameraRoot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerController/CameraRoot/PowerVisualizer"]
-transform = Transform3D(0.24, 0, 0, 0, -4.37114e-07, 0.029, 0, -10, -1.26763e-09, 0, 0, -5)
-mesh = SubResource("PrismMesh_10uax")
-surface_material_override/0 = ExtResource("3_glcwq")
-
-[node name="ReadyVisualizer" type="MeshInstance3D" parent="PlayerController/CameraRoot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-mesh = SubResource("CylinderMesh_0riom")
 
 [node name="Obstacle" type="StaticBody3D" parent="."]
 transform = Transform3D(0.139301, 0, 3.82551, 0, 2.15564, 0, -0.200241, 0, 2.66128, -2.59283, 0.827178, 4.81714)
@@ -270,18 +187,7 @@ shape = SubResource("BoxShape3D_7atu5")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle12"]
 mesh = SubResource("BoxMesh_3nibx")
 
-[node name="GroundPlane" type="StaticBody3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-physics_material_override = ExtResource("2_ru4nu")
-
-[node name="GroundCollider" type="CollisionShape3D" parent="GroundPlane"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-shape = SubResource("WorldBoundaryShape3D_7bypn")
-
-[node name="GroundMesh" type="MeshInstance3D" parent="GroundPlane"]
-mesh = SubResource("PlaneMesh_jcsg1")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_5qy6h")
+[node name="GroundPlane" parent="." instance=ExtResource("2_ckkoi")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -310,3 +216,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="PlayerController" parent="." instance=ExtResource("6_cntky")]
