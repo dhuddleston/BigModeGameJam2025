@@ -10,7 +10,7 @@ physics_material_override = ExtResource("1_ujebt")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5)
 mesh = ExtResource("1_bpudd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
