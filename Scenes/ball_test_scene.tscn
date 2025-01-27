@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://cc2qtlonu3kjy"]
+[gd_scene load_steps=12 format=3 uid="uid://cc2qtlonu3kjy"]
 
-[ext_resource type="PackedScene" uid="uid://8p8kxh35wcp2" path="res://Prefabs/generic_ground_fab.tscn" id="2_ckkoi"]
 [ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="3_1k2k1"]
 [ext_resource type="Material" uid="uid://brk32xxt11xlq" path="res://Shaders/pixelate.tres" id="3_job2l"]
 [ext_resource type="Material" uid="uid://dhx4ofxlsc56i" path="res://Shaders/quantize.tres" id="4_ne0pl"]
 [ext_resource type="Material" uid="uid://c0eyq16e63ikx" path="res://Shaders/dither.tres" id="5_7iyac"]
+[ext_resource type="PackedScene" uid="uid://uuu0lldfmxi2" path="res://Prefabs/Floors/FloorFlat4x4.tscn" id="6_4w6cb"]
 [ext_resource type="PackedScene" uid="uid://cyeckytrn2v3p" path="res://Prefabs/player_controller_fab.tscn" id="6_cntky"]
+[ext_resource type="PackedScene" uid="uid://e8rexjmxsd0w" path="res://Prefabs/Floors/FloorFlat1x1.tscn" id="6_xh33y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7atu5"]
 
@@ -187,8 +188,6 @@ shape = SubResource("BoxShape3D_7atu5")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacle12"]
 mesh = SubResource("BoxMesh_3nibx")
 
-[node name="GroundPlane" parent="." instance=ExtResource("2_ckkoi")]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pixelate" type="ColorRect" parent="CanvasLayer"]
@@ -218,3 +217,18 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PlayerController" parent="." instance=ExtResource("6_cntky")]
+
+[node name="FloorFlat4x4n" parent="." instance=ExtResource("6_4w6cb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="FloorFlat4x4n2" parent="." instance=ExtResource("6_4w6cb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="FloorFlat4x4n3" parent="." instance=ExtResource("6_4w6cb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
+
+[node name="FloorFlat4x4n4" parent="." instance=ExtResource("6_4w6cb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 4)
+
+[node name="FloorFlat1x1n" parent="." instance=ExtResource("6_xh33y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
