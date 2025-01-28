@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://ce4m3sbr1cxhe"]
+
+[ext_resource type="Script" path="res://Scripts/lightning.gd" id="1_t1l3c"]
+[ext_resource type="Animation" uid="uid://2oo5fjk6kty4" path="res://Animations/LightningMedium.res" id="2_k7gbo"]
+[ext_resource type="Animation" uid="uid://doy6kgls38aqo" path="res://Animations/LightningSmall.res" id="3_68ut8"]
+[ext_resource type="Animation" uid="uid://i6o3d8avngm6" path="res://Animations/LightningLarge.res" id="4_05yap"]
+
+[sub_resource type="Animation" id="Animation_45x6l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LightningSource/DirectionalLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1yve8"]
+_data = {
+"LightningLarge": ExtResource("4_05yap"),
+"LightningMedium": ExtResource("2_k7gbo"),
+"LightningSmall": ExtResource("3_68ut8"),
+"RESET": SubResource("Animation_45x6l")
+}
+
+[node name="LightningSource" type="Node3D" node_paths=PackedStringArray("light", "anim")]
+script = ExtResource("1_t1l3c")
+light = NodePath("DirectionalLight3D")
+anim = NodePath("AnimationPlayer")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.887936, 0.126329, -0.442279, 7.45058e-09, 0.961545, 0.274647, 0.459967, -0.243869, 0.85379, -7.34447, 6.71753, 17.2596)
+light_energy = 0.0
+shadow_enabled = true
+shadow_blur = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_1yve8")
+}

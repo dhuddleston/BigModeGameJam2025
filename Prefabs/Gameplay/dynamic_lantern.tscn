@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyyd4576kyhep"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="1_66aab"]
+[ext_resource type="Script" path="res://Scripts/lantern.gd" id="2_fd4uu"]
+[ext_resource type="ArrayMesh" uid="uid://dxt6xi5nke8xu" path="res://Models/Root Scene_Corner_003.res" id="3_xox8v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gx7t7"]
+
+[node name="LANTERN" type="StaticBody3D" node_paths=PackedStringArray("light")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -6)
+physics_material_override = ExtResource("1_66aab")
+script = ExtResource("2_fd4uu")
+baseRange = 1.0
+maxRange = 8.0
+changeSpeed = 2.0
+light = NodePath("OmniLight3D")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+mesh = ExtResource("3_xox8v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.5, 0, 0, 0, 0.25, 0, 0.25, 0)
+shape = SubResource("BoxShape3D_gx7t7")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.153084, 0)
