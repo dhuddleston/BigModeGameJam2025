@@ -43,7 +43,7 @@ var stoppedTime = 0;
 var swingPower = 0;
 
 
-var targetLightRange = baseLightRange
+var targetLightRange
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -58,6 +58,7 @@ func _ready():
 	
 	ballLight.omni_range = baseLightRange
 	ballLight.light_size = baseLightRange * brightLightCoef
+	targetLightRange = baseLightRange
 	
 	checkpoint.set_position(golfBall.get_position())
 
