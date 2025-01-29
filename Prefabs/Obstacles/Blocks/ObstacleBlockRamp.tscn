@@ -1,7 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsolo0ghl134k"]
+[gd_scene load_steps=6 format=4 uid="uid://dsolo0ghl134k"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="1_lo5r4"]
-[ext_resource type="ArrayMesh" uid="uid://dpuc7yarhgyeq" path="res://Models/Root Scene_Ramp.res" id="2_oyvnr"]
+[ext_resource type="Material" uid="uid://dcm5yqrcjsy44" path="res://Materials/WhiteX2.tres" id="2_suu2j"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wutvp"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.25, 1, 0.5, 0.5),
+"format": 34896613377,
+"index_count": 18,
+"index_data": PackedByteArray("AAACAAEAAwACAAAABAADAAAAAQACAAUAAAAFAAQAAAABAAUA"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("AAD/////AAAAAP//AAAAAAAAAAAAAAAAAAAAAP//AAD//wAA//8AAP//AAAAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_axypm"]
+resource_name = "Root Scene_Ramp"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.25, 1, 0.5, 0.5),
+"attribute_data": PackedByteArray("H6j/ByCY/wcgmP4XH6j+Fwuw9h8LkPYPC5D2HwOQ/QcDsP0XA5D9FwCQAAAAkP4fD6D+Hw+gAAA="),
+"format": 34896613399,
+"index_count": 18,
+"index_data": PackedByteArray("AAACAAEAAwACAAAABAAGAAUABwAJAAgACgAMAAsACgANAAwA"),
+"material": ExtResource("2_suu2j"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("AAD//////78AAP//AAD/vwAAAAAAAP+/AAAAAP///7///wAA//8AgAAA/////wCAAAAAAP//AIAAAP//AAAAAP//AAAAAAAAAAAAAAAAAAAAAP////9oy///AAD//2jL//8AAAAAaMsAAP//AABoy/9/////f////3////9/////f////3////9///////9/////f////3/AxmAjwMZgI8DGYCPAxmAj")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_wutvp")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i34qw"]
 points = PackedVector3Array(0.5, 0, -0.25, 0.5, 0, 0.25, -0.5, 0, -0.25, -0.5, 0, 0.25, -0.5, 0.5, -0.25, -0.5, 0.5, 0.25)
@@ -11,7 +43,7 @@ physics_material_override = ExtResource("1_lo5r4")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = ExtResource("2_oyvnr")
+mesh = SubResource("ArrayMesh_axypm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_i34qw")

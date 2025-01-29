@@ -1,7 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://dk5rs1r0aae58"]
+[gd_scene load_steps=6 format=4 uid="uid://dk5rs1r0aae58"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="1_eocwn"]
-[ext_resource type="ArrayMesh" uid="uid://de5naag8peje2" path="res://Models/Root Scene_Ramp_003.res" id="2_1d2d8"]
+[ext_resource type="Material" uid="uid://dcm5yqrcjsy44" path="res://Materials/WhiteX2.tres" id="2_hj4po"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qqe3q"]
+_surfaces = [{
+"aabb": AABB(-0.25, 0, -0.5, 0.75, 0.5, 0.75),
+"format": 34896613377,
+"index_count": 66,
+"index_data": PackedByteArray("AAACAAEAAAABAAMAAgAFAAQABAABAAIABgAIAAcACQACAAAACQAAAAgACQAFAAIACAAAAAcACAAKAAkACwAHAAAAAwALAAAABgANAAwACAAGAAwACAAMAA4ACgAIAA4ABwALAA0ADQAGAAcADwAEAAUADwAFAAkACgAPAAkADgAPAAoA"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("qqr//1VVAACqqgAAAAAAAKqq//8AAAAAqqoAAFVVAAAAAAAAAAAAAAAA//8AAAAA////////AAD/////VVUAAKqq/////wAAAAD//1VVAAAAAP////8AAP//AABVVQAAqqoAAP//AAD//wAA//8AAAAAAAD//wAAAAAAAFVVAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3n3ax"]
+resource_name = "Root Scene_Ramp_003"
+_surfaces = [{
+"aabb": AABB(-0.25, 0, -0.5, 0.75, 0.5, 0.75),
+"attribute_data": PackedByteArray("/p8AAP+P/wf+n/8H/48AAP6f/wf/j/4X/p/+F/+P/wf0pwAAAJgAAPSn+gcAmO4XAJj6BwaQ+gcGkO4X9KfuF/uv/wf8nwAA/J//B/uvAAAHmAAABqj/BwaoAAAHmP8HBqj+FweY/hf8n/8H+6/+F/uv/wf8n/4XDqD/Dw6Q/hcOoP4XDpD/Dw6QAAAOoAAA"),
+"format": 34896613399,
+"index_count": 66,
+"index_data": PackedByteArray("AAACAAEAAAABAAMABAAGAAUABQAHAAQACAAKAAkACwANAAwACwAMAAoACwAOAA0ACgAMAAkACgAPAAsAEAASABEAEwAQABEAFAAWABUAFwAUABUAFwAVABgAGQAXABgAGgAcABsAGwAdABoAHgAgAB8AHgAfACEAIgAeACEAIwAeACIA"),
+"material": ExtResource("2_hj4po"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("qqr//1VVVNWqqgAAAABU1aqq//8AAFTVqqoAAFVVVNWqqv//AAD//wAAAAAAAP//AAD//wAA//+qqgAAAAD//////////1TV/////1VVVNWqqv////9U1QAA//9VVVTVqqr//1VVVNWqqv//AABU1QAA//8AAFTVAAD/////VNX//wAAVVX//6qq//9VVf///////1VV//+qqgAAVVX///////////+/qqoAAP///7///wAA////v6qq//////+/AAAAAP///78AAP//////v/////9VVVTV//8AAP//VNX//wAAVVVU1f///////1TVAAAAAFVVVNUAAP//AABU1QAAAAAAAFTVAAD//1VVVNUAAP////9U1QAAAAD//1TVqiqqKqoqqiqqKqoqqiqqKv+//7//v/+//7//v/+//7+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqv8//7//P/+//z//v/8//7//f/9//3//f/9//3//f/9//3//f/9//3+qqlRVqqpUVaqqVFWqqlRVVFWpqlRVqqpUVaqqVFWqqlRVqapUVamq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_qqe3q")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gx7t7"]
 
@@ -10,7 +42,7 @@ physics_material_override = ExtResource("1_eocwn")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = ExtResource("2_1d2d8")
+mesh = SubResource("ArrayMesh_3n3ax")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.75, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.125, 0.25, 0)

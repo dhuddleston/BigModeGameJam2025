@@ -1,7 +1,57 @@
-[gd_scene load_steps=4 format=3 uid="uid://bw06dypn2noee"]
+[gd_scene load_steps=7 format=4 uid="uid://bw06dypn2noee"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="1_qn51p"]
-[ext_resource type="ArrayMesh" uid="uid://dadwiurwp888x" path="res://Models/Root Scene_Stair_003.res" id="2_bh8e3"]
+[ext_resource type="Material" uid="uid://d1220qcg4bjqc" path="res://Materials/PinkX2.tres" id="2_vif5k"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cmga8"]
+_surfaces = [{
+"aabb": AABB(-0.5, -2.98023e-08, -0.5, 1, 0.25, 0.5),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAACAAEAAAADAAIAAQAEAAAAAQAFAAQAAwAHAAYAAwAGAAIAAAAEAAcAAwAAAAcABwAEAAYABQAGAAQAAgAGAAUAAQACAAUA"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("////////AAAAAP////8AAAAAAAD//wAA//8AAP//AAD/////AAAAAAAA//8AAAAAAAAAAAAAAAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xx8gl"]
+resource_name = "Root Scene_Stair_003"
+_surfaces = [{
+"aabb": AABB(-0.5, -2.98023e-08, -0.5, 1, 0.25, 0.5),
+"attribute_data": PackedByteArray("+Z//H/mfAAD5lwAA+Zf/HwOQAAADkP4fAqD+HwKgAAAJqP4fCpgAAAqY/h8JqAAACZgAAAmQ/w8JmP8PCZAAAP2XAAD9l/8f/Z8AAP2f/x8BmAAAAZD/DwGY/w8BkAAA"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAACAAEAAAADAAIABAAGAAUABAAHAAYACAAKAAkACAAJAAsADAAOAA0ADwAMAA0AEAASABEAEwARABIAFAAWABUAFwAUABUA"),
+"material": ExtResource("2_vif5k"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////////78AAP//////vwAAAAD///+///8AAP///78AAP////9U1f///////1TV/////wAAVNUAAP//AABU1f//AAD//1TVAAAAAAAAVNX//wAAAABU1QAAAAD//1TV////////VNX//wAAAABU1f////8AAFTV//8AAP//VNX//wAAAAD//wAAAAAAAP///////wAA//8AAP//AAD//wAAAAD//1TVAAD//wAAVNUAAAAAAABU1QAA/////1TV/////////////////////1TVqipU1aoqVNWqKlTVqiqqKlTVqipU1aoqVNWqKlTVqiqqKqoqqiqqKqoqqiqqKv+//7//v/+//7//v/+//79UVaqqVFWqqlRVqqpUVaqq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_cmga8")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_g25bu"]
+resource_name = "Root Scene_Stair_003"
+_surfaces = [{
+"aabb": AABB(-0.5, -2.98023e-08, -0.5, 1, 0.25, 0.5),
+"attribute_data": PackedByteArray("+Z//H/mfAAD5lwAA+Zf/HwOQAAADkP4fAqD+HwKgAAAJqP4fCpgAAAqY/h8JqAAACZgAAAmQ/w8JmP8PCZAAAP2XAAD9l/8f/Z8AAP2f/x8BmAAAAZD/DwGY/w8BkAAA"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAACAAEAAAADAAIABAAGAAUABAAHAAYACAAKAAkACAAJAAsADAAOAA0ADwAMAA0AEAASABEAEwARABIAFAAWABUAFwAUABUA"),
+"material": ExtResource("2_vif5k"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////////78AAP//////vwAAAAD///+///8AAP///78AAP////9U1f///////1TV/////wAAVNUAAP//AABU1f//AAD//1TVAAAAAAAAVNX//wAAAABU1QAAAAD//1TV////////VNX//wAAAABU1f////8AAFTV//8AAP//VNX//wAAAAD//wAAAAAAAP///////wAA//8AAP//AAD//wAAAAD//1TVAAD//wAAVNUAAAAAAABU1QAA/////1TV/////////////////////1TVqipU1aoqVNWqKlTVqiqqKlTVqipU1aoqVNWqKlTVqiqqKqoqqiqqKqoqqiqqKv+//7//v/+//7//v/+//79UVaqqVFWqqlRVqqpUVaqq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_cmga8")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gx7t7"]
 
@@ -11,11 +61,11 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
-mesh = ExtResource("2_bh8e3")
+mesh = SubResource("ArrayMesh_xx8gl")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1)
-mesh = ExtResource("2_bh8e3")
+mesh = SubResource("ArrayMesh_g25bu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 1, 0.5, 0.125, 0.5)

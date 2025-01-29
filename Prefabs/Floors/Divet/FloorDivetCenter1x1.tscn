@@ -1,7 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://dctqjub5x4o3w"]
+[gd_scene load_steps=6 format=4 uid="uid://dctqjub5x4o3w"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://cfru8dkauad3i" path="res://PhysMats/ground_standard.tres" id="1_jxa5o"]
-[ext_resource type="ArrayMesh" uid="uid://bhvr40cpbb6tv" path="res://Models/Root Scene_Ground_005.res" id="2_sticu"]
+[ext_resource type="Material" uid="uid://cplnb7mc7x1mc" path="res://Materials/GreenX1.tres" id="2_nmcdi"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_h3p1y"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.25, 1),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAACAAEAAQADAAAABAACAAAABAAAAAMA"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 5,
+"vertex_data": PackedByteArray("/38AAP9/AAD/////AAAAAAAA//8AAAAA////////AAAAAP////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_u7npm"]
+resource_name = "Root Scene_Ground_005"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.25, 1),
+"attribute_data": PackedByteArray("DWD/Dwxw/h8McAAADHD+Hw1g/w8OUP4fDlAAAA1g/w8McAAADlAAAA5Q/h8NYP8P"),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAACAAEAAwAFAAQABgAIAAcACQALAAoA"),
+"material": ExtResource("2_nmcdi"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/38AAP9/aMv/////AABoywAA//8AAGjL/////wAA9eD/fwAA/3/14P////////XgAAD/////aMv/fwAA/39oywAA//8AAGjLAAD/////9eD////////14P9/AAD/f/XgntxgI57cYCOe3GAjx+HkMMfh5DDH4eQwwMZgI8DGYCPAxmAjGs/kMBrP5DAaz+Qw")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_h3p1y")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ec82p"]
 points = PackedVector3Array(0.5, 0.25, -0.5, 0.5, 0.24, -0.5, 0, 0, 0, 0, -0.01, 0, -0.5, 0.25, -0.5, -0.5, 0.24, -0.5)
@@ -13,7 +45,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5)
-mesh = ExtResource("2_sticu")
+mesh = SubResource("ArrayMesh_u7npm")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)

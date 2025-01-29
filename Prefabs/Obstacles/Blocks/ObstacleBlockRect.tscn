@@ -1,7 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://baqapqe52ob1p"]
+[gd_scene load_steps=6 format=4 uid="uid://baqapqe52ob1p"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="1_eocwn"]
-[ext_resource type="ArrayMesh" uid="uid://del33mxo58p1k" path="res://Models/Root Scene_Ramp_001.res" id="2_snems"]
+[ext_resource type="Material" uid="uid://dcm5yqrcjsy44" path="res://Materials/WhiteX2.tres" id="2_a87mp"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6uhfg"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.25, 1, 0.5, 0.5),
+"format": 34896613377,
+"index_count": 30,
+"index_data": PackedByteArray("AAACAAEAAQADAAAABAAGAAUABwAGAAQAAwAHAAQAAwABAAcAAgAFAAYAAgAAAAUABAAFAAAABAAAAAMA"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAD//wAA//8AAP//AAAAAAAA////////AAAAAP////8AAAAA//8AAAAAAAAAAAAAAAAAAAAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2gcqp"]
+resource_name = "Root Scene_Ramp_001"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.25, 1, 0.5, 0.5),
+"attribute_data": PackedByteArray("AaD/DwKQAAACkP8PAaAAAPSf/w/0nwAA9Y8AAPWP/w8MkAAADJD+Hwyg/h8MoAAAAKD+HwCgAAABkAAAAZD+HwWQAAAFoP4fBaAAAAWQ/h8="),
+"format": 34896613399,
+"index_count": 30,
+"index_data": PackedByteArray("AAACAAEAAQADAAAABAAGAAUABwAGAAQACAAKAAkACAALAAoADAAOAA0ADAAPAA4AEAASABEAEAARABMA"),
+"material": ExtResource("2_a87mp"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("/////wAAVNX//wAA//9U1f//AAAAAFTV////////VNUAAP////9U1QAA//8AAFTVAAAAAAAAVNUAAAAA//9U1f////////+/AAD//////78AAAAA////v///AAD///+///8AAAAA//8AAAAAAAD//wAA//8AAP///////wAA//8AAP////9U1f////8AAFTVAAD//wAAVNX///////9U1aoqqiqqKqoqqiqqKqoqqipU1VTVVNVU1VTVVNVU1VTV/3//f/9//3//f/9//3//f/8//7//P/+//z//v/8//79U1aoqVNWqKlTVqipU1aoq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_6uhfg")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gx7t7"]
 
@@ -10,7 +42,7 @@ physics_material_override = ExtResource("1_eocwn")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = ExtResource("2_snems")
+mesh = SubResource("ArrayMesh_2gcqp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.25, 0)

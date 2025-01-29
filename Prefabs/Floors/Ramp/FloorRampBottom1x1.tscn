@@ -1,7 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://rfk1togee3x8"]
+[gd_scene load_steps=7 format=4 uid="uid://rfk1togee3x8"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://cfru8dkauad3i" path="res://PhysMats/ground_standard.tres" id="1_ejge6"]
-[ext_resource type="ArrayMesh" uid="uid://dv6b7egi3oot" path="res://Models/Root Scene_Ground_011.res" id="2_glg6i"]
+[ext_resource type="Material" uid="uid://cplnb7mc7x1mc" path="res://Materials/GreenX1.tres" id="2_jdf66"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sionb"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.25, 1),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAACAAEAAwAAAAEAAwABAAQABQADAAQA"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("AAAAAP//AAD/fwAAAAAAAAAAAAAAAAAA/38AAP//AAD/////AAAAAP///////wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bkext"]
+resource_name = "Root Scene_Ground_011"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.25, 1),
+"attribute_data": PackedByteArray("BFAAAANwGw8DcAAABFAaDwRQGg8DcP8fA3AbDwRQ/h8="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAACAAEAAwAAAAEABAAGAAUABwAEAAUA"),
+"material": ExtResource("2_jdf66"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//VdX/fwAAAABV1QAAAAAAAFXV/38AAP//VdX/fwAA///24P////8AAPbg/38AAAAA9uD////////24FTVqSpU1akqVNWpKlTVqSrH4eMwx+HjMMfh4zDH4eMw")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_sionb")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eu50g"]
 
@@ -14,7 +46,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5)
-mesh = ExtResource("2_glg6i")
+mesh = SubResource("ArrayMesh_bkext")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.01, 0, 0, 0, 0.5, 0.5, -0.005, 0.75)

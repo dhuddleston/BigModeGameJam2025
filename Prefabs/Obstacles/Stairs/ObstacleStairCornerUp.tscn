@@ -1,7 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfqhqhlyb3w5v"]
+[gd_scene load_steps=7 format=4 uid="uid://cfqhqhlyb3w5v"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="1_fvta0"]
-[ext_resource type="ArrayMesh" uid="uid://dtop2g8myfy3w" path="res://Models/Root Scene_Stair_002.res" id="2_vfmrr"]
+[ext_resource type="Material" uid="uid://d1220qcg4bjqc" path="res://Materials/PinkX2.tres" id="2_qshx5"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0q1pg"]
+_surfaces = [{
+"aabb": AABB(-0.5, -1.49012e-08, -0.5, 1, 0.5, 1),
+"format": 34896613377,
+"index_count": 96,
+"index_data": PackedByteArray("AAACAAEAAwABAAIABAAFAAIAAgAAAAQABgAEAAAAAAABAAYAAgAFAAcAAgAHAAMABQAEAAcABgAHAAQAAwAHAAYAAQADAAYACAAKAAkACwAIAAkADAANAAoADAAKAAgACQAPAA4ADgALAAkACAAOAAwACAALAA4ACQAQAA8AEQAQAAkAEgARAAoACQAKABEAEAATAA8ADQAPABMAEgATABAAEQASABAACgANABMAEwASAAoADgAPAA0ADAAOAA0A"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("//////7/AAD/f/////8AAP///3/+/wAA/3//f///AAD//////38AAP///3//fwAA/3////9/AAD/f/9//38AAP9//3/+/wAA/38AAP9/AAD/f/9//38AAP9/AAD+/wAAAAD/f/7/AAAAAP9/AAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAP//AAD/fwAA////f/9/AAD///9/AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ttxay"]
+resource_name = "Root Scene_Stair_002"
+_surfaces = [{
+"aabb": AABB(-0.5, -1.49012e-08, -0.5, 1, 0.5, 1),
+"attribute_data": PackedByteArray("/Y//D/2P/x/9l/8P/Zf/H/2PAAD9l/8P/ZcAAP2P/w/9l/8P/KcAAP2XAAD8p/8PA5AAAAKg/w8CoAAAA5D/D/+X/x//l/8P/4//H/+P/w//lwAA/4//D/+X/w//jwAA/ZcAAP2P/w/9l/8P/Y8AAPmP/h/4n/8P+Y8AAPif/h8HoP8PBrAAAAeQAAAGsP8PA5j/DwOYAAAEkAAABJD/Dweg/w8HkAAAB5D+Hweg/h/9lwAA/Zf/D/2fAAD9n/8PCZAAAAmQ/x8JmAAACZj/H/+X/w//nwAA/5cAAP+f/w/4n/8P968AAPmPAAD3r/8PAqAAAAKY/x8CoP8fApgAAA=="),
+"format": 34896613399,
+"index_count": 96,
+"index_data": PackedByteArray("AAACAAEAAwABAAIABAAGAAUABQAHAAQACAAKAAkACQALAAgADAAOAA0ADAANAA8AEAASABEAEwARABIAFAAWABUAFwAUABUAGAAaABkAGwAYABkAHAAeAB0AHAAdAB8AIAAiACEAIQAjACAAJAAmACUAJAAnACYAKAAqACkAKwAqACgALAAuAC0ALwAtAC4AMAAyADEAMwAxADIANAA2ADUANwA0ADUAOAA6ADkAOQA7ADgAPAA+AD0APwA8AD0A"),
+"material": ExtResource("2_qshx5"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 64,
+"vertex_data": PackedByteArray("//////7//7//f///////v////3/+//+//3//f////7///////39U1f///3/+/1TV////f/9/VNX//////v9U1f9/////f1TV//////7/VNX//////39U1f9//////1TV////f/7/VNX/f/9//39U1f///3//f1TV/3//f///VNX///9//3////9//3//f/////////9/////f////3////9//3///1TV/3////9/VNX/f/9//39U1f9//////1TV/3//f/7/VNX/fwAA/39U1f9//3//f1TV/38AAP7/VNUAAP9//v//v/9//3//f/+/AAD/fwAA/7//f/9//v//v/9/AAD/f1TVAAAAAP7/VNUAAAAAAABU1f9/AAD+/1TV/3//f/7//78AAP9//v//vwAAAAD+//+//38AAP7//7//fwAA/39U1QAAAAAAAFTV//8AAAAAVNX//wAA/39U1f///3//f/+//3//f/9//7///wAA/3//v/9/AAD/f/+///8AAAAA//8AAAAAAAD//////38AAP//AAD/fwAA//////9//39U1f//AAAAAFTV////fwAAVNX//wAA/39U1f9//3//f/+/////fwAA/78AAP9/AAD/v////3//f/+/AAAAAP7/VNUAAP9/AABU1QAAAAAAAFTVAAD/f/7/VNX/f/9//3//f/9//3//f/9/qqpUVaqqVFWqqlRVqqpUVaqqqqqqqqqqqqqqqqmqqqpUVVRVVFVUVVRVVFVUVVRV/z//v/8//7//P/+//z//v1RVqqpUVaqqVFWqqlRVqqqqKqoqqiqqKqoqqiqqKqoq/v//f/7//3/+//9//v//f6oqVNWqKlTVqipU1aoqVNX/////////////////////qipU1aoqVNWqKlTVqipU1f9//3//f/9//3//f/9//3//v/+//7//v/+//7//v/+/qqpUVaqqVFWqqlRVqqpUVf7//3/+//9//v//f////39VVamqVVWpqlVVqapVVamq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_0q1pg")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gx7t7"]
 
@@ -13,7 +45,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
-mesh = ExtResource("2_vfmrr")
+mesh = SubResource("ArrayMesh_ttxay")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.5, 0.125, 0.25)

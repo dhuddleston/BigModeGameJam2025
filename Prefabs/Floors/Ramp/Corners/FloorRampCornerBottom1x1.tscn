@@ -1,7 +1,41 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxyx2xv274s8h"]
+[gd_scene load_steps=8 format=4 uid="uid://bxyx2xv274s8h"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://cfru8dkauad3i" path="res://PhysMats/ground_standard.tres" id="1_e04aj"]
-[ext_resource type="ArrayMesh" uid="uid://dwp617dk55ch0" path="res://Models/Root Scene_Ground_010.res" id="2_globi"]
+[ext_resource type="Material" uid="uid://cplnb7mc7x1mc" path="res://Materials/GreenX1.tres" id="2_ma0u8"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_c26sl"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.25, 1),
+"format": 34896613377,
+"index_count": 18,
+"index_data": PackedByteArray("AAACAAEAAAADAAIABAADAAAABAAFAAMABgAAAAEABgAEAAAA"),
+"lods": [0.144587, PackedByteArray("AwACAAEABgADAAEABgAEAAMABAAFAAMA")],
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 7,
+"vertex_data": PackedByteArray("/38AAP9/AAD///////8AAP////8AAAAA/38AAAAAAAAAAAAA/38AAAAAAAAAAAAAAAD/////AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ygovm"]
+resource_name = "Root Scene_Ground_010"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.25, 1),
+"attribute_data": PackedByteArray("CGD/DwhQ/x8IcP8fCHD/DwhgAAAIYP8PCHD/DwhwAAAIUAAACFD/Hwhg/w8IYAAA"),
+"format": 34896613399,
+"index_count": 18,
+"index_data": PackedByteArray("AAACAAEAAAADAAIABAAGAAUABAAHAAYACAAKAAkACAALAAoA"),
+"lods": [0.144587, PackedByteArray("AwACAAEACAADAAEACAAEAAMABAAHAAMA")],
+"material": ExtResource("2_ma0u8"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/38AAP9/9eD////////14P////8AAPXg/38AAAAA9eAAAAAA/39U1f9/AAD/f1TV/38AAAAAVNUAAAAAAABU1QAA//////Xg////////9eD/fwAA/3/14AAAAAD/f/Xgx+HkMMfh5DDH4eQwx+HkMFTVqipU1aoqVNWqKlTVqioaz+QwGs/kMBrP5DAaz+Qw")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_c26sl")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eu50g"]
 
@@ -18,7 +52,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
-mesh = ExtResource("2_globi")
+mesh = SubResource("ArrayMesh_ygovm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.01, 0, 0, 0, 0.5, 0.25, -0.005, 0.25)

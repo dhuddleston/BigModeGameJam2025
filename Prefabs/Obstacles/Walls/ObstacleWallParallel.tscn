@@ -1,7 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://d330ca6ulwp61"]
+[gd_scene load_steps=6 format=4 uid="uid://d330ca6ulwp61"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="1_fwska"]
-[ext_resource type="ArrayMesh" uid="uid://bc8u6h84nl234" path="res://Models/Root Scene_Rim_003.res" id="2_0kicl"]
+[ext_resource type="Material" uid="uid://dcm5yqrcjsy44" path="res://Materials/WhiteX2.tres" id="2_bhi61"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_buq33"]
+_surfaces = [{
+"aabb": AABB(-0.375, 0, -0.625, 0.75, 0.25, 1.25),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray("AAACAAEAAAABAAMAAgAFAAQAAAAFAAIAAwAFAAAAAwAGAAUABAAFAAcABgAHAAUABwAGAAMAAwABAAcACAAKAAkACAALAAoACwANAAwACAANAAsACQANAAgACQAOAA0ADAANAA8ADgAPAA0ADwAOAAkACQAKAA8A"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("/////zMzAAAAAAAAMzMAAP//AAAzMwAAAAD//zMzAAD//wAAAAAAAP////8AAAAAAAD//wAAAAAAAAAAAAAAAP///////wAAAAD/////AAAAAAAA//8AAP//AAD//wAA//8AAMzMAAD/////zMwAAAAA///MzAAAAAAAAMzMAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cbltf"]
+resource_name = "Root Scene_Rim_003"
+_surfaces = [{
+"aabb": AABB(-0.375, 0, -0.625, 0.75, 0.25, 1.25),
+"attribute_data": PackedByteArray("E5j+FxOQAAATkP4XE5gAAAOY/wcDoP8HA6AAAAOYAAATmAAAE5j+FxKg/hcSoAAAEqj+FxKoAAASoP4XEqAAAN+f/wfflwAA35f/B9+fAAATmP4XE5gAABOQAAATkP4XA5j/BwOg/wcDoAAAA5gAABOYAAATmP4XEqD+FxKgAAASqP4XEqgAABKg/hcSoAAA35//B9+XAADfl/8H358AAA=="),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray("AAACAAEAAAABAAMABAAGAAUABwAGAAQACAAKAAkACAALAAoADAAOAA0ADwANAA4AEAASABEAEQATABAAFAAWABUAFAAXABYAGAAaABkAGwAaABgAHAAeAB0AHAAfAB4AIAAiACEAIwAhACIAJAAmACUAJQAnACQA"),
+"material": ExtResource("2_bhi61"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 40,
+"vertex_data": PackedByteArray("/////zMz/78AAAAAMzP/v///AAAzM/+/AAD//zMz/7///wAAMzP/v///AAAAAP+//////wAA/7//////MzP/vwAA//8zM1TV/////zMzVNX/////AABU1QAA//8AAFTV//8AAAAA//8AAAAAAAD///////8AAP//AAD//wAA//8AAAAAAABU1QAA//8zM1TVAAD//wAAVNUAAAAAMzNU1f////////+/AAD//////78AAAAA////v///AAD///+///8AAP///7///wAAzMz/v//////MzP+//////////78AAP////9U1f///////1TV/////8zMVNUAAP//zMxU1f//AADMzP//AAAAAMzM////////zMz//wAA///MzP//AAAAAMzMVNUAAP////9U1QAA///MzFTVAAAAAP//VNX//////////////////////38AAP9/AAD/fwAA/38AAFTVqipU1aoqVNWqKlTVqir/P/+//7//P/+//z//v/8/VFWqqlRVqqpUVaqqVFWqqv//////////////////////fwAA/38AAP9/AAD/fwAAVNWqKlTVqipU1aoqVNWqKv8//7//v/8//7//P/+//z9UVaqqVFWqqlRVqqpUVaqq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_buq33")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gx7t7"]
 
@@ -11,7 +43,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, -0.5)
-mesh = ExtResource("2_0kicl")
+mesh = SubResource("ArrayMesh_cbltf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.75, 0, 0.125, -0.5)

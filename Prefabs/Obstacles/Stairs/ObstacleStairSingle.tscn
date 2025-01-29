@@ -1,7 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://blaje1iolutlm"]
+[gd_scene load_steps=6 format=4 uid="uid://blaje1iolutlm"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="1_mug2g"]
-[ext_resource type="ArrayMesh" uid="uid://bufcp7ks7rgwh" path="res://Models/Root Scene_Stair_004.res" id="2_6xt04"]
+[ext_resource type="Material" uid="uid://d1220qcg4bjqc" path="res://Materials/PinkX2.tres" id="2_bg5rr"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sj1x6"]
+_surfaces = [{
+"aabb": AABB(-0.5, -1.49012e-08, -0.5, 0.5, 0.25, 0.5),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAACAAEAAwABAAIABAAAAAEAAQAFAAQAAAAEAAYAAgAAAAYABwAFAAEAAQADAAcABgAEAAcABQAHAAQAAwAGAAcAAgAGAAMA"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/v//////AAAAAP////8AAP7/AAD//wAAAAAAAP//AAD/////AAAAAAAA//8AAAAA//8AAAAAAAAAAAAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lg2nr"]
+resource_name = "Root Scene_Stair_004"
+_surfaces = [{
+"aabb": AABB(-0.5, -1.49012e-08, -0.5, 0.5, 0.25, 0.5),
+"attribute_data": PackedByteArray("/J//D/yfAAD8l/8P/JcAAPyfAAD9j/8P/J//D/2PAAACkP8PApgAAAKQAAACmP8PAJj/DwGQAAABkP8PAJgAAAGY/w8BmAAAAZD/DwGQAAAAmAAAAJj/D/+n/w//pwAA"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAACAAEAAwABAAIABAAGAAUABQAHAAQACAAKAAkACwAIAAkADAAOAA0ADQAPAAwAEAASABEAEwARABIAFAAWABUAFwAWABQA"),
+"material": ExtResource("2_bg5rr"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/v///////78AAP//////v/7/AAD///+/AAAAAP///7//////AAD/vwAA//////+//v///////78AAP//AAD/v/7//////1TV//8AAAAAVNX/////AABU1f7/AAD//1TVAAAAAAAAVNUAAP////9U1QAA//8AAFTVAAAAAP//VNX//wAAAAD//wAAAAAAAP///////wAA//8AAP//AAD//wAAAAD///+/AAAAAAAA/7///wAAAAD/v/7/AAD///+//////////////////////////3////9/////f/7//3+qqlRVqqpUVaqqVFWqqlRVVFWqqlRVqqpUVaqqVFWqqv8//7//P/+//z//v/8//78AAP9/AAD/fwAA/38AAP9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_sj1x6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gx7t7"]
 
@@ -11,7 +43,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
-mesh = ExtResource("2_6xt04")
+mesh = SubResource("ArrayMesh_lg2nr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.25, 0.125, 0.25)

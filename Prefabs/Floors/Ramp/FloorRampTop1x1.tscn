@@ -1,7 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://dndcrv6lubqi0"]
+[gd_scene load_steps=7 format=4 uid="uid://dndcrv6lubqi0"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://cfru8dkauad3i" path="res://PhysMats/ground_standard.tres" id="1_bkhru"]
-[ext_resource type="ArrayMesh" uid="uid://0u06vdq8464" path="res://Models/Root Scene_Ground_001.res" id="2_rbhrs"]
+[ext_resource type="Material" uid="uid://cplnb7mc7x1mc" path="res://Materials/GreenX1.tres" id="2_6umug"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tslee"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.25, 1),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAACAAEAAAADAAIABAABAAUABAAAAAEA"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("AAD///9/AAD//////38AAP////8AAAAAAAD//wAAAAAAAAAA//8AAP//AAD//wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pvn17"]
+resource_name = "Root Scene_Ground_001"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.25, 1),
+"attribute_data": PackedByteArray("AFAaDwBwHA8AcAEAAFAAAABQ/h8AcP8fAHAcDwBQGg8="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAACAAEAAAADAAIABAAGAAUABAAHAAYA"),
+"material": ExtResource("2_6umug"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAD///9//7///////3//v/////8AAP+/AAD//wAA/78AAAAA//8brf//AAD//xut//////9/G60AAP///38brfv/+H/7//h/+//4f/v/+H/7//Z/+//2f/v/9n/7//Z/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_tslee")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eu50g"]
 
@@ -14,7 +46,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
-mesh = ExtResource("2_rbhrs")
+mesh = SubResource("ArrayMesh_pvn17")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.01, 0, 0, 0, 0.5, 0.5, 0.245, 0.25)
