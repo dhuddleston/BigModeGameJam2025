@@ -4,7 +4,7 @@ extends Node3D
 #TODO: pull the camera closer in if it would be moved into an obstacle
 
 #Constants - Camera control
-const camMinDist = 0.5 #Minimum camera distance from the ball when zooming in
+const camMinDist = 0.6 #Minimum camera distance from the ball when zooming in
 const camMaxDist = 3.0 #Maximum camera distance from the ball when zooming out
 const camZoomSpeed = 0.08 #Zoom scroll rate
 const camLookSensitivityX = 0.005 #Horizontal look sensitivity

@@ -18,14 +18,14 @@ background_mode = 1
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_0riom"]
 material = ExtResource("3_1tfm4")
-top_radius = 0.24
-bottom_radius = 0.24
+top_radius = 0.12
+bottom_radius = 0.12
 height = 0.02
 
 [node name="PlayerController" type="Node3D"]
 script = ExtResource("1_nv0vu")
 baseLightRange = 1.0
-maxLightRange = 5.0
+maxLightRange = 3.0
 
 [node name="Checkpoint" type="Node3D" parent="."]
 
@@ -68,15 +68,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 environment = SubResource("Environment_wmfqj")
 
 [node name="PowerVisualizer" type="Node3D" parent="CameraRoot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09, -0.2)
+transform = Transform3D(1.02952, 0, 0, 0, 1.02952, 0, 0, 0, 1.02952, -0.00393105, -0.05, -0.0930333)
 
 [node name="Sprite3D" type="Sprite3D" parent="CameraRoot/PowerVisualizer"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-07, 1, 0, -10, -4.37114e-08, 0, 0, -3.22)
+transform = Transform3D(1, 0, 0, 0, -2.08035e-07, 1, 0, -4.75929, -4.37114e-08, 0.00372791, 0.00776438, -1.53309)
 no_depth_test = true
 texture_filter = 0
 render_priority = 110
 texture = ExtResource("3_vpn5j")
 
 [node name="ReadyVisualizer" type="MeshInstance3D" parent="CameraRoot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 mesh = SubResource("CylinderMesh_0riom")
