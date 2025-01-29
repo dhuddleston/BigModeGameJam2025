@@ -16,12 +16,14 @@ const minCameraElevation = -10 #Minimum allowed elevation of the camera (in degr
 #Constants - Gameplay
 const swingMaxPower = 100.0;
 const swingCoefficient = 0.5 #Conversion constant from swing power (1-100) to physics force
-const baseLightRange = 3.0 #How far the light is allowed to shine
 const brightLightCoef = 0.8 #Fraction of the light radius before brightness begins to falloff
-const lightPerPower = 0.05 #Factor of how much to increase the light radii for each unit of power
-const killPlane = -5 #Y value that falling below will trigger a respawn
 const stoppingVel = 0.0005 #Square magnitude such that if the ball's velocity is below it it's basically done rolling
 const stoppingCheck = 0.1 #Time (in sec) the ball must remain stopped before they can hit it again
+
+@export var baseLightRange: float = 2.0 #How far the light is allowed to shine passively
+@export var maxLightRange: float = 8.0 #How far the light is allowed to shine at max power
+@export var lightAdjustSpeed: float = 1.0 #How far the light is allowed to shine at max power
+@export var killPlane: float = -5.0 #Y value that falling below will trigger a respawn
 
 #Subnodes
 var cameraRoot #Follows the ball around. rotates around global Y only to track the "forward" look direction
@@ -41,7 +43,7 @@ var stoppedTime = 0;
 var swingPower = 0;
 
 
-var lightRange = baseLightRange
+var targetLightRange = baseLightRange
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -71,7 +73,7 @@ func _physics_process(delta):
 			isRolling = false
 			checkpoint.set_position(golfBall.get_position())
 			readyVisual.visible = true
-			lightRange = baseLightRange
+			targetLightRange = baseLightRange
 			Global.power = 0.0
 	
 	if golfBall.global_position.y < killPlane:
@@ -80,8 +82,8 @@ func _physics_process(delta):
 
 func _process(delta):
 	powerVisual.set_scale(Vector3(1,1,swingPower/swingMaxPower))
-	ballLight.omni_range = lerp(ballLight.omni_range, lightRange, delta)
-	ballLight.light_size = lerp(ballLight.light_size, lightRange * brightLightCoef, delta)
+	ballLight.omni_range = lerp(ballLight.omni_range, targetLightRange, delta * lightAdjustSpeed)
+	ballLight.light_size = lerp(ballLight.light_size, targetLightRange * brightLightCoef, delta * lightAdjustSpeed)
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -134,7 +136,7 @@ func hitBall():
 	Global.power = swingPower/swingMaxPower
 	var forward = -cameraRoot.global_transform.basis.z
 	golfBall.apply_impulse(forward * swingPower * swingCoefficient)
-	lightRange = baseLightRange * (1 + swingPower * lightPerPower)
+	targetLightRange = lerp(baseLightRange, maxLightRange, swingPower/swingMaxPower)
 	isSwinging = false
 	swingPower = 0
 	powerVisual.visible = false
@@ -143,9 +145,11 @@ func hitBall():
 	stoppedTime = 0
 
 func respawn():
+	Global.power = 0.0
 	golfBall.set_linear_velocity(Vector3(0,0,0))
 	golfBall.set_angular_velocity(Vector3(0,0,0))
 	golfBall.set_position(checkpoint.get_position())
+	targetLightRange = baseLightRange
 	ballLight.omni_range = baseLightRange
 	isRolling = false
 	readyVisual.visible = true

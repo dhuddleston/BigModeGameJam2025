@@ -34,7 +34,7 @@ light = NodePath("DirectionalLight3D")
 anim = NodePath("AnimationPlayer")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.887936, 0.126329, -0.442279, 7.45058e-09, 0.961545, 0.274647, 0.459967, -0.243869, 0.85379, -7.34447, 6.71753, 17.2596)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 light_energy = 0.0
 shadow_enabled = true
 shadow_blur = 0.0
