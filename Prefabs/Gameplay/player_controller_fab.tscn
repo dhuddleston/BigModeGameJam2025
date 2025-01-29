@@ -24,11 +24,14 @@ height = 0.02
 
 [node name="PlayerController" type="Node3D"]
 script = ExtResource("1_nv0vu")
+baseLightRange = 1.0
+maxLightRange = 5.0
 
 [node name="Checkpoint" type="Node3D" parent="."]
 
 [node name="GolfBall" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+mass = 2.0
 physics_material_override = ExtResource("2_jcgso")
 continuous_cd = true
 linear_damp_mode = 1
@@ -37,11 +40,11 @@ angular_damp_mode = 1
 angular_damp = 0.4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GolfBall"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 shape = SubResource("SphereShape3D_0ujoa")
 
 [node name="BallMesh" type="MeshInstance3D" parent="GolfBall"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 mesh = SubResource("SphereMesh_jngx2")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_sdtb4")

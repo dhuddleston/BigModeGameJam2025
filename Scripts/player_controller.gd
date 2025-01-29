@@ -4,8 +4,8 @@ extends Node3D
 #TODO: pull the camera closer in if it would be moved into an obstacle
 
 #Constants - Camera control
-const camMinDist = 1.0 #Minimum camera distance from the ball when zooming in
-const camMaxDist = 6.0 #Maximum camera distance from the ball when zooming out
+const camMinDist = 0.5 #Minimum camera distance from the ball when zooming in
+const camMaxDist = 3.0 #Maximum camera distance from the ball when zooming out
 const camZoomSpeed = 0.08 #Zoom scroll rate
 const camLookSensitivityX = 0.005 #Horizontal look sensitivity
 const camLookSensitivityY = -0.005 #Vertical look sensitivity
@@ -14,7 +14,7 @@ const maxCameraElevation = -85 #Maximum allowed elevation of the camera (in degr
 const minCameraElevation = -10 #Minimum allowed elevation of the camera (in degrees)
 
 #Constants - Gameplay
-const swingMaxPower = 100.0;
+const swingMaxPower = 40.0;
 const swingCoefficient = 0.5 #Conversion constant from swing power (1-100) to physics force
 const brightLightCoef = 0.8 #Fraction of the light radius before brightness begins to falloff
 const stoppingVel = 0.0005 #Square magnitude such that if the ball's velocity is below it it's basically done rolling
