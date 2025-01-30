@@ -61,6 +61,8 @@ func _ready():
 	targetLightRange = baseLightRange
 	
 	checkpoint.set_position(golfBall.get_position())
+	Global.power = 0.0
+	Global.strokes = 0
 
 func _physics_process(delta):
 	cameraRoot.set_position(golfBall.get_position())
@@ -134,6 +136,7 @@ func adjustSwing(delta):
 	swingPower = clamp(swingPower, 0.0, swingMaxPower)
 	
 func hitBall():
+	Global.strokes += 1
 	Global.power = swingPower/swingMaxPower
 	var forward = -cameraRoot.global_transform.basis.z
 	golfBall.apply_impulse(forward * swingPower * swingCoefficient)
