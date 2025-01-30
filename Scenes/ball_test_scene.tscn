@@ -547,4 +547,3 @@ omni_range = 1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
 
 [editable path="Canvas"]
-[editable path="PlayerController"]

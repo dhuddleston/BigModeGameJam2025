@@ -1,17 +1,44 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyeckytrn2v3p"]
+[gd_scene load_steps=11 format=4 uid="uid://cyeckytrn2v3p"]
 
 [ext_resource type="Script" path="res://Scripts/player_controller.gd" id="1_nv0vu"]
 [ext_resource type="PhysicsMaterial" uid="uid://bjqrehal88572" path="res://PhysMats/ball.tres" id="2_jcgso"]
 [ext_resource type="Material" uid="uid://be0w0a33lrpw4" path="res://Materials/IndicatorMat.tres" id="3_1tfm4"]
+[ext_resource type="Material" uid="uid://ceyythc7ngh4v" path="res://Materials/BallMaterial.tres" id="3_rpw7x"]
 [ext_resource type="Texture2D" uid="uid://41wkn78onipe" path="res://Textures/PowerArrow.png" id="3_vpn5j"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0ujoa"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_jngx2"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_j154n"]
+_surfaces = [{
+"aabb": AABB(-0.1, -0.1, -0.1, 0.2, 0.2, 0.2),
+"format": 34896613377,
+"index_count": 144,
+"index_data": PackedByteArray("AAACAAEAAwAFAAQAAAAEAAYABwAFAAEACAABAAkACAALAAoABwAMAAUACAAKAAwACQANAAsAAQAIAAcAAQADAAAAAQACAA0AAQAFAAMADQAJAAEAAgAAAA4ADQAOAA8AEAAEABEABAASABEABAAQABMABAAAAAMABAAFABIAEwAGAAQAEwAUAA4AFQAWABEAFwAYABYAFQARAAwADAAXABUADAAHAAgADAARABIADAASAAUAFwAMAAoAFwAKAAsAFAATABYAFgAZABQAFgAQABEAFgATABAAFgAVABcAGQAWABgACwAPABkACwAYABcACwANAA8ACwAIAAkAGQAYAAsADgAUABkADgANAAIADgAAAAYADgAGABMAGQAPAA4A"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 26,
+"vertex_data": PackedByteArray("5ckZNhk2AAD///9//38AAIHafSX/fwAAgdr/f30lAAD/f/9/AAAAAOXJ5ckZNgAA/399JX0lAACB2oHa/38AAOXJ5cnlyQAAgdr/f4HaAAD/f4HagdoAAP9//3///wAA/3////9/AADlyRk25ckAAP9/AAD/fwAA/399JYHaAAB9Jf9/fSUAABk25ckZNgAA/3+B2n0lAAAZNhk2GTYAAH0lfSX/fwAAfSWB2v9/AAAAAP9//38AABk25cnlyQAAfSX/f4HaAAAZNhk25ckAAA==")
+}]
+blend_shape_mode = 0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdtb4"]
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
+[sub_resource type="ArrayMesh" id="ArrayMesh_8x0xs"]
+resource_name = "Root Scene_Cube"
+_surfaces = [{
+"aabb": AABB(-0.1, -0.1, -0.1, 0.2, 0.2, 0.2),
+"attribute_data": PackedByteArray("/78AAP+3/wf/v/8H/8f/B/+//wf/x/8P/8cAAP+/AAD/r/8H/68AAP+v/w//t/8P/68AAP+v/wf/t/8H/7cAAP+3/wf/vwAA/7//B/+3AAD/vwAA/7cAAP+//w//t/8H/7//D/+3AAD/t/8H/7f/D/+//w//twAA/6//D/+v/wf/v/8P/8f/D/+//wf/t/8P/7f/B/+3/w//r/8P/7//D/+v/wf/r/8P/78AAP/HAAD/twAA/8f/B/+//w//v/8H/7f/D/+vAAD/t/8P"),
+"format": 34896613399,
+"index_count": 144,
+"index_data": PackedByteArray("AAACAAEAAwAFAAQABgAEAAcACAAJAAEACgABAAsADAAOAA0ADwAQAAkAEQASABAAEwAUAA4AAQAKAAgAAQAVAAAAAQACABYAAQAJABUAFgALAAEAAgAYABcAFAAXABkAGgAEABsABAAcABsABAAaAB0ABAAGAAMABAAFABwAHQAHAAQAHgAfABcAIAAiACEAIwAkACIAJQAmABAAEAAnACUAEAAPABEAEAAmACgAEAAoAAkAJwAQABIAKQANAA4AKgArACIAIgAsACoAIgAtACEAIgArAC0AIgAgACMALAAiACQADgAvAC4ADgAwACkADgAUAC8ADgAMABMALgAwAA4AFwAfADEAFwAUAAIAFwAYADIAFwAyAB4AMQAZABcA"),
+"material": ExtResource("3_rpw7x"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 51,
+"vertex_data": PackedByteArray("5ckZNhk2bfj///9//39U1YHafSX/f/zFgdr/f30l////f/9/AAD//+XJ5ckZNmvj5ckZNhk2a+P/f30lfSX/34Hagdr/f/zF5cnlyRk2J/TlyeXJ5cnnu4Ha/3+B2vzF5cnlyeXJ28T/f4Hagdr8xf9//3////+/gdqB2v9/qun/f////39U1eXJ5cnlyaDe/3+B2oHa/MWB2v9/gdr8xeXJGTblyQqqgdr/f30lqunlyRk25clr1v9/AAD/f/+/5ckZNhk24t//f30lgdr/n30l/399Jf//GTblyRk2a+P/f4HafSX/3xk2GTYZNmvjGTYZNhk24t99JX0l/3/8xX0lgdr/f6rpGTblyRk2FO8AAP9//3///xk25cnlyeTofSX/f4Ha//99JYHa/3/8xRk25ckZNjXbGTblyeXJRLX/f4HafSWq6Rk25cnlyZHMfSV9Jf9/qukZNhk2GTYU7xk2GTblyeTofSX/f30l//8ZNhk25cnbxP9/fSWB2vzFfSX/f4Ha/MUZNhk25ckKqv9/fSV9Jf/fM6V/R6qqVFX/HAFGgdr/f////38226N6WwU2WwAA/38AxgBjZr5Mn+C3fXT+nABjl7bKfP6c/pz/f/9/BLX1laqqqqqdqHqN/pz+nP6cAGOoJzs8BLX6SjyJI1MAAP9/nRGGVQAA/3///3ylo/rIpP///3/IJFuFeCqckf45/pwI6gQ1pehZRv8//3/s7Qckglr/f/6cAMYfpgHM7ZIGuQS1BLX+fBiz+koJaqU5pWj4W+1t//98pWdJNIMAYwBjAGP+nMNDqKcAAP9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_j154n")
 
 [sub_resource type="Environment" id="Environment_wmfqj"]
 background_mode = 1
@@ -44,10 +71,9 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 shape = SubResource("SphereShape3D_0ujoa")
 
 [node name="BallMesh" type="MeshInstance3D" parent="GolfBall"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-mesh = SubResource("SphereMesh_jngx2")
+transform = Transform3D(0.525, 0, 0, 0, 0.525, 0, 0, 0, 0.525, 0, 0, 0)
+mesh = SubResource("ArrayMesh_8x0xs")
 skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_sdtb4")
 
 [node name="BallLight" type="OmniLight3D" parent="GolfBall"]
 light_size = 3.0
@@ -71,7 +97,7 @@ environment = SubResource("Environment_wmfqj")
 transform = Transform3D(1.02952, 0, 0, 0, 1.02952, 0, 0, 0, 1.02952, -0.00393105, -0.05, -0.0930333)
 
 [node name="Sprite3D" type="Sprite3D" parent="CameraRoot/PowerVisualizer"]
-transform = Transform3D(1, 0, 0, 0, -2.08035e-07, 1, 0, -4.75929, -4.37114e-08, 0.00372791, 0.00776438, -1.53309)
+transform = Transform3D(0.6, 0, 0, 0, -2.08022e-07, 1, 0, -4.759, -4.37114e-08, 0.00372791, 0.00776438, -1.53309)
 no_depth_test = true
 texture_filter = 0
 render_priority = 110

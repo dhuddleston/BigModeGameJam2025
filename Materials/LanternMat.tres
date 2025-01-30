@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bkgpu4ask100v"]
+
+[ext_resource type="Texture2D" uid="uid://c8wafwtbimpbj" path="res://Textures/PicoCheckers.png" id="1_2puyw"]
+
+[resource]
+albedo_texture = ExtResource("1_2puyw")
+metallic_specular = 0.0
+roughness = 0.0
+texture_filter = 0
+disable_receive_shadows = true

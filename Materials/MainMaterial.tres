@@ -6,4 +6,5 @@
 albedo_texture = ExtResource("1_tduue")
 metallic_specular = 0.0
 roughness = 0.0
+emission = Color(1, 1, 1, 1)
 texture_filter = 0

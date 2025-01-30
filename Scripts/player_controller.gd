@@ -124,7 +124,6 @@ func rotateCamera(delta):
 	var targetRot = cameraArm.get_rotation_degrees().x + rad_to_deg(camLookSensitivityY * delta.y)
 	if (targetRot >= maxCameraElevation and targetRot <= minCameraElevation):
 		cameraArm.rotate_object_local(Vector3(1,0,0), camLookSensitivityY * delta.y)
-	
 
 func zoomIn():
 	var targetDist = max(camera.transform.origin.z - camZoomSpeed, camMinDist)
