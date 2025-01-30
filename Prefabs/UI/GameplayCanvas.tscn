@@ -1,0 +1,136 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf1x8kiwnxcbe"]
+
+[ext_resource type="Material" uid="uid://c0eyq16e63ikx" path="res://Shaders/dither.tres" id="1_eh86q"]
+[ext_resource type="Script" path="res://Scripts/interface.gd" id="2_tyg4i"]
+[ext_resource type="Theme" uid="uid://s738mrqiyb1c" path="res://Prefabs/UI/ui_theme.tres" id="3_vcudb"]
+
+[node name="Canvas" type="CanvasLayer"]
+
+[node name="Palette Dither" type="ColorRect" parent="."]
+material = ExtResource("1_eh86q")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Interface" type="Control" parent="." node_paths=PackedStringArray("menu", "strokeCounter", "parLabel", "levelLabel")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_tyg4i")
+menu = NodePath("PauseMenu")
+strokeCounter = NodePath("StrokeCount")
+parLabel = NodePath("Par")
+levelLabel = NodePath("PauseMenu/VBoxContainer/Title")
+
+[node name="StrokeCount" type="Label" parent="Interface"]
+layout_mode = 0
+offset_left = 484.0
+offset_top = -318.0
+offset_right = 572.0
+offset_bottom = -294.0
+text = "Stroke:"
+
+[node name="Par" type="Label" parent="Interface"]
+layout_mode = 0
+offset_left = 484.0
+offset_top = -300.0
+offset_right = 572.0
+offset_bottom = -276.0
+text = "Par:"
+
+[node name="PauseMenu" type="Control" parent="Interface"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Interface/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.5
+offset_top = -83.5
+offset_right = 173.5
+offset_bottom = 83.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_vcudb")
+
+[node name="Title" type="Label" parent="Interface/PauseMenu/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="Interface/PauseMenu/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_vcudb")
+text = "Continue"
+
+[node name="RestartButton" type="Button" parent="Interface/PauseMenu/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_vcudb")
+text = "Restart Level"
+
+[node name="ExitLevelButton" type="Button" parent="Interface/PauseMenu/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_vcudb")
+text = "Exit Level"
+
+[node name="LevelCompleteMenu" type="Control" parent="Interface"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Interface/LevelCompleteMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.5
+offset_top = -83.5
+offset_right = 173.5
+offset_bottom = 83.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_vcudb")
+
+[node name="Title" type="Label" parent="Interface/LevelCompleteMenu/VBoxContainer"]
+layout_mode = 2
+text = "Level Complete!"
+horizontal_alignment = 1
+
+[node name="NextLevelButton" type="Button" parent="Interface/LevelCompleteMenu/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_vcudb")
+text = "Continue"
+
+[node name="ReplayButton" type="Button" parent="Interface/LevelCompleteMenu/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_vcudb")
+text = "Restart Level"
+
+[connection signal="pressed" from="Interface/PauseMenu/VBoxContainer/ContinueButton" to="Interface" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Interface/PauseMenu/VBoxContainer/RestartButton" to="Interface" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Interface/PauseMenu/VBoxContainer/ExitLevelButton" to="Interface" method="_on_exit_level_button_pressed"]
+[connection signal="pressed" from="Interface/LevelCompleteMenu/VBoxContainer/NextLevelButton" to="Interface" method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="Interface/LevelCompleteMenu/VBoxContainer/ReplayButton" to="Interface" method="_on_restart_button_pressed"]
