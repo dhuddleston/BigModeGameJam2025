@@ -1,12 +1,9 @@
-[gd_scene load_steps=46 format=3 uid="uid://cc2qtlonu3kjy"]
+[gd_scene load_steps=37 format=3 uid="uid://cc2qtlonu3kjy"]
 
 [ext_resource type="Theme" uid="uid://s738mrqiyb1c" path="res://Prefabs/UI/ui_theme.tres" id="2_vade5"]
-[ext_resource type="Script" path="res://Scripts/interface.gd" id="2_wrewb"]
 [ext_resource type="Material" uid="uid://c0eyq16e63ikx" path="res://Shaders/dither.tres" id="5_7iyac"]
 [ext_resource type="PackedScene" uid="uid://ck6ujv2ukqr8a" path="res://Prefabs/Obstacles/Corners/ObstacleCornerTriple.tscn" id="5_c2lhe"]
-[ext_resource type="PhysicsMaterial" uid="uid://cfru8dkauad3i" path="res://PhysMats/ground_standard.tres" id="5_ihkgr"]
 [ext_resource type="PackedScene" uid="uid://uuu0lldfmxi2" path="res://Prefabs/Floors/Flat/FloorFlat4x4.tscn" id="6_4w6cb"]
-[ext_resource type="ArrayMesh" uid="uid://dv6b7egi3oot" path="res://Models/Root Scene_Ground_011.res" id="6_58d6q"]
 [ext_resource type="PackedScene" uid="uid://cyeckytrn2v3p" path="res://Prefabs/Gameplay/player_controller_fab.tscn" id="6_cntky"]
 [ext_resource type="PackedScene" uid="uid://c050lj1s88psi" path="res://Prefabs/Obstacles/Walls/ObstacleWallDeadEnd.tscn" id="6_s8xer"]
 [ext_resource type="PackedScene" uid="uid://e8rexjmxsd0w" path="res://Prefabs/Floors/Flat/FloorFlat1x1.tscn" id="6_xh33y"]
@@ -26,21 +23,13 @@
 [ext_resource type="PackedScene" uid="uid://cfqhqhlyb3w5v" path="res://Prefabs/Obstacles/Stairs/ObstacleStairCornerUp.tscn" id="20_yh6rc"]
 [ext_resource type="PackedScene" uid="uid://b5fjlgqxeaioc" path="res://Prefabs/Obstacles/Corners/ObstacleCorner.tscn" id="21_3g74d"]
 [ext_resource type="PackedScene" uid="uid://c8xxp81lobgnj" path="res://Prefabs/Obstacles/Walls/ObstacleWallSingle.tscn" id="22_bowxq"]
-[ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="22_fw6gs"]
 [ext_resource type="PackedScene" uid="uid://cyyd4576kyhep" path="res://Prefabs/Gameplay/dynamic_lantern.tscn" id="22_w7546"]
 [ext_resource type="PackedScene" uid="uid://blaje1iolutlm" path="res://Prefabs/Obstacles/Stairs/ObstacleStairSingle.tscn" id="23_jrjoh"]
-[ext_resource type="Script" path="res://Scripts/lantern.gd" id="23_k62cb"]
-[ext_resource type="ArrayMesh" uid="uid://dxt6xi5nke8xu" path="res://Models/Root Scene_Corner_003.res" id="24_dmf34"]
 [ext_resource type="PackedScene" uid="uid://bn7f1vqvf5so4" path="res://Prefabs/Obstacles/Stairs/ObstacleStairDouble.tscn" id="24_owobv"]
 [ext_resource type="Script" path="res://Scripts/lightning.gd" id="28_5fph5"]
 [ext_resource type="Animation" uid="uid://i6o3d8avngm6" path="res://Animations/LightningLarge.res" id="30_3iljv"]
 [ext_resource type="Animation" uid="uid://2oo5fjk6kty4" path="res://Animations/LightningMedium.res" id="31_cyjj4"]
 [ext_resource type="Animation" uid="uid://doy6kgls38aqo" path="res://Animations/LightningSmall.res" id="32_21gjl"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_eu50g"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ec82p"]
-points = PackedVector3Array(0, 0, 0.5, 1, 0, 0.5, 0, 0.25, 0, 1, 0.25, 0, 0, -0.01, 0.5, 1, -0.01, 0.5, 0, 0.24, 0, 1, 0.24, 0)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lu036"]
 bounce = 0.25
@@ -81,8 +70,6 @@ shadow_mesh = SubResource("ArrayMesh_ut0rr")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ksmsg"]
 points = PackedVector3Array(0, 0, 1, 1, 0, 1, 0, 0.5, 0, 1, 0.5, 0, 0, -0.01, 1, 1, -0.01, 1, 0, 0.49, 0, 1, 0.49, 0)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_gx7t7"]
-
 [sub_resource type="Animation" id="Animation_45x6l"]
 length = 0.001
 tracks/0/type = "value"
@@ -108,9 +95,9 @@ _data = {
 
 [node name="BallTestScene" type="Node3D"]
 
-[node name="Canvas" type="CanvasLayer" parent="."]
+[node name="Shader" type="CanvasLayer" parent="."]
 
-[node name="Palette Dither" type="ColorRect" parent="Canvas"]
+[node name="Palette Dither" type="ColorRect" parent="Shader"]
 material = ExtResource("5_7iyac")
 anchors_preset = 15
 anchor_right = 1.0
@@ -118,8 +105,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Interface" type="Control" parent="Canvas" node_paths=PackedStringArray("menu", "strokeCounter", "parLabel", "levelLabel")]
-process_mode = 3
+[node name="Control" type="Control" parent="Shader"]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -130,108 +117,31 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("2_wrewb")
-menu = NodePath("PauseMenu")
-strokeCounter = NodePath("StrokeCount")
-parLabel = NodePath("Par")
-levelLabel = NodePath("PauseMenu/VBoxContainer/Title")
 
-[node name="StrokeCount" type="Label" parent="Canvas/Interface"]
-layout_mode = 0
-offset_left = 484.0
-offset_top = -318.0
-offset_right = 572.0
-offset_bottom = -294.0
-text = "Stroke:"
-
-[node name="Par" type="Label" parent="Canvas/Interface"]
-layout_mode = 0
-offset_left = 484.0
-offset_top = -300.0
-offset_right = 572.0
-offset_bottom = -276.0
-text = "Par:"
-
-[node name="PauseMenu" type="Control" parent="Canvas/Interface"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Canvas/Interface/PauseMenu"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Shader/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -173.5
-offset_top = -83.5
-offset_right = 173.5
-offset_bottom = 83.5
+offset_left = -54.5
+offset_top = -33.0
+offset_right = 54.5
+offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_vade5")
 
-[node name="Title" type="Label" parent="Canvas/Interface/PauseMenu/VBoxContainer"]
-layout_mode = 2
-horizontal_alignment = 1
-
-[node name="ContinueButton" type="Button" parent="Canvas/Interface/PauseMenu/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_vade5")
-text = "Continue"
-
-[node name="RestartButton" type="Button" parent="Canvas/Interface/PauseMenu/VBoxContainer"]
+[node name="RestartButton" type="Button" parent="Shader/Control/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_vade5")
 text = "Restart Level"
 
-[node name="ExitLevelButton" type="Button" parent="Canvas/Interface/PauseMenu/VBoxContainer"]
+[node name="ExitLevelButton" type="Button" parent="Shader/Control/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_vade5")
 text = "Exit Level"
-
-[node name="LevelCompleteMenu" type="Control" parent="Canvas/Interface"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Canvas/Interface/LevelCompleteMenu"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -173.5
-offset_top = -83.5
-offset_right = 173.5
-offset_bottom = 83.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_vade5")
-
-[node name="Title" type="Label" parent="Canvas/Interface/LevelCompleteMenu/VBoxContainer"]
-layout_mode = 2
-text = "Level Complete!"
-horizontal_alignment = 1
-
-[node name="NextLevelButton" type="Button" parent="Canvas/Interface/LevelCompleteMenu/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_vade5")
-text = "Continue"
-
-[node name="ReplayButton" type="Button" parent="Canvas/Interface/LevelCompleteMenu/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_vade5")
-text = "Restart Level"
 
 [node name="PlayerController" parent="." instance=ExtResource("6_cntky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -260,37 +170,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 4)
 [node name="FloorRampBottom1x1n2" parent="." instance=ExtResource("8_cdodo")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
 
-[node name="FloorRampBottom1x1n3" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, -8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1, -0.25, -2)
-physics_material_override = ExtResource("5_ihkgr")
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="FloorRampBottom1x1n3"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5)
-mesh = ExtResource("6_58d6q")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorRampBottom1x1n3"]
-transform = Transform3D(1, 0, 0, 0, 0.01, 0, 0, 0, 0.5, 0.5, -0.005, 0.75)
-shape = SubResource("BoxShape3D_eu50g")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="FloorRampBottom1x1n3"]
-shape = SubResource("ConvexPolygonShape3D_ec82p")
-
-[node name="FloorRampBottom1x1n6" type="StaticBody3D" parent="."]
+[node name="FloorRampBottom1x1n3" parent="." instance=ExtResource("8_cdodo")]
 transform = Transform3D(1, 0, -8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1, -0.25, -2)
-physics_material_override = ExtResource("5_ihkgr")
-metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="FloorRampBottom1x1n6"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5)
-mesh = ExtResource("6_58d6q")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorRampBottom1x1n6"]
-transform = Transform3D(1, 0, 0, 0, 0.01, 0, 0, 0, 0.5, 0.5, -0.005, 0.75)
-shape = SubResource("BoxShape3D_eu50g")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="FloorRampBottom1x1n6"]
-shape = SubResource("ConvexPolygonShape3D_ec82p")
+[node name="FloorRampBottom1x1n6" parent="." instance=ExtResource("8_cdodo")]
+transform = Transform3D(1, 0, -8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1, -0.25, -2)
 
 [node name="FloorRampBottom1x1n4" parent="." instance=ExtResource("8_cdodo")]
 transform = Transform3D(-7.54979e-08, 6.60024e-15, -1, 8.74228e-08, 1, 0, 1, -8.74228e-08, -7.54979e-08, 4, -8.74228e-08, 1)
@@ -311,7 +195,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3, 0, -7)
 
 [node name="ObstacleCornerDouble9" parent="." instance=ExtResource("7_ugr8r")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 5.78, 0, 8.74228e-08, 0, -1, 1, 0, -7)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1.156, 0, 8.74228e-08, 0, -1, 1, 0.015, -7)
 
 [node name="ObstacleCornerDouble10" parent="." instance=ExtResource("7_ugr8r")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1, 0, -7)
@@ -338,19 +222,19 @@ transform = Transform3D(0.999995, 0.00220557, 0.00218551, -0.0022058, 0.999997, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
 
 [node name="ObstacleWallParallel5" parent="." instance=ExtResource("6_s8xer")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 6.88, 0, 1, 0, -4.37114e-08, 1.49012e-07, 0, -8.89639)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.376, 0, 1, 0, -4.37114e-08, 1.49012e-07, 0.02, -8.99639)
 
 [node name="ObstacleWallParallel6" parent="." instance=ExtResource("7_ugr8r")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 6.88, 0, 8.74228e-08, 0, -1, 1, 0, -7.89639)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1.376, 0, 8.74228e-08, 0, -1, 1, 0.02, -7.99639)
 
 [node name="ObstacleWallParallel4" parent="." instance=ExtResource("8_ngit6")]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 6.88, 0, 1.06581e-14, 0, 1, 2.38419e-07, 0, -6.89639)
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1.376, 0, 1.06581e-14, 0, 1, 2.38419e-07, 0.02, -6.99639)
 
 [node name="FloorFlat1x1n5" parent="." instance=ExtResource("6_xh33y")]
-transform = Transform3D(-0.00218533, -0.000104648, 0.999998, -0.0022058, 0.999997, 9.98254e-05, -0.999995, -0.00220557, -0.00218556, 2.38419e-07, 0, -6.89639)
+transform = Transform3D(-0.00218533, -0.000104648, 0.999998, -0.0022058, 0.999997, 9.98254e-05, -0.999995, -0.00220557, -0.00218556, 2.38419e-07, 0.025, -6.99639)
 
 [node name="FloorFlat1x1n6" parent="." instance=ExtResource("6_xh33y")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.93715e-07, 0, -7.89639)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.93715e-07, 0.025, -7.99639)
 
 [node name="FloorFlat2x2n" parent="." instance=ExtResource("10_ws7b8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 3)
@@ -579,28 +463,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
 [node name="LANTERN" parent="." instance=ExtResource("22_w7546")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -6)
 
-[node name="LANTERN2" type="StaticBody3D" parent="." node_paths=PackedStringArray("light")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.43719, 1.01436, 0.496293)
-physics_material_override = ExtResource("22_fw6gs")
-script = ExtResource("23_k62cb")
-baseRange = 1.0
-changeSpeed = 2.0
-light = NodePath("OmniLight3D")
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="LANTERN2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
-mesh = ExtResource("24_dmf34")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LANTERN2"]
-transform = Transform3D(0.25, 0, 0, 0, 0.5, 0, 0, 0, 0.25, 0, 0.25, 0)
-shape = SubResource("BoxShape3D_gx7t7")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="LANTERN2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.153084, 0)
-shadow_enabled = true
-shadow_blur = 0.0
-
 [node name="ObstacleWallSingle" parent="." instance=ExtResource("22_bowxq")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 2)
 
@@ -645,14 +507,12 @@ libraries = {
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="LightningSource"]
 transform = Transform3D(0.887936, 0.0823931, -0.452527, 0, 0.983826, 0.179128, 0.459967, -0.159055, 0.873574, 0, -0.32093, 0)
+visible = false
 light_energy = 0.0
 shadow_enabled = true
 shadow_blur = 0.0
 
-[connection signal="pressed" from="Canvas/Interface/PauseMenu/VBoxContainer/ContinueButton" to="Canvas/Interface" method="_on_continue_button_pressed"]
-[connection signal="pressed" from="Canvas/Interface/PauseMenu/VBoxContainer/RestartButton" to="Canvas/Interface" method="_on_restart_button_pressed"]
-[connection signal="pressed" from="Canvas/Interface/PauseMenu/VBoxContainer/ExitLevelButton" to="Canvas/Interface" method="_on_exit_level_button_pressed"]
-[connection signal="pressed" from="Canvas/Interface/LevelCompleteMenu/VBoxContainer/NextLevelButton" to="Canvas/Interface" method="_on_next_level_button_pressed"]
-[connection signal="pressed" from="Canvas/Interface/LevelCompleteMenu/VBoxContainer/ReplayButton" to="Canvas/Interface" method="_on_restart_button_pressed"]
+[node name="LANTERN2" parent="." instance=ExtResource("22_w7546")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0.5)
 
 [editable path="PlayerController"]
