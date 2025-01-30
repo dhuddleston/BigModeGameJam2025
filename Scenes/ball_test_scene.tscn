@@ -1,7 +1,6 @@
-[gd_scene load_steps=37 format=3 uid="uid://cc2qtlonu3kjy"]
+[gd_scene load_steps=36 format=3 uid="uid://cc2qtlonu3kjy"]
 
-[ext_resource type="Theme" uid="uid://s738mrqiyb1c" path="res://Prefabs/UI/ui_theme.tres" id="2_vade5"]
-[ext_resource type="Material" uid="uid://c0eyq16e63ikx" path="res://Shaders/dither.tres" id="5_7iyac"]
+[ext_resource type="PackedScene" uid="uid://cf1x8kiwnxcbe" path="res://Prefabs/UI/GameplayCanvas.tscn" id="1_j6ssu"]
 [ext_resource type="PackedScene" uid="uid://ck6ujv2ukqr8a" path="res://Prefabs/Obstacles/Corners/ObstacleCornerTriple.tscn" id="5_c2lhe"]
 [ext_resource type="PackedScene" uid="uid://uuu0lldfmxi2" path="res://Prefabs/Floors/Flat/FloorFlat4x4.tscn" id="6_4w6cb"]
 [ext_resource type="PackedScene" uid="uid://cyeckytrn2v3p" path="res://Prefabs/Gameplay/player_controller_fab.tscn" id="6_cntky"]
@@ -95,53 +94,7 @@ _data = {
 
 [node name="BallTestScene" type="Node3D"]
 
-[node name="Shader" type="CanvasLayer" parent="."]
-
-[node name="Palette Dither" type="ColorRect" parent="Shader"]
-material = ExtResource("5_7iyac")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Control" type="Control" parent="Shader"]
-visible = false
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Shader/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -54.5
-offset_top = -33.0
-offset_right = 54.5
-offset_bottom = 33.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_vade5")
-
-[node name="RestartButton" type="Button" parent="Shader/Control/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_vade5")
-text = "Restart Level"
-
-[node name="ExitLevelButton" type="Button" parent="Shader/Control/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_vade5")
-text = "Exit Level"
+[node name="Canvas" parent="." instance=ExtResource("1_j6ssu")]
 
 [node name="PlayerController" parent="." instance=ExtResource("6_cntky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
