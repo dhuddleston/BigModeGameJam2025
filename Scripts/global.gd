@@ -14,6 +14,8 @@ var levels: Array[Level] = [
 var currentLevel: int = 0
 var furthestLevel: int = 0 #Furthest level that is unlocked
 
+var levelUI: Control
+
 func _ready():
 	SaveData.loadProgress()
 
@@ -32,6 +34,6 @@ func getRandomBird():
 	var birds = ["Falcon","Owl","Woodpecker","Peafowl","Crow","Raven","Robin","Kestrel","Hawk","Buzzard",\
 		"Kingfisher","Pelican","Flamingo","Penguin","Turkey","Sparrow","Ostrich","Canary","Goldfish",\
 		"Cardinal","Blue Jay","Hummingbird","Mockingbird","Parrot","Parakeet","Kea","Cassowary","Toucan",\
-		"Heron","Spoonbill","Goose","Duck","Dodo","Swan","Emu","Stork","Freebird","Roc","Phoenix",\
+		"Heron","Spoonbill","Goose","Duck","Dodo","Swan","Emu","Stork","Bat","Freebird","Roc","Phoenix",\
 		"Griffon","Dragon"] #A list of creatures that are all definitely very real birds
 	return birds[rng.randi_range(0,birds.size()-1)]

@@ -1,7 +1,9 @@
-[gd_scene load_steps=14 format=4 uid="uid://crm8xscewxoj7"]
+[gd_scene load_steps=16 format=4 uid="uid://crm8xscewxoj7"]
 
 [ext_resource type="Material" uid="uid://cywujqu2ubens" path="res://Materials/MainMaterial.tres" id="1_3txxs"]
+[ext_resource type="PhysicsMaterial" uid="uid://cfru8dkauad3i" path="res://PhysMats/ground_standard.tres" id="2_d8vj6"]
 [ext_resource type="Material" uid="uid://cplnb7mc7x1mc" path="res://Materials/GreenX1.tres" id="2_odqo3"]
+[ext_resource type="Script" path="res://Scripts/goaltrigger.gd" id="3_mq1rg"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3bv6e"]
 _surfaces = [{
@@ -90,7 +92,8 @@ size = Vector3(0.2, 0.08, 0.2)
 
 [node name="GoalTile" type="Node3D"]
 
-[node name="HoleTerrain" type="StaticBody3D" parent="."]
+[node name="HoleTerrain" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5)
 
 [node name="Flag" type="Node3D" parent="HoleTerrain"]
 
@@ -98,7 +101,8 @@ size = Vector3(0.2, 0.08, 0.2)
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
 mesh = SubResource("ArrayMesh_hxboj")
 
-[node name="GoalPlane" type="Node3D" parent="HoleTerrain"]
+[node name="GoalPlane" type="StaticBody3D" parent="HoleTerrain"]
+physics_material_override = ExtResource("2_d8vj6")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="HoleTerrain/GoalPlane"]
 transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0)
@@ -155,43 +159,44 @@ shape = SubResource("ConvexPolygonShape3D_8mjva")
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_lesrt")
 
-[node name="HoleCylinder" type="Node3D" parent="HoleTerrain/GoalPlane"]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0)
-
-[node name="HoleContainerCol3" type="CollisionShape3D" parent="HoleTerrain/GoalPlane/HoleCylinder"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.71547e-09, -0.075, 0.085)
+[node name="HoleContainerCol3" type="CollisionShape3D" parent="HoleTerrain/GoalPlane"]
+transform = Transform3D(-1, 0, 3.17865e-08, 0, 1, 0, -3.17865e-08, 0, -1, -0.085, -0.075, 0)
 shape = SubResource("BoxShape3D_jguo8")
 
-[node name="HoleContainerCol4" type="CollisionShape3D" parent="HoleTerrain/GoalPlane/HoleCylinder"]
+[node name="HoleContainerCol4" type="CollisionShape3D" parent="HoleTerrain/GoalPlane"]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -0.0601041, -0.075, 0.0601042)
+shape = SubResource("BoxShape3D_jguo8")
+
+[node name="HoleContainerCol" type="CollisionShape3D" parent="HoleTerrain/GoalPlane"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, -0.075, 0.085)
+shape = SubResource("BoxShape3D_jguo8")
+
+[node name="HoleContainerCol2" type="CollisionShape3D" parent="HoleTerrain/GoalPlane"]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0.0601041, -0.075, 0.0601041)
 shape = SubResource("BoxShape3D_jguo8")
 
-[node name="HoleContainerCol" type="CollisionShape3D" parent="HoleTerrain/GoalPlane/HoleCylinder"]
+[node name="HoleContainerCol5" type="CollisionShape3D" parent="HoleTerrain/GoalPlane"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.085, -0.075, 0)
 shape = SubResource("BoxShape3D_jguo8")
 
-[node name="HoleContainerCol2" type="CollisionShape3D" parent="HoleTerrain/GoalPlane/HoleCylinder"]
+[node name="HoleContainerCol6" type="CollisionShape3D" parent="HoleTerrain/GoalPlane"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.0601041, -0.075, -0.0601041)
 shape = SubResource("BoxShape3D_jguo8")
 
-[node name="HoleContainerCol5" type="CollisionShape3D" parent="HoleTerrain/GoalPlane/HoleCylinder"]
-transform = Transform3D(1.19249e-08, 0, 1, 0, 1, 0, -1, 0, 1.19249e-08, 1.01361e-09, -0.075, -0.085)
+[node name="HoleContainerCol7" type="CollisionShape3D" parent="HoleTerrain/GoalPlane"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.075, -0.085)
 shape = SubResource("BoxShape3D_jguo8")
 
-[node name="HoleContainerCol6" type="CollisionShape3D" parent="HoleTerrain/GoalPlane/HoleCylinder"]
+[node name="HoleContainerCol8" type="CollisionShape3D" parent="HoleTerrain/GoalPlane"]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -0.0601041, -0.075, -0.0601041)
 shape = SubResource("BoxShape3D_jguo8")
 
-[node name="HoleContainerCol7" type="CollisionShape3D" parent="HoleTerrain/GoalPlane/HoleCylinder"]
-transform = Transform3D(-1, 0, -3.17865e-08, 0, 1, 0, 3.17865e-08, 0, -1, -0.085, -0.075, 2.70185e-09)
-shape = SubResource("BoxShape3D_jguo8")
-
-[node name="HoleContainerCol8" type="CollisionShape3D" parent="HoleTerrain/GoalPlane/HoleCylinder"]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -0.0601041, -0.075, 0.0601041)
-shape = SubResource("BoxShape3D_jguo8")
-
-[node name="GOALTRIGGER" type="StaticBody3D" parent="."]
+[node name="GOALTRIGGER" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+script = ExtResource("3_mq1rg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GOALTRIGGER"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07, 0)
 shape = SubResource("BoxShape3D_3m41o")
+
+[connection signal="body_entered" from="GOALTRIGGER" to="GOALTRIGGER" method="_on_body_entered"]

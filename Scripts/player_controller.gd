@@ -41,6 +41,7 @@ var isSwinging = false;
 var isRolling = false;
 var stoppedTime = 0;
 var swingPower = 0;
+var levelComplete = false;
 
 
 var targetLightRange
@@ -89,6 +90,8 @@ func _process(delta):
 	ballLight.light_size = lerp(ballLight.light_size, targetLightRange * brightLightCoef, delta * lightAdjustSpeed)
 
 func _input(event):
+	if levelComplete:
+		return
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.is_pressed() and !isRolling:
@@ -157,3 +160,7 @@ func respawn():
 	ballLight.omni_range = baseLightRange
 	isRolling = false
 	readyVisual.visible = true
+	
+func win():
+	levelComplete = true;
+	Global.levelUI.show_victory_screen()

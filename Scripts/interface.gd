@@ -9,6 +9,7 @@ extends Control
 @export var nextLevelButton: Button
 
 func _ready():
+	Global.levelUI = self
 	if Global.currentLevel == Global.levels.size():
 		nextLevelButton.text = "Main Menu"
 
@@ -89,4 +90,5 @@ func show_victory_screen():
 	if Global.strokes < 0:
 		victoryLabel.text = str("ULTRA ",victoryLabel.text)
 		
-	victoryMenu.visibile = true
+	victoryMenu.visible = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
