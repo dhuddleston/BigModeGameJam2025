@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://cc2qtlonu3kjy"]
+[gd_scene load_steps=44 format=4 uid="uid://cc2qtlonu3kjy"]
 
 [ext_resource type="PackedScene" uid="uid://cf1x8kiwnxcbe" path="res://Prefabs/UI/GameplayCanvas.tscn" id="1_j6ssu"]
 [ext_resource type="PackedScene" uid="uid://ck6ujv2ukqr8a" path="res://Prefabs/Obstacles/Corners/ObstacleCornerTriple.tscn" id="5_c2lhe"]
@@ -30,7 +30,9 @@
 [ext_resource type="PackedScene" uid="uid://crm8xscewxoj7" path="res://Prefabs/Gameplay/goal_tile.tscn" id="30_2dn86"]
 [ext_resource type="Animation" uid="uid://i6o3d8avngm6" path="res://Animations/LightningLarge.res" id="30_3iljv"]
 [ext_resource type="Animation" uid="uid://2oo5fjk6kty4" path="res://Animations/LightningMedium.res" id="31_cyjj4"]
+[ext_resource type="Script" path="res://Scripts/lantern.gd" id="31_xwhhf"]
 [ext_resource type="Animation" uid="uid://doy6kgls38aqo" path="res://Animations/LightningSmall.res" id="32_21gjl"]
+[ext_resource type="ArrayMesh" uid="uid://dxt6xi5nke8xu" path="res://Models/Root Scene_Corner_003.res" id="32_da1wj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lu036"]
 bounce = 0.25
@@ -127,6 +129,8 @@ _data = {
 "LightningSmall": ExtResource("32_21gjl"),
 "RESET": SubResource("Animation_45x6l")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4j8l6"]
 
 [node name="BallTestScene" type="Node3D"]
 
@@ -511,8 +515,33 @@ light_energy = 0.0
 shadow_enabled = true
 shadow_blur = 0.0
 
-[node name="LANTERN2" parent="." instance=ExtResource("22_w7546")]
+[node name="LANTERN2" type="StaticBody3D" parent="." node_paths=PackedStringArray("light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0.5)
+physics_material_override = ExtResource("25_wcbim")
+script = ExtResource("31_xwhhf")
+baseRange = 1.0
+maxRange = 8.0
+changeSpeed = 2.0
+light = NodePath("OmniLight3D")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LANTERN2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+mesh = ExtResource("32_da1wj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LANTERN2"]
+transform = Transform3D(0.25, 0, 0, 0, 0.5, 0, 0, 0, 0.25, 0, 0.25, 0)
+shape = SubResource("BoxShape3D_4j8l6")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="LANTERN2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.153084, 0)
+shadow_enabled = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.847, -2.5)
+light_size = 0.8
+shadow_enabled = true
+omni_range = 1.0
 
 [node name="GoalTile" parent="." instance=ExtResource("30_2dn86")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)

@@ -162,5 +162,6 @@ func respawn():
 	readyVisual.visible = true
 	
 func win():
-	levelComplete = true;
-	Global.levelUI.show_victory_screen()
+	if !levelComplete:
+		levelComplete = true
+		Global.levelUI.show_victory_screen()
