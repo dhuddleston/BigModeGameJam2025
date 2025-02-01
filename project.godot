@@ -46,6 +46,13 @@ texture={
 "roughness/src_normal": ""
 }
 
+[physics]
+
+3d/physics_engine="JoltPhysics3D"
+jolt_3d/solver/bounce_velocity_threshold=0.6
+jolt_3d/solver/contact_speculative_distance=0.0
+jolt_3d/solver/contact_allowed_penetration=0.0
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
