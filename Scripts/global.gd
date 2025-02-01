@@ -15,6 +15,7 @@ var currentLevel: int = 0
 var furthestLevel: int = 0 #Furthest level that is unlocked
 
 var levelUI: Control
+var menuUI: Control
 
 func _ready():
 	SaveData.loadProgress()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://jkjucx40iky1"]
+[gd_scene load_steps=10 format=3 uid="uid://jkjucx40iky1"]
 
 [ext_resource type="Material" uid="uid://c0eyq16e63ikx" path="res://Shaders/dither.tres" id="1_n081e"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="2_edq4h"]
 [ext_resource type="Theme" uid="uid://s738mrqiyb1c" path="res://Prefabs/UI/ui_theme.tres" id="2_lur7e"]
+[ext_resource type="Theme" uid="uid://pby0q1gruyc0" path="res://Prefabs/UI/levelbutton_theme.tres" id="2_opnrq"]
 [ext_resource type="PackedScene" uid="uid://dxfqcbof48po" path="res://Prefabs/Floors/Flat/FloorFlat2x2.tscn" id="2_uttdw"]
 [ext_resource type="Script" path="res://Scripts/start_screen_anim.gd" id="5_8l04g"]
 
@@ -27,15 +28,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Menu" type="Control" parent="UI"]
+[node name="Menu" type="Control" parent="UI" node_paths=PackedStringArray("mainMenu", "levelMenu", "levelList")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_lur7e")
+theme = ExtResource("2_opnrq")
 script = ExtResource("2_edq4h")
+mainMenu = NodePath(".")
+levelMenu = NodePath("../LevelSelect")
+levelList = NodePath("../LevelSelect/LevelList")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/Menu"]
 layout_mode = 0
@@ -55,6 +59,36 @@ text = "Level Select"
 [node name="Exit" type="Button" parent="UI/Menu/VBoxContainer"]
 layout_mode = 2
 text = "Quit Game"
+
+[node name="LevelSelect" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_opnrq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/LevelSelect"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 13.0
+offset_right = 147.0
+offset_bottom = 180.0
+
+[node name="Back" type="Button" parent="UI/LevelSelect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_lur7e")
+text = "Back
+"
+
+[node name="LevelList" type="VBoxContainer" parent="UI/LevelSelect"]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 13.0
+offset_right = 971.0
+offset_bottom = 637.0
 
 [node name="FloorFlat2x2n" parent="." instance=ExtResource("2_uttdw")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
@@ -109,3 +143,4 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0er01")
 [connection signal="pressed" from="UI/Menu/VBoxContainer/Play" to="UI/Menu" method="_on_play_pressed"]
 [connection signal="pressed" from="UI/Menu/VBoxContainer/LevelSelect" to="UI/Menu" method="_on_level_select_pressed"]
 [connection signal="pressed" from="UI/Menu/VBoxContainer/Exit" to="UI/Menu" method="_on_exit_pressed"]
+[connection signal="pressed" from="UI/LevelSelect/VBoxContainer/Back" to="UI/Menu" method="_on_back_pressed"]

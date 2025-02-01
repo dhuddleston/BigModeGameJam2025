@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjbkwtd6gihw1"]
+
+[ext_resource type="Theme" uid="uid://pby0q1gruyc0" path="res://Prefabs/UI/levelbutton_theme.tres" id="1_ygtq7"]
+[ext_resource type="Script" path="res://Scripts/level_select_button.gd" id="2_1kf20"]
+
+[node name="LevelButton" type="Button"]
+theme = ExtResource("1_ygtq7")
+text = "Title | Par: # | Best: #
+"
+script = ExtResource("2_1kf20")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
