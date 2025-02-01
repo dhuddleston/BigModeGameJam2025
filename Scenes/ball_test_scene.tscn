@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://cc2qtlonu3kjy"]
+[gd_scene load_steps=45 format=4 uid="uid://cc2qtlonu3kjy"]
 
 [ext_resource type="PackedScene" uid="uid://cf1x8kiwnxcbe" path="res://Prefabs/UI/GameplayCanvas.tscn" id="1_j6ssu"]
 [ext_resource type="PackedScene" uid="uid://ck6ujv2ukqr8a" path="res://Prefabs/Obstacles/Corners/ObstacleCornerTriple.tscn" id="5_c2lhe"]
@@ -33,6 +33,7 @@
 [ext_resource type="Animation" uid="uid://doy6kgls38aqo" path="res://Animations/LightningSmall.res" id="32_21gjl"]
 [ext_resource type="ArrayMesh" uid="uid://dxt6xi5nke8xu" path="res://Models/Root Scene_Corner_003.res" id="32_da1wj"]
 [ext_resource type="PackedScene" uid="uid://cyeckytrn2v3p" path="res://Prefabs/Gameplay/player_controller_fab.tscn" id="33_27ngl"]
+[ext_resource type="PackedScene" uid="uid://je2mklg5lim8" path="res://Prefabs/Gameplay/PoleLight.tscn" id="34_awo45"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lu036"]
 bounce = 0.25
@@ -545,5 +546,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
 
 [node name="PlayerController" parent="." instance=ExtResource("33_27ngl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="LanternPole" parent="." instance=ExtResource("34_awo45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -0.25, -5.75)
 
 [editable path="Canvas"]
