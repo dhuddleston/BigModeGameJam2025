@@ -57,6 +57,7 @@ maxLightRange = 3.0
 [node name="Checkpoint" type="Node3D" parent="."]
 
 [node name="GolfBall" type="RigidBody3D" parent="."]
+physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 mass = 2.0
 physics_material_override = ExtResource("2_jcgso")

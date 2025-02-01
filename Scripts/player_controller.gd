@@ -15,7 +15,7 @@ const minCameraElevation = -10 #Minimum allowed elevation of the camera (in degr
 
 #Constants - Gameplay
 const swingMaxPower = 40.0;
-const swingCoefficient = 2 #Conversion constant from swing power (1-100) to physics force
+const swingCoefficient = .5 #Conversion constant from swing power (1-100) to physics force
 const brightLightCoef = 0.8 #Fraction of the light radius before brightness begins to falloff
 const stoppingVel = 0.0005 #Square magnitude such that if the ball's velocity is below it it's basically done rolling
 const stoppingCheck = 0.1 #Time (in sec) the ball must remain stopped before they can hit it again
@@ -67,7 +67,7 @@ func _ready():
 
 func _physics_process(delta):
 	if golfBall.get_linear_velocity().length_squared() < 0.007:
-		golfBall.set_linear_velocity(0.8 * golfBall.get_linear_velocity())
+		golfBall.set_linear_velocity(0.75 * golfBall.get_linear_velocity())
 	print("vel: ", golfBall.get_linear_velocity().length_squared())
 	cameraRoot.set_position(golfBall.get_position())
 	if isRolling:
