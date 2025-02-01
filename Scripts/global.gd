@@ -7,8 +7,9 @@ var mainMenu = "res://Scenes/MainMenu.tscn"
 #Put your levels in this array, along with their title and the score for par
 #It controls the course progression and is used to generate the level select
 var levels: Array[Level] = [
+	Level.new("res://Scenes/StraightShot_Level.tscn", "Hole 2", 5),
 	Level.new("res://Scenes/ball_test_scene.tscn", "Example 1", 10),
-	Level.new("res://Scenes/Experimental_Level.tscn", "Example 2", 7)
+	Level.new("res://Scenes/Experimental_Level.tscn", "Example 2", 5)
 ]
 
 var currentLevel: int = 0
