@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://dsolo0ghl134k"]
+[gd_scene load_steps=8 format=4 uid="uid://dsolo0ghl134k"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="1_lo5r4"]
+[ext_resource type="PhysicsMaterial" uid="uid://cfru8dkauad3i" path="res://PhysMats/ground_standard.tres" id="2_djbxu"]
 [ext_resource type="Material" uid="uid://dcm5yqrcjsy44" path="res://Materials/WhiteX2.tres" id="2_suu2j"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wutvp"]
@@ -35,15 +36,26 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wutvp")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i34qw"]
-points = PackedVector3Array(0.5, 0, -0.25, 0.5, 0, 0.25, -0.5, 0, -0.25, -0.5, 0, 0.25, -0.5, 0.5, -0.25, -0.5, 0.5, 0.25)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u3bw1"]
+points = PackedVector3Array(0.5, 0, -0.25, 0.5, 0, 0.25, -0.5, 0.5, -0.25, -0.5, 0.5, 0.25, 0.45, 0, -0.25, 0.45, 0, 0.25, -0.5, 0.45, -0.25, -0.5, 0.45, 0.25)
 
-[node name="ObstacleBlockRamp" type="StaticBody3D"]
-physics_material_override = ExtResource("1_lo5r4")
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xjnfl"]
+points = PackedVector3Array(0.45, 0, -0.25, 0.45, 0, 0.25, -0.5, 0, -0.25, -0.5, 0, 0.25, -0.5, 0.45, -0.25, -0.5, 0.45, 0.25)
+
+[node name="ObstacleBlockRamp" type="Node3D"]
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_axypm")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_i34qw")
+[node name="RampSurface" type="StaticBody3D" parent="."]
+physics_material_override = ExtResource("2_djbxu")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RampSurface"]
+shape = SubResource("ConvexPolygonShape3D_u3bw1")
+
+[node name="RampBottom" type="StaticBody3D" parent="."]
+physics_material_override = ExtResource("1_lo5r4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RampBottom"]
+shape = SubResource("ConvexPolygonShape3D_xjnfl")
