@@ -1,5 +1,5 @@
 [gd_resource type="PhysicsMaterial" format=3 uid="uid://cfru8dkauad3i"]
 
 [resource]
-bounce = 0.25
+bounce = 0.5
 absorbent = true
