@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dp5e42eqr8bf0"]
+
+[ext_resource type="Shader" path="res://Shaders/unlit_tex.gdshader" id="1_6jxck"]
+[ext_resource type="Texture2D" uid="uid://bcjcyhwmde1up" path="res://Textures/PinkX4.png" id="2_hvyeq"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_6jxck")
+shader_parameter/TEXTURE = ExtResource("2_hvyeq")

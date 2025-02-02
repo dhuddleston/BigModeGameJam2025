@@ -68,7 +68,7 @@ func _ready():
 func _physics_process(delta):
 	if golfBall.get_linear_velocity().length_squared() < 0.007:
 		golfBall.set_linear_velocity(0.75 * golfBall.get_linear_velocity())
-	print("vel: ", golfBall.get_linear_velocity().length_squared())
+	#print("vel: ", golfBall.get_linear_velocity().length_squared())
 	cameraRoot.set_position(golfBall.get_position())
 	if isRolling:
 		if golfBall.get_linear_velocity().length_squared() < stoppingVel:
