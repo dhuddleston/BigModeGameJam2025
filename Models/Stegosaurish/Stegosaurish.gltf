@@ -75,14 +75,14 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":410,
+			"count":785,
 			"max":[
 				0.8125,
 				3.115924119949341,
 				2.1875
 			],
 			"min":[
-				-1.4901161193847656e-08,
+				-0.8125,
 				-8.195638656616211e-08,
 				-4.631057262420654
 			],
@@ -91,45 +91,45 @@
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":410,
+			"count":785,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":410,
+			"count":785,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":1092,
+			"count":2163,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":4920,
+			"byteLength":9420,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":4920,
-			"byteOffset":4920,
+			"byteLength":9420,
+			"byteOffset":9420,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":3280,
-			"byteOffset":9840,
+			"byteLength":6280,
+			"byteOffset":18840,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":2184,
-			"byteOffset":13120,
+			"byteLength":4326,
+			"byteOffset":25120,
 			"target":34963
 		}
 	],
@@ -141,7 +141,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":15304,
+			"byteLength":29448,
 			"uri":"Stegosaurish.bin"
 		}
 	]
