@@ -13,3 +13,249 @@ export_presets.cfg
 data_*/
 mono_crash.*.json
 addons/godot-jolt/windows/~godot-jolt_windows-x64_editor.dll
+Tilesets/CourseTileset.fbx.import
+Textures/WhiteX4.png.import
+Textures/WhiteX2.png.import
+Textures/WhiteX1.png.import
+Textures/PowerArrow.png.import
+Textures/PinkX4.png.import
+Textures/PinkX2.png.import
+Textures/PinkX1.png.import
+Textures/PicoCheckers.png.import
+Textures/GreenX4.png.import
+Textures/GreenX2.png.import
+Textures/GreenX1.png.import
+Sounds/Rain.wav.import
+Sounds/Music/AmbientGolfMusic.ogg.import
+Sounds/Intro/Rain_10s.wav.import
+Shaders/bayer3.png.import
+Shaders/bayer2.png.import
+Shaders/bayer.png.import
+Models/WallEye/Eye_Cube_029.res
+Models/WallEye/Eye.gltf.import
+Models/Magnet_out/Root Scene_Magnet.res
+Models/Magnet_out/Magnet.gltf.import
+Models/LanternPole/LanternPole_Cube_027.res
+Models/LanternPole/LanternPole.gltf.import
+Models/Lantern/Root Scene_lantern.res
+Models/Lantern/Lantern.gltf.import
+Models/Hole/Root Scene_Hole.res
+Models/Hole/Hole.gltf.import
+Models/GolfBall/Root Scene_Cube.res
+Models/GolfBall/Golfball.gltf.import
+Models/Flag/Root Scene_flag.res
+Models/Flag/Flag.gltf.import
+Models/Fan_out/Root Scene_Fanblade.res
+Models/Fan_out/Root Scene_Fan.res
+Models/Fan_out/Fan.gltf.import
+Models/ExpandedTileset_out/Root Scene_Stair_008.res
+Models/ExpandedTileset_out/Root Scene_Stair_007.res
+Models/ExpandedTileset_out/Root Scene_Stair_006.res
+Models/ExpandedTileset_out/Root Scene_Stair_005.res
+Models/ExpandedTileset_out/Root Scene_Stair_004.res
+Models/ExpandedTileset_out/Root Scene_Stair_003.res
+Models/ExpandedTileset_out/Root Scene_Stair_002.res
+Models/ExpandedTileset_out/Root Scene_Stair_001.res
+Models/ExpandedTileset_out/Root Scene_Stair.res
+Models/ExpandedTileset_out/Root Scene_Rim_009.res
+Models/ExpandedTileset_out/Root Scene_Rim_008.res
+Models/ExpandedTileset_out/Root Scene_Rim_007.res
+Models/ExpandedTileset_out/Root Scene_Rim_006.res
+Models/ExpandedTileset_out/Root Scene_Rim_005.res
+Models/ExpandedTileset_out/Root Scene_Rim_004.res
+Models/ExpandedTileset_out/Root Scene_Rim_003.res
+Models/ExpandedTileset_out/Root Scene_Rim_002.res
+Models/ExpandedTileset_out/Root Scene_Rim_001.res
+Models/ExpandedTileset_out/Root Scene_Rim.res
+Models/ExpandedTileset_out/Root Scene_Ramp_003.res
+Models/ExpandedTileset_out/Root Scene_Ramp_002.res
+Models/ExpandedTileset_out/Root Scene_Ramp_001.res
+Models/ExpandedTileset_out/Root Scene_Ramp.res
+Models/ExpandedTileset_out/Root Scene_Ground_015.res
+Models/ExpandedTileset_out/Root Scene_Ground_014.res
+Models/ExpandedTileset_out/Root Scene_Ground_013.res
+Models/ExpandedTileset_out/Root Scene_Ground_012.res
+Models/ExpandedTileset_out/Root Scene_Ground_011.res
+Models/ExpandedTileset_out/Root Scene_Ground_010.res
+Models/ExpandedTileset_out/Root Scene_Ground_009.res
+Models/ExpandedTileset_out/Root Scene_Ground_008.res
+Models/ExpandedTileset_out/Root Scene_Ground_007.res
+Models/ExpandedTileset_out/Root Scene_Ground_006.res
+Models/ExpandedTileset_out/Root Scene_Ground_005.res
+Models/ExpandedTileset_out/Root Scene_Ground_004.res
+Models/ExpandedTileset_out/Root Scene_Ground_003.res
+Models/ExpandedTileset_out/Root Scene_Ground_002.res
+Models/ExpandedTileset_out/Root Scene_Ground_001.res
+Models/ExpandedTileset_out/Root Scene_Ground.res
+Models/ExpandedTileset_out/Root Scene_Corner_003.res
+Models/ExpandedTileset_out/Root Scene_Corner_002.res
+Models/ExpandedTileset_out/Root Scene_Corner_001.res
+Models/ExpandedTileset_out/Root Scene_Corner.res
+Models/ExpandedTileset_out/ExpandedTileset.gltf.import
+Models/Drink_out/Root Scene_Drink.res
+Models/Drink_out/Drink.gltf.import
+Models/Drawbridge_out/Root Scene_Drawbridge_Bridge.res
+Models/Drawbridge_out/Root Scene_Drawbridge.res
+Models/Drawbridge_out/Drawbridge.gltf.import
+Models/CourseTileset.gltf.import
+Models/Cat_out/Root Scene_cat.res
+Models/Cat_out/Cat.gltf.import
+icon.svg.import
+icon.svg.import
+Models/Cat_out/Cat.gltf.import
+Models/Cat_out/Root Scene_cat.res
+Models/CourseTileset.gltf.import
+Models/Drawbridge_out/Drawbridge.gltf.import
+Models/Drawbridge_out/Root Scene_Drawbridge.res
+Models/Drawbridge_out/Root Scene_Drawbridge_Bridge.res
+Models/Drink_out/Drink.gltf.import
+Models/Drink_out/Root Scene_Drink.res
+Models/ExpandedTileset_out/ExpandedTileset.gltf.import
+Models/ExpandedTileset_out/Root Scene_Corner.res
+Models/ExpandedTileset_out/Root Scene_Corner_001.res
+Models/ExpandedTileset_out/Root Scene_Corner_002.res
+Models/ExpandedTileset_out/Root Scene_Corner_003.res
+Models/ExpandedTileset_out/Root Scene_Ground.res
+Models/ExpandedTileset_out/Root Scene_Ground_001.res
+Models/ExpandedTileset_out/Root Scene_Ground_002.res
+Models/ExpandedTileset_out/Root Scene_Ground_003.res
+Models/ExpandedTileset_out/Root Scene_Ground_004.res
+Models/ExpandedTileset_out/Root Scene_Ground_005.res
+Models/ExpandedTileset_out/Root Scene_Ground_006.res
+Models/ExpandedTileset_out/Root Scene_Ground_007.res
+Models/ExpandedTileset_out/Root Scene_Ground_008.res
+Models/ExpandedTileset_out/Root Scene_Ground_009.res
+Models/ExpandedTileset_out/Root Scene_Ground_010.res
+Models/ExpandedTileset_out/Root Scene_Ground_011.res
+Models/ExpandedTileset_out/Root Scene_Ground_012.res
+Models/ExpandedTileset_out/Root Scene_Ground_013.res
+Models/ExpandedTileset_out/Root Scene_Ground_014.res
+Models/ExpandedTileset_out/Root Scene_Ground_015.res
+Models/ExpandedTileset_out/Root Scene_Ramp.res
+Models/ExpandedTileset_out/Root Scene_Ramp_001.res
+Models/ExpandedTileset_out/Root Scene_Ramp_002.res
+Models/ExpandedTileset_out/Root Scene_Ramp_003.res
+Models/ExpandedTileset_out/Root Scene_Rim.res
+Models/ExpandedTileset_out/Root Scene_Rim_001.res
+Models/ExpandedTileset_out/Root Scene_Rim_002.res
+Models/ExpandedTileset_out/Root Scene_Rim_003.res
+Models/ExpandedTileset_out/Root Scene_Rim_004.res
+Models/ExpandedTileset_out/Root Scene_Rim_005.res
+Models/ExpandedTileset_out/Root Scene_Rim_006.res
+Models/ExpandedTileset_out/Root Scene_Rim_007.res
+Models/ExpandedTileset_out/Root Scene_Rim_008.res
+Models/ExpandedTileset_out/Root Scene_Rim_009.res
+Models/ExpandedTileset_out/Root Scene_Stair.res
+Models/ExpandedTileset_out/Root Scene_Stair_001.res
+Models/ExpandedTileset_out/Root Scene_Stair_002.res
+Models/ExpandedTileset_out/Root Scene_Stair_003.res
+Models/ExpandedTileset_out/Root Scene_Stair_004.res
+Models/ExpandedTileset_out/Root Scene_Stair_005.res
+Models/ExpandedTileset_out/Root Scene_Stair_006.res
+Models/ExpandedTileset_out/Root Scene_Stair_007.res
+Models/ExpandedTileset_out/Root Scene_Stair_008.res
+Models/Fan_out/Fan.gltf.import
+Models/Fan_out/Root Scene_Fan.res
+Models/Fan_out/Root Scene_Fanblade.res
+Models/Flag/Flag.gltf.import
+Models/Flag/Root Scene_flag.res
+Models/GolfBall/Golfball.gltf.import
+Models/GolfBall/Root Scene_Cube.res
+Models/Hole/Hole.gltf.import
+Models/Hole/Root Scene_Hole.res
+Models/Lantern/Lantern.gltf.import
+Models/Lantern/Root Scene_lantern.res
+Models/LanternPole/LanternPole.gltf.import
+Models/LanternPole/LanternPole_Cube_027.res
+Models/Magnet_out/Magnet.gltf.import
+Models/Magnet_out/Root Scene_Magnet.res
+Models/WallEye/Eye.gltf.import
+Models/WallEye/Eye_Cube_029.res
+Shaders/bayer.png.import
+Shaders/bayer2.png.import
+Shaders/bayer3.png.import
+Sounds/Intro/Rain_10s.wav.import
+Sounds/Music/AmbientGolfMusic.ogg.import
+Sounds/Rain.wav.import
+Textures/GreenX1.png.import
+Textures/GreenX2.png.import
+Textures/GreenX4.png.import
+Textures/PicoCheckers.png.import
+Textures/PinkX1.png.import
+Textures/PinkX2.png.import
+Textures/PinkX4.png.import
+Textures/PowerArrow.png.import
+Textures/WhiteX1.png.import
+Textures/WhiteX2.png.import
+Textures/WhiteX4.png.import
+Tilesets/CourseTileset.fbx.import
+icon.svg.import
+Models/WallEye/Eye_Cube_029.res
+Models/WallEye/Eye.gltf.import
+Models/Magnet_out/Root Scene_Magnet.res
+Models/Magnet_out/Magnet.gltf.import
+Models/LanternPole/LanternPole_Cube_027.res
+Models/LanternPole/LanternPole.gltf.import
+Models/Lantern/Root Scene_lantern.res
+Models/Lantern/Lantern.gltf.import
+Models/Hole/Root Scene_Hole.res
+Models/Hole/Hole.gltf.import
+Models/GolfBall/Root Scene_Cube.res
+Models/GolfBall/Golfball.gltf.import
+Models/Flag/Root Scene_flag.res
+Models/Flag/Flag.gltf.import
+Models/Fan_out/Root Scene_Fanblade.res
+Models/Fan_out/Root Scene_Fan.res
+Models/Fan_out/Fan.gltf.import
+Models/ExpandedTileset_out/Root Scene_Stair_008.res
+Models/ExpandedTileset_out/Root Scene_Stair_007.res
+Models/ExpandedTileset_out/Root Scene_Stair_006.res
+Models/ExpandedTileset_out/Root Scene_Stair_005.res
+Models/ExpandedTileset_out/Root Scene_Stair_004.res
+Models/ExpandedTileset_out/Root Scene_Stair_003.res
+Models/ExpandedTileset_out/Root Scene_Stair_002.res
+Models/ExpandedTileset_out/Root Scene_Stair_001.res
+Models/ExpandedTileset_out/Root Scene_Stair.res
+Models/ExpandedTileset_out/Root Scene_Rim_009.res
+Models/ExpandedTileset_out/Root Scene_Rim_008.res
+Models/ExpandedTileset_out/Root Scene_Rim_007.res
+Models/ExpandedTileset_out/Root Scene_Rim_006.res
+Models/ExpandedTileset_out/Root Scene_Rim_005.res
+Models/ExpandedTileset_out/Root Scene_Rim_004.res
+Models/ExpandedTileset_out/Root Scene_Rim_003.res
+Models/ExpandedTileset_out/Root Scene_Rim_002.res
+Models/ExpandedTileset_out/Root Scene_Rim_001.res
+Models/ExpandedTileset_out/Root Scene_Rim.res
+Models/ExpandedTileset_out/Root Scene_Ramp_003.res
+Models/ExpandedTileset_out/Root Scene_Ramp_002.res
+Models/ExpandedTileset_out/Root Scene_Ramp_001.res
+Models/ExpandedTileset_out/Root Scene_Ramp.res
+Models/ExpandedTileset_out/Root Scene_Ground_015.res
+Models/ExpandedTileset_out/Root Scene_Ground_014.res
+Models/ExpandedTileset_out/Root Scene_Ground_013.res
+Models/ExpandedTileset_out/Root Scene_Ground_012.res
+Models/ExpandedTileset_out/Root Scene_Ground_011.res
+Models/ExpandedTileset_out/Root Scene_Ground_010.res
+Models/ExpandedTileset_out/Root Scene_Ground_009.res
+Models/ExpandedTileset_out/Root Scene_Ground_008.res
+Models/ExpandedTileset_out/Root Scene_Ground_007.res
+Models/ExpandedTileset_out/Root Scene_Ground_006.res
+Models/ExpandedTileset_out/Root Scene_Ground_005.res
+Models/ExpandedTileset_out/Root Scene_Ground_004.res
+Models/ExpandedTileset_out/Root Scene_Ground_003.res
+Models/ExpandedTileset_out/Root Scene_Ground_002.res
+Models/ExpandedTileset_out/Root Scene_Ground_001.res
+Models/ExpandedTileset_out/Root Scene_Ground.res
+Models/ExpandedTileset_out/Root Scene_Corner_003.res
+Models/ExpandedTileset_out/Root Scene_Corner_002.res
+Models/ExpandedTileset_out/Root Scene_Corner_001.res
+Models/ExpandedTileset_out/Root Scene_Corner.res
+Models/ExpandedTileset_out/ExpandedTileset.gltf.import
+Models/Drink_out/Root Scene_Drink.res
+Models/Drink_out/Drink.gltf.import
+Models/Drawbridge_out/Root Scene_Drawbridge_Bridge.res
+Models/Drawbridge_out/Root Scene_Drawbridge.res
+Models/Drawbridge_out/Drawbridge.gltf.import
+Models/CourseTileset.gltf.import
+Models/Cat_out/Root Scene_cat.res
+Models/Cat_out/Cat.gltf.import
