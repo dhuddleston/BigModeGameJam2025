@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ux5iypyf8wgm"]
+[gd_scene load_steps=24 format=3 uid="uid://gmwsq1ycbeuj"]
 
 [ext_resource type="PackedScene" uid="uid://cf1x8kiwnxcbe" path="res://Prefabs/UI/GameplayCanvas.tscn" id="1_pdt7a"]
 [ext_resource type="PackedScene" uid="uid://uuu0lldfmxi2" path="res://Prefabs/Floors/Flat/FloorFlat4x4.tscn" id="2_sdgi2"]
@@ -85,19 +85,19 @@ _data = {
 [node name="Canvas" parent="." instance=ExtResource("1_pdt7a")]
 
 [node name="FloorRampBottom1x1n4" parent="." instance=ExtResource("3_p0yjm")]
-transform = Transform3D(1, -8.74228e-08, -3.17865e-08, 8.74228e-08, 1, 0, 3.17865e-08, -2.77887e-15, 1, 1.00715, -5.96046e-08, 2)
+transform = Transform3D(-1, -8.74228e-08, -3.17865e-08, -8.74228e-08, 1, 5.50571e-21, -3.17865e-08, -2.77887e-15, 1, 2.00715, -5.96046e-08, 2)
 
 [node name="FloorRampBottom1x1n5" parent="." instance=ExtResource("3_p0yjm")]
-transform = Transform3D(1, -8.74228e-08, -3.17865e-08, 8.74228e-08, 1, 0, 3.17865e-08, -2.77887e-15, 1, 0.00714679, -1.78814e-07, 2)
+transform = Transform3D(-1, -8.74228e-08, -3.17865e-08, -8.74228e-08, 1, 5.50571e-21, -3.17865e-08, -2.77887e-15, 1, 1.00715, -1.78814e-07, 2)
 
 [node name="FloorFlat1x1n7" parent="." instance=ExtResource("8_a71x3")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.999999, 0, -1, 0, -4.37114e-08, -7, 1.5, -8)
+transform = Transform3D(4.37114e-08, 0, 1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 1.5, -9)
 
 [node name="FloorFlat1x1n8" parent="." instance=ExtResource("8_a71x3")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.999999, 0, -1, 0, -4.37114e-08, -7, 1.5, -5)
+transform = Transform3D(4.37114e-08, 0, 1, 0, 0.999999, 0, 1, 0, -4.37114e-08, -7, 1.5, -6)
 
 [node name="FloorFlat1x1n9" parent="." instance=ExtResource("8_a71x3")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.999999, 0, -1, 0, -4.37114e-08, -7, 1.5, -6)
+transform = Transform3D(4.37114e-08, 0, 1, 0, 0.999999, 0, 1, 0, -4.37114e-08, -7, 1.5, -7)
 
 [node name="FloorFlat2x2n3" parent="." instance=ExtResource("9_aoyb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.5, -8)
@@ -121,7 +121,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -7)
 
 [node name="FloorRampMiddle1x1n" type="StaticBody3D" parent="."]
-transform = Transform3D(-2, 0, -2.13163e-14, 0, 2, 0, -2.13163e-14, 0, 2, 2.00715, 0.25, -1.49012e-07)
+transform = Transform3D(2, -1.74846e-07, 1.74846e-07, 1.74846e-07, 2, 0, -1.74846e-07, 1.52855e-14, 2, 0.00714993, 0.25, -1.49012e-07)
 physics_material_override = SubResource("PhysicsMaterial_lu036")
 metadata/_edit_group_ = true
 
@@ -133,19 +133,19 @@ mesh = SubResource("ArrayMesh_pbx3w")
 shape = SubResource("ConvexPolygonShape3D_ksmsg")
 
 [node name="FloorRampTop1x1n" parent="." instance=ExtResource("11_e7jgc")]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0.00714655, 1.25, -1)
+transform = Transform3D(-1, 0, -1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 1.00715, 1.25, -1)
 
 [node name="FloorRampTop1x1n2" parent="." instance=ExtResource("11_e7jgc")]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 1.00715, 1.25, -1)
+transform = Transform3D(-1, 0, -1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 2.00715, 1.25, -1)
 
 [node name="FloorRampBottom1x1n7" parent="." instance=ExtResource("3_p0yjm")]
-transform = Transform3D(1, -8.74228e-08, -3.17865e-08, 8.74228e-08, 1, 0, 3.17865e-08, -2.77887e-15, 1, -0.992853, -5.96046e-08, 2)
+transform = Transform3D(-1, -8.74228e-08, -3.17865e-08, -8.74228e-08, 1, 5.50571e-21, -3.17865e-08, -2.77887e-15, 1, 0.00714701, -5.96046e-08, 2)
 
 [node name="FloorRampBottom1x1n8" parent="." instance=ExtResource("3_p0yjm")]
-transform = Transform3D(1, -8.74228e-08, -3.17865e-08, 8.74228e-08, 1, 0, 3.17865e-08, -2.77887e-15, 1, -1.99285, -1.78814e-07, 2)
+transform = Transform3D(-1, -8.74228e-08, -3.17865e-08, -8.74228e-08, 1, 5.50571e-21, -3.17865e-08, -2.77887e-15, 1, -0.99285, -1.78814e-07, 2)
 
 [node name="FloorRampMiddle1x1n2" type="StaticBody3D" parent="."]
-transform = Transform3D(-2, 0, -2.13163e-14, 0, 2, 0, -2.13163e-14, 0, 2, 0.00714707, 0.25, -1.49012e-07)
+transform = Transform3D(2, -1.74846e-07, 1.74846e-07, 1.74846e-07, 2, 0, -1.74846e-07, 1.52855e-14, 2, -1.99285, 0.25, -1.49012e-07)
 physics_material_override = SubResource("PhysicsMaterial_lu036")
 metadata/_edit_group_ = true
 
@@ -157,10 +157,10 @@ mesh = SubResource("ArrayMesh_pbx3w")
 shape = SubResource("ConvexPolygonShape3D_ksmsg")
 
 [node name="FloorRampTop1x1n3" parent="." instance=ExtResource("11_e7jgc")]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -1.99285, 1.25, -1)
+transform = Transform3D(-1, 0, -1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -0.99285, 1.25, -1)
 
 [node name="FloorRampTop1x1n4" parent="." instance=ExtResource("11_e7jgc")]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -0.992853, 1.25, -1)
+transform = Transform3D(-1, 0, -1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 0.00714701, 1.25, -1)
 
 [node name="ObstacleBlockRect21" parent="." instance=ExtResource("14_drd3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 7.25)
@@ -428,7 +428,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1.5, -8)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0692235, 0, 4.90855)
 
 [node name="LanternPole" parent="." instance=ExtResource("34_6xjt6")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.997871, 1.25, -7.97609)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.997871, 1.375, -7.97609)
 
 [node name="AmbientGolfMusic" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.198892, 1.29034, 11.7101)
