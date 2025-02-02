@@ -66,8 +66,10 @@ func _ready():
 	Global.strokes = 0
 
 func _physics_process(delta):
+	if golfBall.get_linear_velocity().length_squared() < 1.0:
+		golfBall.set_linear_velocity(0.999 * golfBall.get_linear_velocity())
 	if golfBall.get_linear_velocity().length_squared() < 0.1:
-		golfBall.set_linear_velocity(0.99 * golfBall.get_linear_velocity())
+		golfBall.set_linear_velocity(0.98 * golfBall.get_linear_velocity())
 	if golfBall.get_linear_velocity().length_squared() < 0.005:
 		golfBall.set_linear_velocity(0.5 * golfBall.get_linear_velocity())
 	if golfBall.get_linear_velocity().length_squared() < 0.08:
