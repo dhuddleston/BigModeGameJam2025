@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://4uvv6qqs87be"]
+[gd_scene load_steps=62 format=4 uid="uid://4uvv6qqs87be"]
 
 [ext_resource type="PackedScene" uid="uid://cf1x8kiwnxcbe" path="res://Prefabs/UI/GameplayCanvas.tscn" id="1_ys321"]
 [ext_resource type="PackedScene" uid="uid://cyeckytrn2v3p" path="res://Prefabs/Gameplay/player_controller_fab.tscn" id="2_67a3u"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://e8rexjmxsd0w" path="res://Prefabs/Floors/Flat/FloorFlat1x1.tscn" id="9_w0vpo"]
 [ext_resource type="PackedScene" uid="uid://du4n6roiapajx" path="res://Prefabs/Floors/Ramp/FloorRampMiddle1x1.tscn" id="10_84wkk"]
 [ext_resource type="PackedScene" uid="uid://c8xxp81lobgnj" path="res://Prefabs/Obstacles/Walls/ObstacleWallSingle.tscn" id="11_6wojl"]
+[ext_resource type="Material" uid="uid://b888xettldr2a" path="res://Materials/GreenX4.tres" id="11_vaubs"]
 [ext_resource type="PackedScene" uid="uid://baqapqe52ob1p" path="res://Prefabs/Obstacles/Blocks/ObstacleBlockRect.tscn" id="12_vtwus"]
 [ext_resource type="PackedScene" uid="uid://ck6ujv2ukqr8a" path="res://Prefabs/Obstacles/Corners/ObstacleCornerTriple.tscn" id="13_uili7"]
 [ext_resource type="PackedScene" uid="uid://w30dkhh6eigx" path="res://Prefabs/Obstacles/Corners/ObstacleCornerDouble.tscn" id="14_7yd58"]
@@ -19,11 +20,13 @@
 [ext_resource type="PackedScene" uid="uid://uuu0lldfmxi2" path="res://Prefabs/Floors/Flat/FloorFlat4x4.tscn" id="17_vfy0a"]
 [ext_resource type="Material" uid="uid://ckjtng0hkuy37" path="res://Materials/WhiteX4.tres" id="18_xgmwq"]
 [ext_resource type="PackedScene" uid="uid://crm8xscewxoj7" path="res://Prefabs/Gameplay/goal_tile.tscn" id="19_i1ix8"]
+[ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="19_twpyg"]
 [ext_resource type="PackedScene" uid="uid://e8mwc44nfwr4" path="res://Prefabs/Floors/Divet/FloorTrough1x1.tscn" id="20_kyafh"]
 [ext_resource type="PackedScene" uid="uid://dsolo0ghl134k" path="res://Prefabs/Obstacles/Blocks/ObstacleBlockRamp.tscn" id="21_p8f1v"]
 [ext_resource type="Material" uid="uid://cywujqu2ubens" path="res://Materials/MainMaterial.tres" id="22_7322y"]
 [ext_resource type="Material" uid="uid://dp5e42eqr8bf0" path="res://Materials/UnlitTex.tres" id="23_u8d50"]
 [ext_resource type="Material" uid="uid://ci336nb0v3kte" path="res://Materials/UnlitYellow.tres" id="24_yxfjd"]
+[ext_resource type="Material" uid="uid://dcm5yqrcjsy44" path="res://Materials/WhiteX2.tres" id="25_dudr0"]
 [ext_resource type="Shader" path="res://Shaders/unlit_color.gdshader" id="25_wmqij"]
 [ext_resource type="AudioStream" uid="uid://ctfcx5q8k1eq1" path="res://Sounds/Music/AmbientGolfMusic.ogg" id="26_85kk5"]
 [ext_resource type="AudioStream" uid="uid://dlbumg4yexgt2" path="res://Sounds/Rain.wav" id="27_xf04v"]
@@ -82,7 +85,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_j1nt6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_4j1h7"]
 resource_name = "Root Scene_Ground_007"
 _surfaces = [{
 "aabb": AABB(-0.5, 0, -0.5, 1, 0.25, 1),
@@ -90,7 +93,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 12,
 "index_data": PackedByteArray("AAACAAEAAAADAAIABAAGAAUABAAHAAYA"),
-"material": ExtResource("5_rnt2m"),
+"material": ExtResource("11_vaubs"),
 "name": "GolfCourse",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -141,6 +144,45 @@ shadow_mesh = SubResource("ArrayMesh_mmtpt")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ksmsg"]
 points = PackedVector3Array(0, 0, 1, 1, 0, 1, 0, 0.5, 0, 1, 0.5, 0, 0, -0.01, 1, 1, -0.01, 1, 0, 0.49, 0, 1, 0.49, 0)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kt0u2"]
+render_priority = 0
+shader = ExtResource("25_wmqij")
+shader_parameter/color = Color(0.5, 0.5, 0.5, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_f3smx"]
+_surfaces = [{
+"aabb": AABB(-0.625, 0, -0.375, 0.25, 0.25, 0.75),
+"format": 34896613377,
+"index_count": 30,
+"index_data": PackedByteArray("AAACAAEAAwAAAAEABAACAAAAAAAFAAQABgABAAIABAAGAAIABwABAAYAAQAHAAMABwAFAAAAAAADAAcA"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAD/////AAD/////AAAAAAAA//8AAAAA////////AAAAAAAAAAAAAAAAAAD//wAA//8AAAAAAAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6mfhl"]
+resource_name = "Root Scene_Rim_004"
+_surfaces = [{
+"aabb": AABB(-0.625, 0, -0.375, 0.25, 0.25, 0.75),
+"attribute_data": PackedByteArray("DKgBCA6g/B8MqPwfDqABCA2YAQgLoPwfC6ABCA2Y/B8LoP4HDZgAAA2Y/gcLoAAACpj7FwqYAAALkAAAC5D7FwuQ/gcKmAAAC5AAAAqY/gc="),
+"format": 34896613399,
+"index_count": 30,
+"index_data": PackedByteArray("AAACAAEAAwAAAAEABAAGAAUABQAHAAQACAAKAAkACwAIAAkADAAOAA0ADgAMAA8AEAASABEAEQATABAA"),
+"material": SubResource("ShaderMaterial_kt0u2"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("AAD/////////////AAD//wAA//8AAP////////////8AAAAAAABU1QAA/////1TVAAD//wAAVNUAAAAA//9U1f//AAAAAP//AAD//wAA////////AAD//wAAAAAAAP////8AAP//VNX//wAAAABU1f////8AAFTV////////VNX//wAA////vwAA//////+/AAAAAP///7//////////v/9//7//f/+//3//v/9//79U1VTVVNVU1VTVVNVU1VTV/z//v/8//7//P/+//z//v6mqVFWpqlRVqapUVaqqVFX/////////////////////")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_f3smx")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gx7t7"]
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_hendw"]
 _surfaces = [{
 "aabb": AABB(-0.5, 0, -0.5, 1, 1e-05, 1),
@@ -175,6 +217,40 @@ shadow_mesh = SubResource("ArrayMesh_hendw")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eu50g"]
 
+[sub_resource type="ArrayMesh" id="ArrayMesh_6uhfg"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.25, 1, 0.5, 0.5),
+"format": 34896613377,
+"index_count": 30,
+"index_data": PackedByteArray("AAACAAEAAQADAAAABAAGAAUABwAGAAQAAwAHAAQAAwABAAcAAgAFAAYAAgAAAAUABAAFAAAABAAAAAMA"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAD//wAA//8AAP//AAAAAAAA////////AAAAAP////8AAAAA//8AAAAAAAAAAAAAAAAAAAAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2gcqp"]
+resource_name = "Root Scene_Ramp_001"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.25, 1, 0.5, 0.5),
+"attribute_data": PackedByteArray("AaD/DwKQAAACkP8PAaAAAPSf/w/0nwAA9Y8AAPWP/w8MkAAADJD+Hwyg/h8MoAAAAKD+HwCgAAABkAAAAZD+HwWQAAAFoP4fBaAAAAWQ/h8="),
+"format": 34896613399,
+"index_count": 30,
+"index_data": PackedByteArray("AAACAAEAAQADAAAABAAGAAUABwAGAAQACAAKAAkACAALAAoADAAOAA0ADAAPAA4AEAASABEAEAARABMA"),
+"material": ExtResource("25_dudr0"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("/////wAAVNX//wAA//9U1f//AAAAAFTV////////VNUAAP////9U1QAA//8AAFTVAAAAAAAAVNUAAAAA//9U1f////////+/AAD//////78AAAAA////v///AAD///+///8AAAAA//8AAAAAAAD//wAA//8AAP///////wAA//8AAP////9U1f////8AAFTVAAD//wAAVNX///////9U1aoqqiqqKqoqqiqqKqoqqipU1VTVVNVU1VTVVNVU1VTV/3//f/9//3//f/9//3//f/8//7//P/+//z//v/8//79U1aoqVNWqKlTVqipU1aoq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_6uhfg")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iarw2"]
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_ncotn"]
 _surfaces = [{
 "aabb": AABB(-0.04, 0, -0.015, 0.0575, 0.015, 0.03),
@@ -206,6 +282,40 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ncotn")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bj5cq"]
+_surfaces = [{
+"aabb": AABB(-0.490491, -1.81259e-08, -0.490491, 0.980982, 0.213257, 0.980982),
+"format": 34896613377,
+"index_count": 966,
+"index_data": PackedByteArray("kwABAAwAkwANAAEAgQADABUAgQAWAAMAbwACAB4AbwAfAAIAXQAAACcAXQAGAAAASwAAAAcASwAnAAAAHgAiAC0AHgACACIALQAjADMALQAiACMAMwAkADkAMwAjACQAOQAlAD8AOQAkACUAPwAmAEUAPwAlACYARQAnAEsARQAmACcAAwAoABUAAwAZACgAGQApACgAGQAaACkAGgAqACkAGgAbACoAGwArACoAGwAcACsAHAAsACsAHAAdACwAHQAtACwAHQAeAC0AFQAuABQAFQAoAC4AKAAvAC4AKAApAC8AKQAwAC8AKQAqADAAKgAxADAAKgArADEAKwAyADEAKwAsADIALAAzADIALAAtADMAFAA0ABMAFAAuADQALgA1ADQALgAvADUALwA2ADUALwAwADYAMAA3ADYAMAAxADcAMQA4ADcAMQAyADgAMgA5ADgAMgAzADkAEwA6ABIAEwA0ADoANAA7ADoANAA1ADsANQA8ADsANQA2ADwANgA9ADwANgA3AD0ANwA+AD0ANwA4AD4AOAA/AD4AOAA5AD8AEgBAABEAEgA6AEAAOgBBAEAAOgA7AEEAOwBCAEEAOwA8AEIAPABDAEIAPAA9AEMAPQBEAEMAPQA+AEQAPgBFAEQAPgA/AEUAEQBGABAAEQBAAEYAQABHAEYAQABBAEcAQQBIAEcAQQBCAEgAQgBJAEgAQgBDAEkAQwBKAEkAQwBEAEoARABLAEoARABFAEsAEAAMAAEAEABGAAwARgALAAwARgBHAAsARwAKAAsARwBIAAoASAAJAAoASABJAAkASQAIAAkASQBKAAgASgAHAAgASgBLAAcAnQAEAFEAnQCUAAQAUQAFAFcAUQAEAAUAVwAGAF0AVwAFAAYAlwBMACEAlwCYAEwAmABNAEwAmACZAE0AmQBOAE0AmQCaAE4AmgBPAE4AmgCbAE8AmwBQAE8AmwCcAFAAnABRAFAAnACdAFEAIQBSACAAIQBMAFIATABTAFIATABNAFMATQBUAFMATQBOAFQATgBVAFQATgBPAFUATwBWAFUATwBQAFYAUABXAFYAUABRAFcAIABYAB8AIABSAFgAUgBZAFgAUgBTAFkAUwBaAFkAUwBUAFoAVABbAFoAVABVAFsAVQBcAFsAVQBWAFwAVgBdAFwAVgBXAF0AHwAiAAIAHwBYACIAWAAjACIAWABZACMAWQAkACMAWQBaACQAWgAlACQAWgBbACUAWwAmACUAWwBcACYAXAAnACYAXABdACcAowAhAGMAowCXACEAYwAgAGkAYwAhACAAaQAfAG8AaQAgAB8AlgBeABgAlgCeAF4AngBfAF4AngCfAF8AnwBgAF8AnwCgAGAAoABhAGAAoAChAGEAoQBiAGEAoQCiAGIAogBjAGIAogCjAGMAGABkABcAGABeAGQAXgBlAGQAXgBfAGUAXwBmAGUAXwBgAGYAYABnAGYAYABhAGcAYQBoAGcAYQBiAGgAYgBpAGgAYgBjAGkAFwBqABYAFwBkAGoAZABrAGoAZABlAGsAZQBsAGsAZQBmAGwAZgBtAGwAZgBnAG0AZwBuAG0AZwBoAG4AaABvAG4AaABpAG8AFgAZAAMAFgBqABkAagAaABkAagBrABoAawAbABoAawBsABsAbAAcABsAbABtABwAbQAdABwAbQBuAB0AbgAeAB0AbgBvAB4AqQAYAHUAqQCWABgAdQAXAHsAdQAYABcAewAWAIEAewAXABYAlQBwAA8AlQCkAHAApABxAHAApAClAHEApQByAHEApQCmAHIApgBzAHIApgCnAHMApwB0AHMApwCoAHQAqAB1AHQAqACpAHUADwB2AA4ADwBwAHYAcAB3AHYAcABxAHcAcQB4AHcAcQByAHgAcgB5AHgAcgBzAHkAcwB6AHkAcwB0AHoAdAB7AHoAdAB1AHsADgB8AA0ADgB2AHwAdgB9AHwAdgB3AH0AdwB+AH0AdwB4AH4AeAB/AH4AeAB5AH8AeQCAAH8AeQB6AIAAegCBAIAAegB7AIEADQAQAAEADQB8ABAAfAARABAAfAB9ABEAfQASABEAfQB+ABIAfgATABIAfgB/ABMAfwAUABMAfwCAABQAgAAVABQAgACBABUArwAPAIcArwCVAA8AhwAOAI0AhwAPAA4AjQANAJMAjQAOAA0AlACCAAQAlACqAIIAqgCDAIIAqgCrAIMAqwCEAIMAqwCsAIQArACFAIQArACtAIUArQCGAIUArQCuAIYArgCHAIYArgCvAIcABACIAAUABACCAIgAggCJAIgAggCDAIkAgwCKAIkAgwCEAIoAhACLAIoAhACFAIsAhQCMAIsAhQCGAIwAhgCNAIwAhgCHAI0ABQCOAAYABQCIAI4AiACPAI4AiACJAI8AiQCQAI8AiQCKAJAAigCRAJAAigCLAJEAiwCSAJEAiwCMAJIAjACTAJIAjACNAJMABgAHAAAABgCOAAcAjgAIAAcAjgCPAAgAjwAJAAgAjwCQAAkAkAAKAAkAkACRAAoAkQALAAoAkQCSAAsAkgAMAAsAkgCTAAwA"),
+"lods": [0.0652099, PackedByteArray("DQABAAwADQAQAAEADQARABAADQASABEADQATABIADQAMAAsADQAUABMABgANAAsADQAWABQABgALAAoABgAKAAkAFgAVABQABgAJAAgAFgADABUABgAIAAcABgAHAAAABgAAACcABgAnACYAFgAZAAMAHwAGACYAFgAaABkAFgAbABoAFgAcABsAFgAdABwAFgAfAB0AHwAmACUAHwAeAB0AHwAlACQAHwACAB4AHwAkACMAHwAiAAIAHwAjACIASwAAAAcASwAnAAAAHgAiAC0AHgACACIALQAjADMALQAiACMAMwAkADkAMwAjACQAOQAlAD8AOQAkACUAPwAmAEUAPwAlACYARQAnAEsARQAmACcAAwAoABUAAwAZACgAKAAvAC4AKAApAC8AGgAqACkAGgAbACoAGQApACgAGQAaACkAFQAoAC4AFQAuABQAKQAwAC8AKQAqADAAFAAuADQAFAA0ABMAGwArACoAGwAcACsAHAAsACsAHAAdACwAHQAtACwAHQAeAC0AKgAxADAAKgArADEAKwAyADEAKwAsADIALAAzADIALAAtADMALgA1ADQALgAvADUALwA2ADUALwAwADYAMAA3ADYAMAAxADcANwA4AD4ANwA+AD0ANQA2AD0APQA+AEQAPQBEAEMANQA9ADsAPQBDAEIAOwA9AEIAOwBCAEEAMQA4ADcAMQAyADgAMgA5ADgAMgAzADkAEwA6ABIAEwA0ADoANAA7ADoANAA1ADsANgA3AD0AOAA/AD4AOAA5AD8AEgBAABEAEgA6AEAAOgBBAEAAOgA7AEEAPgBFAEQAPgA/AEUAEQBGABAAEQBAAEYAQABHAEYAQABBAEcAEABGAAwAEAAMAAEARwBIAAoARwAKAAsAQQBIAEcAQQBCAEgAQgBJAEgAQgBDAEkAQwBKAEkAQwBEAEoASgBLAAcASgAHAAgARABLAEoARABFAEsASQBKAAgASQAIAAkARgALAAwARgBHAAsASAAJAAoASABJAAkAnQCUAIIAnACdAIIAnACCAFAAlACqAIIAqgCDAIIAqgCrAIMAqwCEAIMAqwCsAIQArACtAIQArQCuAIQArgCHAIQArgCvAIcAlwBMAGIAlwCYAEwAowCXAGIAogCjAGIAoQCiAGIAoQBiAGEAmABOAEwAmACZAE4AmQCaAE4AmgCbAE4AmwBQAE4AmwCcAFAAYgBMACAATABOACAAYQBiACAATgAFACAAYQAgABcAYABhABcAGABgABcAcwAYABcATgBQAAUAUACCAAUAggCDAAUAgwCEAAUAhAAOAAUAcwAXAA4AhACHAA4AcgBzAA4AhwBxAA4AcQByAA4AIAAGAB8AIAAFAAYAFwAgAB8AFwAfABYADgAXABYABQANAAYABQAOAA0ADgAWAA0AlgBgABgAlgCeAGAAngCfAGAAnwCgAGAAoABhAGAAoAChAGEAqQCWABgAqQAYAHMAqACpAHMApwCoAHMApgCnAHMApgBzAHIApQCmAHIApQByAHEApAClAHEAlQCkAHEArwCVAHEArwBxAIcA")],
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 176,
+"vertex_data": PackedByteArray("wj4NljzBAADCPg2Wwj4AADzBDZY8wQAAPMENlsI+AABnMNIWl88AANwyw0MizQAAsTecbk3IAACxN0ymF7AAANwya7F1nQAAZzAQt+uJAABnMBC3E3YAANwya7GJYgAAsTdMpudPAACxN5xusTcAANwyw0PcMgAAZzDSFmcwAADnT0ymsTcAAIlia7HcMgAAE3YQt2cwAADriRC3ZzAAAHWda7HcMgAAF7BMprE3AABNyJxusTcAACLNw0PcMgAAl8/SFmcwAABNyEym508AACLNa7GJYgAAl88QtxN2AACXzxC364kAACLNa7F1nQAATchMphewAABNyJxuTcgAACLNw0MizQAAl8/SFpfPAAAXsEymTcgAAHWda7EizQAA64kQt5fPAAATdhC3l88AAIlia7EizQAA509Mpk3IAABCt2K9TEoAADK8R83wXgAAtr5h1dZ0AAC2vmHVKIsAADK8R80OoQAAQrdivbK1AAAfo83PSEYAAAun2uRMXAAADKme7+pzAAAMqZ7vFIwAAAun2uSyowAAH6PNz7a5AAAgjJraJ0QAAKmNUvPcWgAAc47//2lzAABzjv//lYwAAKmNUvMipQAAIIya2te7AADec5raJ0QAAFVyUvPcWgAAi3H//2lzAACLcf//lYwAAFVyUvMipQAA3nOa2te7AADfXM3PSEYAAPNY2uRMXAAA8lae7+pzAADyVp7vFIwAAPNY2uSyowAA31zNz7a5AAC8SGK9TEoAAMxDR83wXgAASEFh1dZ0AABIQWHVKIsAAMxDR80OoQAAvEhivbK1AADXu+YbC98AACKlbh/K6QAAlYw9IUzvAABpcz0hTO8AANxabh/K6QAAJ0TmGwvfAAC2uclQWdoAALKjzll/4wAAFIxrXi7oAADqc2teLugAAExczll/4wAASEbJUFnaAACytRp/VtIAAA6hdIpA2QAAKIs+kMXcAADWdD6QxdwAAPBedIpA2QAATEoaf1bSAAAL3+YbJ0QAAMrpbh/cWgAATO89IWlzAABM7z0hlYwAAMrpbh8ipQAAC9/mG9e7AABZ2slQSEYAAH/jzllMXAAALuhrXupzAAAu6GteFIwAAH/jzlmyowAAWdrJULa5AABW0hp/TEoAAEDZdIrwXgAAxdw+kNZ0AADF3D6QKIsAAEDZdIoOoQAAVtIaf7K1AAAnROYb8yAAANxabh80FgAAaXM9IbIQAACVjD0hshAAACKlbh80FgAA17vmG/MgAABIRslQpSUAAExczll/HAAA6nNrXtAXAAAUjGte0BcAALKjzll/HAAAtrnJUKUlAABMShp/qC0AAPBedIq+JgAA1nQ+kDkjAAAoiz6QOSMAAA6hdIq+JgAAsrUaf6gtAADzIOYb17sAADQWbh8ipQAAshA9IZWMAACyED0haXMAADQWbh/cWgAA8yDmGydEAAClJclQtrkAAH8czlmyowAA0BdrXhSMAADQF2te6nMAAH8czllMXAAApSXJUEhGAACoLRp/srUAAL4mdIoOoQAAOSM+kCiLAAA5Iz6Q1nQAAL4mdIrwXgAAqC0af0xKAAB3JAAAh9sAAHckAAB3JAAAh9sAAHckAACH2wAAh9sAANHEAABM7QAAtKoAAKj5AAB4jgAA/v8AAIZxAAD//wAASlUAAKj5AAAtOwAATO0AAEztAAAtOwAAqPkAAEpVAAD//wAAhnEAAP//AAB4jgAAqPkAALSqAABM7QAA0cQAAC07AACyEgAASlUAAFYGAACGcQAAAAAAAHiOAAAAAAAAtKoAAFYGAADRxAAAshIAALISAADRxAAAVgYAALSqAAAAAAAAeI4AAAAAAACGcQAAVgYAAEpVAACyEgAALTsAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_88186"]
+resource_name = "Eye_Cube_029"
+_surfaces = [{
+"aabb": AABB(-0.490491, -1.81259e-08, -0.490491, 0.980982, 0.213257, 0.980982),
+"attribute_data": PackedByteArray("KLTKBP/HAAD/rwAAnbEwBLi0OgL/x/8XMbKcAf/HAAD/b/8P6Cz5BaEk2wShLIoFYiR3BGG0JgXDs8wE/7//B//H/wdjs8kE/7//D//H/w8Hs7wE/7f/H//H/xf/r/8XrrKlBP+3/xf/r/8PVLKHBP+3/w//r/8H+bFdBP+3/wdAIbsDP7FqBNkg+wPZKKoE/0//B2Yo8QT/rwAAm7HKA/+3AAD/r/8XoLFoA/+3AAD/r/8PrbEJA/+3/w//r/8HxLGtAv+3/wf/rwAA/68AAOCxUQIFsvcB/7cAAP+/AAD3IZEA97FAAbchKwC3KdsA/08AAP9fAABwKWkAlrKaAf+//wf/x/8H97KdAf+//w//x/8PU7OpAf+//xf/x/8Xq7O/Af+//x//xwAAA7TeAf+//wf/x/8HXLQMAv+//w//x/8PFyVRARe1AAJ/JRIBfy3BAf9f/xfyLXsBubShAv+//xf/vwAA/6//F7S0AwP/xwAA/6//D6m0YwP/t/8P/6//B5W0vwP/t/8H/68AAHm0GAT/v/8fVLRxBP+3/x//vwAA/7f/B/+3/wf/v/8H/7//B/+3/w//t/8P/7//D/+//w//t/8X/7f/F/+3/x//v/8X/7f/H/+3/xf/vwAA/7//F/+3/wf/t/8P/7//B/+//w//t/8P/7f/B/+//w//v/8H/6//B/+3/wf/twAA/7//H/+H/x//r/8P/7f/D/+3/x//h/8f/4//H/+v1hf/v/8f/3//H/+P/x//v/8X/8f/FwGI/x//v/8PAMD/H//H/w//t/8X/7f/H/+//wf/x/8H/7f/B/+//wf/v/8X/8f/F/+H/xf/j/8X/7f/F/+//xf/h/8X/4//F//X/xf/f/8X/4//F//P/xf/d/8X/4f/F/+3/xf/v/8XALD4F/+3/w8AuPgX/7//D/+3/w//v/8P/8f/D//P/w//j/8P/7//D//H/w//h/8P/9f/D/9//w//z/8P/3f/D/+3/w//v/8P/6//D/+3/wf/t/8P/7//B/+3/wf/t/8X/7//B//P/wf/j/8H/7f/D/+//w//x/8H/4f/B/+3/xf/xwAA/3//B/+//wf/x/8H/3f/B/+//w//v/8H/8f/D/+3AAD/t/8H/7//F//H/xf/r/8H/7f/B/+3/wf/v/8H/6//D/+3/w//t/8P/7//D/+v/xf/t/8X/7//F/+/AAD/t/8H/7//H/+//wf/v/8X/7f/D/+//w//t/8H/7f/F/+//wf/v/8X/08AAP9f/x81LiQC/0//B1gu2QL/T/8PWS6VA/9P/xcrLksE/0//H/9v/x/aLfEE/2//F20tgQWeJacBni1WAqglPAKoLesCnCXPApwtfgN9JV4DfS0NBEcl5QNHLZUE/SRlBP0sFAUiJc8BIbV+AiAlSAIgtfgCEyW/AhO1bgP5JDED+bThA9QkoAPTtFAEoSQMBKC0vAT/T/8HFyolAP9P/w/KKgAA/0//F4QrAAD/T/8f/18AAD4sJgD/X/8H6Sx9AP9f/w97LfEASyILAEsqugDeIgAA3iqvAHAjCgBwK7kA/iMsAP4r2wCHJGQAhywTAQglsgAILWEBcyKFAHOyNAHrIoUA6rI0AV8jkgBes0EB0COuAM+zXQE/JNcAPrSGAawkDgGrtL4B/0//DyMoRwT/T/8X/yeTA/9P/x//X/8f/yfZAv9f/xclKCAC/1//D3kodQH/X/8H6SjjALogZgO6KBUEryDRAq8ogAO5ID4CuSjtAtsgrgHbKF0CECEkARAp0wFaIaMAWilSATUhPgM1se0DNiHEAjWxcwNEIU4CQ7H9Al8h2wFesYoChSFqAYSxGQK4IfwAt7GrAf9v/wdDLD4G/18AAP9vAACRK2MG/1//B9kqZgb/X/8PHypBBv9f/xdzKe0F/08AAP9f/x/gKHoFDyT7BA8sqgV9IwcFfSu2Bewi/QTsKqwFXSLcBF0qiwXTIaYE0ylVBVEhWgRRKQkF5yOCBOazMQVwI4IEb7MxBfwidQT7siQFiiJZBIqyCAUaIjEEGbLhBKwh/AOssasE/2f/D/9X/wf/VwAA/1cAAP9n/xf/VwAA/2f/H/9X/wf/V/8P/1f/F/9X/x//Z/8f/2f/F/9X/wf/V/8P/1f/F/9X/x//ZwAA/2f/B/9n/w//V/8P/1f/F/9X/x//V/8X/1f/D/9X/wf/Z/8H/2cAAP9n/wf/Z/8P/2f/F/9XAAD/Z/8foSTbBGIkdwRAIbsD2SD7A9koqgT3IZEAtyErALcp2wAXJVEBfyUSAX8twQH/b/8f/08AAA=="),
+"format": 34896613399,
+"index_count": 966,
+"index_data": PackedByteArray("ggEDAB4AggEhAAMAXAEGADUAXAE5AAYANwEEAE4ANwFSAAQAEgEAAGYAEgENAAAA6wABABAA6wBoAAEAUABYAH8AUAAFAFgAgABcAJgAgABZAFwAlQBdAKwAlQBaAF0ArgBiAMAArgBfAGIAvgBjANMAvgBgAGMA1QBnAOoA1QBlAGcABwBsADcABwBBAGwAQABuAGoAQABDAG4ARAB0AHAARABHAHQARgB1AHIARgBJAHUASgB7AHcASgBNAHsATAB9AHkATABPAH0ANgCBADIANgBpAIEAawCHAIIAawBvAIcAbQCLAIYAbQBxAIsAcwCPAIwAcwB2AI8AeACUAJAAeAB8AJQAegCXAJIAegB+AJcAMwCZAC8AMwCDAJkAhACfAJsAhACIAJ8AhQCiAJ0AhQCKAKIAiQCkAKEAiQCNAKQAjgCoAKUAjgCRAKgAkwCtAKoAkwCWAK0AMQCwAC4AMQCaALAAnAC0ALEAnACgALQAngC2ALMAngChALYAowC5ALcAowCmALkApAC6ALgApACnALoAqQC9ALsAqQCrAL0ALADCACkALACvAMIAsgDIAMQAsgC1AMgAswDJAMUAswC2AMkAtgDMAMkAtgC4AMwAuADPAMwAuAC6AM8AvADUANEAvAC/ANQAKwDXACYAKwDBANcAwwDdANkAwwDHAN0AxgDfANsAxgDKAN8AywDlAOIAywDOAOUAzQDnAOMAzQDQAOcA0gDsAOgA0gDWAOwAKAAdAAIAKADYAB0A2gAcAB8A2gDeABwA3AAXABoA3ADgABcA4QAVABkA4QDkABUA5gATABYA5gDoABMA5wAPABIA5wDpAA8AjwEIAPkAjwGDAQgA+gALAAYB+gAJAAsABQEMABEBBQEKAAwAhwHuAFUAhwGJAe4AiAHwAO0AiAGKAfAAigHyAPAAigGLAfIAiwH0APIAiwGMAfQAjAH2APQAjAGNAfYAjgH5APcAjgGPAfkAVgD8AFQAVgDvAPwA7wD+APwA7wDxAP4A8QAAAf4A8QDzAAAB8wACAQAB8wD1AAIB9QAEAQIB9QD4AAQB+AAGAQQB+AD6AAYBUwAHAVEAUwD7AAcB+wAJAQcB+wD9AAkB/QALAQkB/QD/AAsB/wANAQsB/wABAQ0BAQEPAQ0BAQEDAQ8BAwERAQ8BAwEFAREBUgBXAAQAUgAIAVcACAFbAFcACAEKAVsACgFeAFsACgEMAV4ADAFhAF4ADAEOAWEADgFkAGEADgEQAWQAEAFmAGQAEAESAWYAlgFVAB4BlgGHAVUAHwFUACsBHwFWAFQAKgFRADYBKgFTAFEAhgETATwAhgGQARMBkAEVARMBkAGRARUBkQEXARUBkQGSARcBkgEZARcBkgGTARkBlAEcARoBlAGVARwBlQEeARwBlQGWAR4BPgAhATsAPgAUASEBFAEjASEBFAEWASMBFgElASMBFgEYASUBGAEnASUBGAEbAScBGwEpAScBGwEdASkBHQErASkBHQEfASsBOgAsATgAOgAgASwBIAEuASwBIAEiAS4BIgEwAS4BIgEkATABJAEyATABJAEmATIBJgE0ATIBJgEoATQBKAE2ATQBKAEqATYBOQA/AAYAOQAtAT8ALQFCAD8ALQEvAUIALwFFAEIALwExAUUAMQFIAEUAMQEzAUgAMwFLAEgAMwE1AUsANQFOAEsANQE3AU4AnAE9AEMBnAGFAT0ARAE7AFABRAE+ADsATwE4AFsBTwE6ADgAhAE4ASQAhAGXATgBlwE6ATgBlwGYAToBmAE8AToBmAGZATwBmQE/AT0BmQGaAT8BmgFBAT8BmgGbAUEBmwFDAUEBmwGcAUMBJQBGASMAJQA5AUYBOQFIAUYBOQE7AUgBOwFKAUgBOwE+AUoBPgFMAUoBPgFAAUwBQAFOAUwBQAFCAU4BQgFQAU4BQgFEAVABIgBRASAAIgBFAVEBRQFTAVEBRQFHAVMBRwFVAVMBRwFJAVUBSQFXAVUBSQFLAVcBSwFZAVcBSwFNAVkBTQFbAVkBTQFPAVsBIQAnAAMAIQBSAScAUgEqACcAUgFUASoAVAEtACoAVAFWAS0AVgEwAC0AVgFYATAAWAE0ADAAWAFaATQAWgE1ADQAWgFcATUAogEkAGgBogGEASQAagEjAHYBagElACMAdQEgAIEBdQEiACAAgwFdAQgAgwGdAV0BnQFgAV0BnQGeAWABngFiAV8BngGfAWIBnwFkAWIBnwGgAWQBoAFmAWQBoAGhAWYBoQFpAWYBoQGjAWkBCQBsAQsACQBeAWwBXgFuAWwBXgFhAW4BYQFwAW4BYQFjAXABYwFyAXABYwFlAXIBZQF0AXIBZQFnAXQBZwF2AXQBZwFqAXYBCgB3AQwACgBrAXcBawF5AXcBawFtAXkBbQF7AXkBbQFvAXsBbwF9AXsBbwFxAX0BcQF/AX0BcQFzAX8BcwGBAX8BcwF1AYEBDQAOAAAADQB4AQ4AeAERAA4AeAF6AREAegEUABEAegF8ARQAfAEYABQAfAF+ARgAfgEbABgAfgGAARsAgAEeABsAgAGCAR4A"),
+"lods": [0.0652099, PackedByteArray("IQADAB4AIQAnAAMAIQAqACcAIQAtACoAIQAwAC0AIQAeABsAIQA0ADAADQAhABsAIQA5ADQADQAbABgADQAYABQAOQA1ADQADQAUABEAOQAGADUADQARAA4ADQAOAAAADQAAAGYADQBmAGQAOQA/AAYAUgANAGQAOQBCAD8AOQBFAEIAOQBIAEUAOQBLAEgAOQBSAEsAUgBkAGEAUgBOAEsAUgBhAF4AUgAEAE4AUgBeAFsAUgBXAAQAUgBbAFcA6wABABAA6wBoAAEAUABYAH8AUAAFAFgAgABcAJgAgABZAFwAlQBdAKwAlQBaAF0ArgBiAMAArgBfAGIAvgBjANMAvgBgAGMA1QBnAOoA1QBlAGcABwBrADcABwBBAGsAawCHAIIAawBvAIcARAB0AG8ARABHAHQAQABtAGkAQABDAG0ANgBpAIEANgCBADIAbQCLAIYAbQBxAIsAMgCDAJkAMgCZAC8ARgB1AHEARgBJAHUASgB7AHcASgBNAHsATAB9AHkATABPAH0AcwCPAIwAcwB2AI8AeACUAJAAeAB8AJQAegCXAJIAegB+AJcAhACfAJsAhACIAJ8AhQCiAJ0AhQCKAKIAiQCkAKEAiQCNAKQApACnALoApAC6ALgAngChALgAuAC6AM8AuADPAMwAngC4ALMAuADMAMkAswC4AMkAswDJAMUAjgCoAKUAjgCRAKgAkwCtAKoAkwCWAK0AMQCwAC4AMQCaALAAnAC0ALEAnACgALQAowCmALkAqQC9ALsAqQCrAL0ALADCACkALACvAMIAsgDIAMQAsgC1AMgAvADUANEAvAC/ANQAKwDXACYAKwDBANcAwwDcANgAwwDHANwAKADYAB0AKAAdAAIA3ADgABcA3AAXABoAxgDfANsAxgDKAN8AywDlAOIAywDOAOUAzQDnAOMAzQDQAOcA5wDpAA8A5wAPABIA0gDsAOgA0gDWAOwA5gDoABMA5gATABYA2gAcAB8A2gDeABwA4QAVABkA4QDkABUAjwGDAV0BjgGPAV0BjgFdAa8BgwGdAV0BnQFgAV0BnQGeAWABngFiAV8BngGfAWIBnwGgAWIBoAGhAWIBoQFpAWIBoQGjAWkBhwHuABwBhwGJAe4AlgGHARwBlQGWARwBlAGVARwBlAEcARoBiAHyAO0AiAGKAfIAigGLAfIAiwGMAfIAjAH2APIAjAGNAfYAHQHvAK4B7wDzAK4BGwEdAa4B8wALAK4BGwGuAasBGAEbAasBPgAYAasBQAE+AKsB8wD4AAsA+ABeAQsAXgFhAQsAYQFjAQsAYwGoAQsAQAGrASMAYwFqASMAPgFAASMAagE7ASMAOwE+ASMArQGlAawBrQGkAaUBqgGtAawBqgGsATgApwGqATgApAGmAaUBpAGnAaYBpwGpAaYBhQEXATwAhQGQARcBkAGRARcBkQGSARcBkgEZARcBkgGTARkBnAGFAT0AnAE9AD8BmwGcAT8BmgGbAT8BmQGaAT8BmQE/AT0BmAGZATwBmAE8AToBlwGYAToBhAGXAToBogGEAToBogE6AbAB")],
+"material": ExtResource("22_7322y"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 433,
+"vertex_data": PackedByteArray("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")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_bj5cq")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_i1i2u"]
 _surfaces = [{
@@ -333,7 +443,7 @@ baseRange = 2.5
 maxRange = 2.5
 
 [node name="LanternPole2" parent="LevelGeo" instance=ExtResource("5_o33b5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 0.5, -1)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 1, 0.5, -1)
 baseRange = 2.5
 maxRange = 2.5
 
@@ -350,36 +460,19 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 0.
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0.375, -2)
 
 [node name="FloorRidge1x1n" type="StaticBody3D" parent="LevelGeo"]
-transform = Transform3D(-4, 0, 0, 0, 2, -1.74846e-07, 0, 1.74846e-07, 2, 1, -1.25, 0)
+transform = Transform3D(-4, 0, 0, 0, 2, -6.03983e-07, 0, 3.01992e-07, 4, 1, -1.25, -2)
 physics_material_override = ExtResource("4_lf5jc")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LevelGeo/FloorRidge1x1n"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5)
-mesh = SubResource("ArrayMesh_j1nt6")
+mesh = SubResource("ArrayMesh_4j1h7")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="LevelGeo/FloorRidge1x1n"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5)
 shape = SubResource("ConvexPolygonShape3D_gi647")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="LevelGeo/FloorRidge1x1n"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0, 0.5)
-shape = SubResource("ConvexPolygonShape3D_478p8")
-
-[node name="FloorRidge1x1n2" type="StaticBody3D" parent="LevelGeo"]
-transform = Transform3D(-4, 0, 0, 0, 2, -1.74846e-07, 0, 1.74846e-07, 2, 1, -1.25, -2)
-physics_material_override = ExtResource("4_lf5jc")
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelGeo/FloorRidge1x1n2"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5)
-mesh = SubResource("ArrayMesh_j1nt6")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="LevelGeo/FloorRidge1x1n2"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5)
-shape = SubResource("ConvexPolygonShape3D_gi647")
-
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="LevelGeo/FloorRidge1x1n2"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0, 0.5)
 shape = SubResource("ConvexPolygonShape3D_478p8")
 
@@ -479,6 +572,45 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4, -1.
 [node name="ObstacleWallSingle34" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4, -1.25, -1)
 
+[node name="ObstacleWallSingle37" type="StaticBody3D" parent="LevelGeo"]
+transform = Transform3D(-0.5, 0, 1.50996e-07, 0, 0.5, 0, -7.54979e-08, 0, -1, 4.5, -1.125, -4.375)
+physics_material_override = ExtResource("19_twpyg")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelGeo/ObstacleWallSingle37"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+mesh = SubResource("ArrayMesh_6mfhl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelGeo/ObstacleWallSingle37"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.75, 0, 0.125, -0.5)
+shape = SubResource("BoxShape3D_gx7t7")
+
+[node name="ObstacleWallSingle38" type="StaticBody3D" parent="LevelGeo"]
+transform = Transform3D(-0.5, -7.54979e-08, 1.65006e-15, 0, -2.18557e-08, -0.25, 7.54979e-08, -0.5, 1.09278e-08, 4.5, -1.1, -4.25)
+physics_material_override = ExtResource("19_twpyg")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelGeo/ObstacleWallSingle38"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+mesh = SubResource("ArrayMesh_6mfhl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelGeo/ObstacleWallSingle38"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.75, 0, 0.125, -0.5)
+shape = SubResource("BoxShape3D_gx7t7")
+
+[node name="ObstacleWallSingle39" type="StaticBody3D" parent="LevelGeo"]
+transform = Transform3D(-0.5, -7.54979e-08, 1.65006e-15, 0, -2.18557e-08, -0.25, 7.54979e-08, -0.5, 1.09278e-08, 4.5, -1.1, -3.375)
+physics_material_override = ExtResource("19_twpyg")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelGeo/ObstacleWallSingle39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+mesh = SubResource("ArrayMesh_6mfhl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelGeo/ObstacleWallSingle39"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.75, 0, 0.125, -0.5)
+shape = SubResource("BoxShape3D_gx7t7")
+
 [node name="ObstacleCornerDouble5" parent="LevelGeo" instance=ExtResource("14_7yd58")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1.25, 1)
 
@@ -529,6 +661,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 
 [node name="ObstacleCorner" parent="LevelGeo" instance=ExtResource("16_xmy2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
+
+[node name="ObstacleCorner9" parent="LevelGeo" instance=ExtResource("16_xmy2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0, -1)
+
+[node name="ObstacleCorner10" parent="LevelGeo" instance=ExtResource("16_xmy2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -1)
+
+[node name="ObstacleCorner11" parent="LevelGeo" instance=ExtResource("16_xmy2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, -1)
+
+[node name="ObstacleCorner12" parent="LevelGeo" instance=ExtResource("16_xmy2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1)
 
 [node name="ObstacleCorner2" parent="LevelGeo" instance=ExtResource("16_xmy2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1)
@@ -582,10 +726,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.625, -5)
 
 [node name="FloorFlat4x4n" parent="LevelGeo" instance=ExtResource("17_vfy0a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.125, 1)
-
-[node name="FloorFlat4x4n2" parent="LevelGeo" instance=ExtResource("17_vfy0a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.125, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.125, 1)
 
 [node name="Backwall" type="StaticBody3D" parent="LevelGeo"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -4, 0.125, 1)
@@ -643,11 +784,29 @@ transform = Transform3D(1, -7.54979e-08, -1.50996e-07, 1.50996e-07, 0.5, -8.7422
 [node name="FloorFlat1x1n3" parent="LevelGeo" instance=ExtResource("9_w0vpo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.75, -4)
 
-[node name="ObstacleBlockRect9" parent="LevelGeo" instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect9" type="StaticBody3D" parent="LevelGeo"]
 transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82137e-15, -1, -8.74228e-08, 4.37114e-08, 1.75, 0.625, -6.5)
+physics_material_override = ExtResource("19_twpyg")
+metadata/_edit_group_ = true
 
-[node name="ObstacleBlockRect10" parent="LevelGeo" instance=ExtResource("12_vtwus")]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelGeo/ObstacleBlockRect9"]
+mesh = SubResource("ArrayMesh_2gcqp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelGeo/ObstacleBlockRect9"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.26, 0)
+shape = SubResource("BoxShape3D_iarw2")
+
+[node name="ObstacleBlockRect10" type="StaticBody3D" parent="LevelGeo"]
 transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82137e-15, -1, -8.74228e-08, 4.37114e-08, 1.75, 0.625, -5.5)
+physics_material_override = ExtResource("19_twpyg")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelGeo/ObstacleBlockRect10"]
+mesh = SubResource("ArrayMesh_2gcqp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelGeo/ObstacleBlockRect10"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.26, 0)
+shape = SubResource("BoxShape3D_iarw2")
 
 [node name="ObstacleBlockRect11" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(4.37114e-08, 0, -1, 0, 1, 0, -1, 0, -4.37114e-08, 1.75, -0.125, -4.5)
@@ -740,16 +899,100 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, -0.875, 2.75)
 transform = Transform3D(7.07107, 0, 7.07107, 0, 10, 0, -7.07107, 0, 7.07107, -0.125, -0.375, 0)
 mesh = SubResource("ArrayMesh_7t8su")
 
+[node name="EyeCube029" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(-4.27193e-08, 1, -3.78551e-08, -2.18557e-08, -3.78552e-08, -1, -1, -4.27193e-08, 2.18557e-08, -4.04269, 1.125, -1.5624)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube036" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(-5.24537e-08, 1, -5.24537e-08, 0, -4.37114e-08, -1.2, -1.2, -4.37114e-08, 2.29282e-15, -4.04269, 1.375, -3.6874)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube030" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(-2.18557e-08, 1, -2.18557e-08, 0, -4.37114e-08, -0.5, -0.5, -4.37114e-08, 9.55343e-16, -4.04269, 1.375, -0.5624)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube045" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(0.5, 0, 0, 0, -4.37114e-08, -0.5, 0, 1, -2.18557e-08, 2.08231, 0, -4.0624)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube046" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(0.353553, 0.707107, -1.54543e-08, 0, -4.37114e-08, -0.5, -0.353553, 0.707107, -1.54543e-08, -0.16769, 1.875, -6.8124)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube047" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(0.353553, -0.707107, 1.54543e-08, 0, -4.37114e-08, -0.5, 0.353553, 0.707107, -1.54543e-08, -0.79269, 1.125, -6.6874)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube034" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(-2.18557e-08, 1, -2.18557e-08, 0, -4.37114e-08, -0.5, -0.5, -4.37114e-08, 9.55343e-16, -4.04269, 0.75, -2.4374)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube035" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(-3.27835e-08, 1, -3.27835e-08, 0, -4.37114e-08, -0.75, -0.75, -4.37114e-08, 1.43301e-15, -4.04269, 1.625, -2.6874)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube031" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(-1.09278e-08, 0.5, -1.09278e-08, 0, -2.18557e-08, -0.25, -0.25, -2.18557e-08, 4.77671e-16, -4.04269, 0.75, -0.1874)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube032" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(-1.09278e-08, 0.5, -1.09278e-08, 0, -2.18557e-08, -0.25, -0.25, -2.18557e-08, 4.77671e-16, -4.04269, 2, 0.1876)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube033" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(-1.09278e-08, 0.5, -1.09278e-08, 0, -2.18557e-08, -0.25, -0.25, -2.18557e-08, 4.77671e-16, -4.04269, 1.75, -1.1874)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube037" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(-1.09278e-08, 0.5, -1.09278e-08, 0, -2.18557e-08, -0.25, -0.25, -2.18557e-08, 4.77671e-16, -4.04269, 1.5, -2.0624)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube038" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(-1.09278e-08, 0.5, -1.09278e-08, 0, -2.18557e-08, -0.25, -0.25, -2.18557e-08, 4.77671e-16, -4.04269, 2, -1.8124)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube039" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(-1.09278e-08, 0.5, -1.09278e-08, 0, -2.18557e-08, -0.25, -0.25, -2.18557e-08, 4.77671e-16, -4.04269, 0.625, -0.8124)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube040" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(-1.09278e-08, 0.5, -1.09278e-08, 0, -2.18557e-08, -0.25, -0.25, -2.18557e-08, 4.77671e-16, -4.04269, 1, -3.0624)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube043" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(-1.09278e-08, 0.5, -1.09278e-08, 0, -2.18557e-08, -0.25, -0.25, -2.18557e-08, 4.77671e-16, -4.04269, 0.625, -3.4374)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube048" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(-1.09278e-08, 0.5, -1.09278e-08, 0, -2.18557e-08, -0.25, -0.25, -2.18557e-08, 4.77671e-16, 4.45731, -0.75, -3.6874)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube049" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(-1.09278e-08, 0.5, -1.09278e-08, 0, -2.18557e-08, -0.25, -0.25, -2.18557e-08, 4.77671e-16, 4.45731, -0.75, -4.0624)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube044" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(-1.09278e-08, 0.5, -1.09278e-08, 0, -2.18557e-08, -0.25, -0.25, -2.18557e-08, 4.77671e-16, -4.04269, 2, -3.3124)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube041" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(-1.09278e-08, 0.5, -1.09278e-08, 0, -2.18557e-08, -0.25, -0.25, -2.18557e-08, 4.77671e-16, -4.04269, 2, -4.3124)
+mesh = SubResource("ArrayMesh_88186")
+
+[node name="EyeCube042" type="MeshInstance3D" parent="LevelGeo"]
+transform = Transform3D(-1.09278e-08, 0.5, -1.09278e-08, 0, -2.18557e-08, -0.25, -0.25, -2.18557e-08, 4.77671e-16, -4.04269, 1.5, -4.6874)
+mesh = SubResource("ArrayMesh_88186")
+
 [node name="Lights" type="Node3D" parent="."]
 
 [node name="SpinLight" type="Node3D" parent="Lights"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 5, -3.5)
+transform = Transform3D(-3.78552e-08, -0.5, -0.866025, -2.18557e-08, 0.866025, -0.5, 1, 0, -4.37114e-08, -0.5, 5, -3.5)
 metadata/_edit_group_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Lights/SpinLight"]
 script = ExtResource("4_c28ta")
 speed = 0.8
-maxRotation = 360.0
+maxRotation = 260.0
 reverseDir = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight/StaticBody3D"]
@@ -769,13 +1012,17 @@ mesh = SubResource("CylinderMesh_fxdi4")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight/StaticBody3D/X-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight/StaticBody3D/X-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
@@ -788,13 +1035,17 @@ mesh = SubResource("CylinderMesh_8ouma")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight/StaticBody3D/Y-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight/StaticBody3D/Y-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
@@ -807,13 +1058,17 @@ mesh = SubResource("CylinderMesh_qtq50")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight/StaticBody3D/Z-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight/StaticBody3D/Z-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
@@ -824,7 +1079,7 @@ metadata/_edit_group_ = true
 [node name="StaticBody3D" type="StaticBody3D" parent="Lights/SpinLight2"]
 script = ExtResource("4_c28ta")
 speed = 0.3
-maxRotation = 360.0
+maxRotation = 70.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight2/StaticBody3D"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.25, -0.25, 0)
@@ -843,13 +1098,17 @@ mesh = SubResource("CylinderMesh_fxdi4")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight2/StaticBody3D/X-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight2/StaticBody3D/X-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
@@ -862,13 +1121,17 @@ mesh = SubResource("CylinderMesh_8ouma")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight2/StaticBody3D/Y-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight2/StaticBody3D/Y-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
@@ -881,13 +1144,17 @@ mesh = SubResource("CylinderMesh_qtq50")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight2/StaticBody3D/Z-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight2/StaticBody3D/Z-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
@@ -898,7 +1165,7 @@ metadata/_edit_group_ = true
 [node name="StaticBody3D" type="StaticBody3D" parent="Lights/SpinLight3"]
 script = ExtResource("4_c28ta")
 speed = 0.5
-maxRotation = 360.0
+maxRotation = 160.0
 reverseDir = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight3/StaticBody3D"]
@@ -918,13 +1185,19 @@ mesh = SubResource("CylinderMesh_fxdi4")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight3/StaticBody3D/X-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
+light_energy = 2.0
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight3/StaticBody3D/X-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
+light_energy = 2.0
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
@@ -937,13 +1210,17 @@ mesh = SubResource("CylinderMesh_8ouma")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight3/StaticBody3D/Y-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight3/StaticBody3D/Y-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
@@ -956,13 +1233,17 @@ mesh = SubResource("CylinderMesh_qtq50")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight3/StaticBody3D/Z-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight3/StaticBody3D/Z-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
@@ -973,6 +1254,7 @@ metadata/_edit_group_ = true
 [node name="StaticBody3D" type="StaticBody3D" parent="Lights/SpinLight4"]
 script = ExtResource("4_c28ta")
 speed = 0.3
+maxRotation = 90.0
 reverseDir = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight4/StaticBody3D"]
@@ -992,13 +1274,17 @@ mesh = SubResource("CylinderMesh_fxdi4")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight4/StaticBody3D/X-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight4/StaticBody3D/X-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
@@ -1011,13 +1297,17 @@ mesh = SubResource("CylinderMesh_8ouma")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight4/StaticBody3D/Y-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight4/StaticBody3D/Y-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
@@ -1030,12 +1320,28 @@ mesh = SubResource("CylinderMesh_qtq50")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight4/StaticBody3D/Z-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight4/StaticBody3D/Z-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
+light_color = Color(0.94, 0.2444, 0.464673, 1)
 spot_range = 30.0
+spot_attenuation = 0.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
+
+[node name="FloorFlat1x1n" parent="." instance=ExtResource("9_w0vpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 2)
+
+[node name="FloorFlat1x1n2" parent="." instance=ExtResource("9_w0vpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 1)
+
+[node name="FloorFlat1x1n3" parent="." instance=ExtResource("9_w0vpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+
+[node name="FloorFlat1x1n4" parent="." instance=ExtResource("9_w0vpo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, -1)
