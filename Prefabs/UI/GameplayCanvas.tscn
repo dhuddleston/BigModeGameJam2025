@@ -18,11 +18,9 @@ grow_vertical = 2
 [node name="Interface" type="Control" parent="." node_paths=PackedStringArray("menu", "victoryMenu", "strokeCounter", "parLabel", "levelLabel", "victoryLabel", "nextLevelButton")]
 process_mode = 3
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -30,27 +28,30 @@ size_flags_vertical = 3
 script = ExtResource("2_tyg4i")
 menu = NodePath("PauseMenu")
 victoryMenu = NodePath("LevelCompleteMenu")
-strokeCounter = NodePath("StrokeCount")
-parLabel = NodePath("Par")
+strokeCounter = NodePath("VBoxContainer/StrokeCount")
+parLabel = NodePath("VBoxContainer/Par")
 levelLabel = NodePath("PauseMenu/VBoxContainer/Title")
 victoryLabel = NodePath("LevelCompleteMenu/VBoxContainer/Title")
 nextLevelButton = NodePath("LevelCompleteMenu/VBoxContainer/NextLevelButton")
 
-[node name="StrokeCount" type="Label" parent="Interface"]
-layout_mode = 0
-offset_left = 484.0
-offset_top = -318.0
-offset_right = 572.0
-offset_bottom = -294.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Interface"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.892361
+anchor_right = 0.956597
+anchor_bottom = 0.0833333
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="StrokeCount" type="Label" parent="Interface/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("3_kxhs4")
 text = "Stroke:"
 
-[node name="Par" type="Label" parent="Interface"]
-layout_mode = 0
-offset_left = 484.0
-offset_top = -300.0
-offset_right = 572.0
-offset_bottom = -276.0
+[node name="Par" type="Label" parent="Interface/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("3_kxhs4")
 text = "Par:"
 
