@@ -48,9 +48,9 @@ func _on_exit_level_button_pressed():
 	get_tree().change_scene_to_file(Global.mainMenu)
 
 func _on_next_level_button_pressed():
-	if Global.currentLevel == Global.levels.size():
-		return _on_exit_level_button_pressed()
 	Global.currentLevel += 1
+	if Global.currentLevel >= Global.levels.size():
+		return _on_exit_level_button_pressed()
 	Global.furthestLevel = maxi(Global.currentLevel, Global.furthestLevel)
 	get_tree().change_scene_to_file(Global.levels[Global.currentLevel].path)
 
