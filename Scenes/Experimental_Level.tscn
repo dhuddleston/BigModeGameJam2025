@@ -1,10 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://baeg468m0tlym"]
+[gd_scene load_steps=16 format=3 uid="uid://baeg468m0tlym"]
 
+[ext_resource type="PackedScene" uid="uid://cf1x8kiwnxcbe" path="res://Prefabs/UI/GameplayCanvas.tscn" id="1_6ppua"]
 [ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="1_gqeqf"]
 [ext_resource type="PhysicsMaterial" uid="uid://cfru8dkauad3i" path="res://PhysMats/ground_standard.tres" id="2_17xpp"]
-[ext_resource type="Material" uid="uid://brk32xxt11xlq" path="res://Shaders/pixelate.tres" id="3_hw4nm"]
-[ext_resource type="Material" uid="uid://dhx4ofxlsc56i" path="res://Shaders/quantize.tres" id="4_iu7kv"]
-[ext_resource type="Material" uid="uid://c0eyq16e63ikx" path="res://Shaders/dither.tres" id="5_kf5eo"]
 [ext_resource type="PackedScene" uid="uid://cyeckytrn2v3p" path="res://Prefabs/Gameplay/player_controller_fab.tscn" id="6_4xod5"]
 [ext_resource type="PackedScene" uid="uid://crm8xscewxoj7" path="res://Prefabs/Gameplay/goal_tile.tscn" id="7_a18g1"]
 [ext_resource type="PackedScene" uid="uid://uuu0lldfmxi2" path="res://Prefabs/Floors/Flat/FloorFlat4x4.tscn" id="8_yskgx"]
@@ -34,33 +32,7 @@ roughness = 0.0
 
 [node name="BallTestScene" type="Node3D"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Pixelate" type="ColorRect" parent="CanvasLayer"]
-visible = false
-material = ExtResource("3_hw4nm")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Palette Quantize" type="ColorRect" parent="CanvasLayer"]
-visible = false
-material = ExtResource("4_iu7kv")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Palette Dither" type="ColorRect" parent="CanvasLayer"]
-material = ExtResource("5_kf5eo")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Canvas" parent="." instance=ExtResource("1_6ppua")]
 
 [node name="PlayerController" parent="." instance=ExtResource("6_4xod5")]
 
