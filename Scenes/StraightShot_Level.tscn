@@ -719,7 +719,7 @@ transform = Transform3D(-0.3264, 0.194339, -0.925037, -0.520887, 0.779652, 0.347
 [node name="Canvas" parent="." instance=ExtResource("1_6txyj")]
 
 [node name="PlayerController" parent="." instance=ExtResource("9_og2bu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -3.25, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -2.5, 4)
 baseLightRange = 0.4
 maxLightRange = 0.4
 
