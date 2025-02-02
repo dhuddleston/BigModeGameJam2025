@@ -11,18 +11,14 @@ var spinReady = true
 func _physics_process(delta):
 	if !spinReady and Global.power == 0:
 		spinReady = true
-		print("ready")
 	if spinReady and Global.power > 0:
 		spinReady = false
-		print("started")
 		remainingRotation = lerp(deg_to_rad(minRotation), deg_to_rad(maxRotation), Global.power)
-		print(deg_to_rad(minRotation),", ", deg_to_rad(maxRotation))
 	if(remainingRotation > 0):
 		var step = delta * speed
 		if step > remainingRotation:
 			step = remainingRotation
 			remainingRotation = 0
-			print("last")
 		else:
 			remainingRotation -= step
 		var dir = -1 if reverseDir else 1
