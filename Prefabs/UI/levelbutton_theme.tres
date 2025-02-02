@@ -1,4 +1,7 @@
-[gd_resource type="Theme" format=3 uid="uid://pby0q1gruyc0"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://pby0q1gruyc0"]
+
+[ext_resource type="FontFile" uid="uid://cx4irp8g5bpmm" path="res://Fonts/Rockboxcond12.ttf" id="1_5bcag"]
 
 [resource]
-default_font_size = 24
+default_font = ExtResource("1_5bcag")
+default_font_size = 48

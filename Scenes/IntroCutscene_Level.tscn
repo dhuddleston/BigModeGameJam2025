@@ -1,0 +1,169 @@
+[gd_scene load_steps=16 format=4 uid="uid://bjeb1hkc0h3wn"]
+
+[ext_resource type="PackedScene" uid="uid://cf1x8kiwnxcbe" path="res://Prefabs/UI/GameplayCanvas.tscn" id="1_3o7bl"]
+[ext_resource type="Script" path="res://Scripts/player_controller.gd" id="2_ua0e2"]
+[ext_resource type="PhysicsMaterial" uid="uid://bjqrehal88572" path="res://PhysMats/ball.tres" id="3_nny83"]
+[ext_resource type="Material" uid="uid://ceyythc7ngh4v" path="res://Materials/BallMaterial.tres" id="4_4pgtp"]
+[ext_resource type="Texture2D" uid="uid://41wkn78onipe" path="res://Textures/PowerArrow.png" id="5_jm0ui"]
+[ext_resource type="Material" uid="uid://be0w0a33lrpw4" path="res://Materials/IndicatorMat.tres" id="6_fenuh"]
+[ext_resource type="PackedScene" uid="uid://crm8xscewxoj7" path="res://Prefabs/Gameplay/goal_tile.tscn" id="7_wutgt"]
+[ext_resource type="AudioStream" uid="uid://dxrtgx7cuo1v8" path="res://Sounds/Intro/Rain_10s.wav" id="8_qfgig"]
+[ext_resource type="PackedScene" uid="uid://uuu0lldfmxi2" path="res://Prefabs/Floors/Flat/FloorFlat4x4.tscn" id="9_t5rvk"]
+[ext_resource type="PackedScene" uid="uid://e8rexjmxsd0w" path="res://Prefabs/Floors/Flat/FloorFlat1x1.tscn" id="10_grgqj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0ujoa"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_j154n"]
+_surfaces = [{
+"aabb": AABB(-0.1, -0.1, -0.1, 0.2, 0.2, 0.2),
+"format": 34896613377,
+"index_count": 144,
+"index_data": PackedByteArray("AAACAAEAAwAFAAQAAAAEAAYABwAFAAEACAABAAkACAALAAoABwAMAAUACAAKAAwACQANAAsAAQAIAAcAAQADAAAAAQACAA0AAQAFAAMADQAJAAEAAgAAAA4ADQAOAA8AEAAEABEABAASABEABAAQABMABAAAAAMABAAFABIAEwAGAAQAEwAUAA4AFQAWABEAFwAYABYAFQARAAwADAAXABUADAAHAAgADAARABIADAASAAUAFwAMAAoAFwAKAAsAFAATABYAFgAZABQAFgAQABEAFgATABAAFgAVABcAGQAWABgACwAPABkACwAYABcACwANAA8ACwAIAAkAGQAYAAsADgAUABkADgANAAIADgAAAAYADgAGABMAGQAPAA4A"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 26,
+"vertex_data": PackedByteArray("5ckZNhk2AAD///9//38AAIHafSX/fwAAgdr/f30lAAD/f/9/AAAAAOXJ5ckZNgAA/399JX0lAACB2oHa/38AAOXJ5cnlyQAAgdr/f4HaAAD/f4HagdoAAP9//3///wAA/3////9/AADlyRk25ckAAP9/AAD/fwAA/399JYHaAAB9Jf9/fSUAABk25ckZNgAA/3+B2n0lAAAZNhk2GTYAAH0lfSX/fwAAfSWB2v9/AAAAAP9//38AABk25cnlyQAAfSX/f4HaAAAZNhk25ckAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8x0xs"]
+resource_name = "Root Scene_Cube"
+_surfaces = [{
+"aabb": AABB(-0.1, -0.1, -0.1, 0.2, 0.2, 0.2),
+"attribute_data": PackedByteArray("/78AAP+3/wf/v/8H/8f/B/+//wf/x/8P/8cAAP+/AAD/r/8H/68AAP+v/w//t/8P/68AAP+v/wf/t/8H/7cAAP+3/wf/vwAA/7//B/+3AAD/vwAA/7cAAP+//w//t/8H/7//D/+3AAD/t/8H/7f/D/+//w//twAA/6//D/+v/wf/v/8P/8f/D/+//wf/t/8P/7f/B/+3/w//r/8P/7//D/+v/wf/r/8P/78AAP/HAAD/twAA/8f/B/+//w//v/8H/7f/D/+vAAD/t/8P"),
+"format": 34896613399,
+"index_count": 144,
+"index_data": PackedByteArray("AAACAAEAAwAFAAQABgAEAAcACAAJAAEACgABAAsADAAOAA0ADwAQAAkAEQASABAAEwAUAA4AAQAKAAgAAQAVAAAAAQACABYAAQAJABUAFgALAAEAAgAYABcAFAAXABkAGgAEABsABAAcABsABAAaAB0ABAAGAAMABAAFABwAHQAHAAQAHgAfABcAIAAiACEAIwAkACIAJQAmABAAEAAnACUAEAAPABEAEAAmACgAEAAoAAkAJwAQABIAKQANAA4AKgArACIAIgAsACoAIgAtACEAIgArAC0AIgAgACMALAAiACQADgAvAC4ADgAwACkADgAUAC8ADgAMABMALgAwAA4AFwAfADEAFwAUAAIAFwAYADIAFwAyAB4AMQAZABcA"),
+"material": ExtResource("4_4pgtp"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 51,
+"vertex_data": PackedByteArray("5ckZNhk2bfj///9//39U1YHafSX/f/zFgdr/f30l////f/9/AAD//+XJ5ckZNmvj5ckZNhk2a+P/f30lfSX/34Hagdr/f/zF5cnlyRk2J/TlyeXJ5cnnu4Ha/3+B2vzF5cnlyeXJ28T/f4Hagdr8xf9//3////+/gdqB2v9/qun/f////39U1eXJ5cnlyaDe/3+B2oHa/MWB2v9/gdr8xeXJGTblyQqqgdr/f30lqunlyRk25clr1v9/AAD/f/+/5ckZNhk24t//f30lgdr/n30l/399Jf//GTblyRk2a+P/f4HafSX/3xk2GTYZNmvjGTYZNhk24t99JX0l/3/8xX0lgdr/f6rpGTblyRk2FO8AAP9//3///xk25cnlyeTofSX/f4Ha//99JYHa/3/8xRk25ckZNjXbGTblyeXJRLX/f4HafSWq6Rk25cnlyZHMfSV9Jf9/qukZNhk2GTYU7xk2GTblyeTofSX/f30l//8ZNhk25cnbxP9/fSWB2vzFfSX/f4Ha/MUZNhk25ckKqv9/fSV9Jf/fM6V/R6qqVFX/HAFGgdr/f////38226N6WwU2WwAA/38AxgBjZr5Mn+C3fXT+nABjl7bKfP6c/pz/f/9/BLX1laqqqqqdqHqN/pz+nP6cAGOoJzs8BLX6SjyJI1MAAP9/nRGGVQAA/3///3ylo/rIpP///3/IJFuFeCqckf45/pwI6gQ1pehZRv8//3/s7Qckglr/f/6cAMYfpgHM7ZIGuQS1BLX+fBiz+koJaqU5pWj4W+1t//98pWdJNIMAYwBjAGP+nMNDqKcAAP9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_j154n")
+
+[sub_resource type="Environment" id="Environment_wmfqj"]
+background_mode = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0riom"]
+material = ExtResource("6_fenuh")
+top_radius = 0.12
+bottom_radius = 0.12
+height = 0.02
+
+[node name="BallTestScene" type="Node3D"]
+
+[node name="Canvas" parent="." instance=ExtResource("1_3o7bl")]
+
+[node name="PlayerController" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+script = ExtResource("2_ua0e2")
+baseLightRange = 1.0
+maxLightRange = 3.0
+
+[node name="Checkpoint" type="Node3D" parent="PlayerController"]
+
+[node name="GolfBall" type="RigidBody3D" parent="PlayerController"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+axis_lock_linear_x = true
+mass = 2.0
+physics_material_override = ExtResource("3_nny83")
+gravity_scale = 0.704
+linear_damp_mode = 1
+linear_damp = 0.4
+angular_damp_mode = 1
+angular_damp = 0.4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerController/GolfBall"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+shape = SubResource("SphereShape3D_0ujoa")
+
+[node name="BallMesh" type="MeshInstance3D" parent="PlayerController/GolfBall"]
+transform = Transform3D(0.525, 0, 0, 0, 0.525, 0, 0, 0, 0.525, 0, 0, 0)
+mesh = SubResource("ArrayMesh_8x0xs")
+skeleton = NodePath("../../..")
+
+[node name="BallLight" type="OmniLight3D" parent="PlayerController/GolfBall"]
+light_size = 3.0
+light_specular = 0.0
+distance_fade_begin = 1.0
+distance_fade_length = 1.0
+omni_range = 4.0
+omni_attenuation = 0.0
+
+[node name="CameraRoot" type="Node3D" parent="PlayerController"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="CameraArm" type="Node3D" parent="PlayerController/CameraRoot"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="PlayerController/CameraRoot/CameraArm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+environment = SubResource("Environment_wmfqj")
+
+[node name="PowerVisualizer" type="Node3D" parent="PlayerController/CameraRoot"]
+transform = Transform3D(1.02952, 0, 0, 0, 1.02952, 0, 0, 0, 1.02952, -0.00393105, -0.05, -0.0930333)
+visible = false
+
+[node name="Sprite3D" type="Sprite3D" parent="PlayerController/CameraRoot/PowerVisualizer"]
+transform = Transform3D(0.6, 0, 0, 0, -2.08022e-07, 1, 0, -4.759, -4.37114e-08, 0.00372791, 0.00776438, -1.53309)
+visible = false
+no_depth_test = true
+texture_filter = 0
+render_priority = 110
+texture = ExtResource("5_jm0ui")
+
+[node name="ReadyVisualizer" type="MeshInstance3D" parent="PlayerController/CameraRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+visible = false
+mesh = SubResource("CylinderMesh_0riom")
+
+[node name="Geometry" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.5)
+
+[node name="GoalTile" parent="Geometry" instance=ExtResource("7_wutgt")]
+transform = Transform3D(-4.37114e-08, -3.09639e-16, -1, 0.173648, 0.984808, -7.5904e-09, 0.984808, -0.173648, -4.30473e-08, 2, -2.57883, -7.94936)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Geometry/GoalTile"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0.847, 0.5)
+light_size = 0.8
+shadow_enabled = true
+omni_range = 1.0
+
+[node name="Rain" type="AudioStreamPlayer3D" parent="Geometry/GoalTile"]
+transform = Transform3D(-4.37114e-08, 0.173648, 0.984808, 8.88178e-16, 0.984808, -0.173648, -1, -7.5904e-09, -4.30473e-08, 0.543045, 0.492003, 0.5)
+stream = ExtResource("8_qfgig")
+volume_db = 25.946
+unit_size = 1.0
+autoplay = true
+max_distance = 8.0
+doppler_tracking = 2
+
+[node name="Rain2" type="AudioStreamPlayer3D" parent="Geometry/GoalTile"]
+transform = Transform3D(-4.37114e-08, 0.173648, 0.984808, 8.88178e-16, 0.984808, -0.173648, -1, -7.5904e-09, -4.30473e-08, 0.543045, 0.492003, 0.5)
+stream = ExtResource("8_qfgig")
+volume_db = 25.946
+unit_size = 1.0
+autoplay = true
+doppler_tracking = 2
+
+[node name="FloorFlat4x4n" parent="Geometry" instance=ExtResource("9_t5rvk")]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 1.5, -2.05788, -4.99494)
+visible = false
+
+[node name="FloorFlat4x4n2" parent="Geometry" instance=ExtResource("9_t5rvk")]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 1.5, -1.36329, -1.0557)
+visible = false
+
+[node name="FloorFlat4x4n3" parent="Geometry" instance=ExtResource("9_t5rvk")]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 1.5, -0.668697, 2.88353)
+visible = false
+
+[node name="FloorFlat1x1n" parent="Geometry" instance=ExtResource("10_grgqj")]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 5.67061, 0, -0.965926, 1.51943, 1, -2.5, -7.55)
+visible = false
+
+[editable path="Canvas"]
