@@ -62,6 +62,8 @@ announcer = NodePath("Announcer")
 [node name="GolfBall" type="RigidBody3D" parent="."]
 physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+collision_layer = 3
+collision_mask = 3
 mass = 2.0
 physics_material_override = ExtResource("2_jcgso")
 continuous_cd = true

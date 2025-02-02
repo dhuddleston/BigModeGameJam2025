@@ -56,22 +56,25 @@ height = 0.02
 
 [node name="BallTestScene" type="Node3D"]
 
-[node name="Canvas" parent="." instance=ExtResource("1_3o7bl")]
-
-[node name="PlayerController" type="Node3D" parent="."]
+[node name="PlayerController" type="Node3D" parent="." node_paths=PackedStringArray("ballSfxPlayer", "globalSfxPlayer", "announcer")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
 script = ExtResource("2_ua0e2")
 baseLightRange = 1.0
 maxLightRange = 3.0
+ballSfxPlayer = NodePath("GolfBall/BallSfxPlayer")
+globalSfxPlayer = NodePath("GlobalAudioPlayer")
+announcer = NodePath("Announcer")
 
 [node name="Checkpoint" type="Node3D" parent="PlayerController"]
 
 [node name="GolfBall" type="RigidBody3D" parent="PlayerController"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 axis_lock_linear_x = true
 mass = 2.0
 physics_material_override = ExtResource("3_nny83")
-gravity_scale = 0.704
+gravity_scale = 0.626
+continuous_cd = true
 linear_damp_mode = 1
 linear_damp = 0.4
 angular_damp_mode = 1
@@ -94,6 +97,8 @@ distance_fade_length = 1.0
 omni_range = 4.0
 omni_attenuation = 0.0
 
+[node name="BallSfxPlayer" type="AudioStreamPlayer3D" parent="PlayerController/GolfBall"]
+
 [node name="CameraRoot" type="Node3D" parent="PlayerController"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
@@ -110,7 +115,6 @@ visible = false
 
 [node name="Sprite3D" type="Sprite3D" parent="PlayerController/CameraRoot/PowerVisualizer"]
 transform = Transform3D(0.6, 0, 0, 0, -2.08022e-07, 1, 0, -4.759, -4.37114e-08, 0.00372791, 0.00776438, -1.53309)
-visible = false
 no_depth_test = true
 texture_filter = 0
 render_priority = 110
@@ -120,6 +124,12 @@ texture = ExtResource("5_jm0ui")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 visible = false
 mesh = SubResource("CylinderMesh_0riom")
+
+[node name="GlobalAudioPlayer" type="AudioStreamPlayer" parent="PlayerController"]
+
+[node name="Announcer" type="AudioStreamPlayer" parent="PlayerController"]
+
+[node name="Canvas" parent="." instance=ExtResource("1_3o7bl")]
 
 [node name="Geometry" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.5)
@@ -137,7 +147,7 @@ omni_range = 1.0
 transform = Transform3D(-4.37114e-08, 0.173648, 0.984808, 8.88178e-16, 0.984808, -0.173648, -1, -7.5904e-09, -4.30473e-08, 0.543045, 0.492003, 0.5)
 stream = ExtResource("8_qfgig")
 volume_db = 25.946
-unit_size = 1.0
+unit_size = 3.0
 autoplay = true
 max_distance = 8.0
 doppler_tracking = 2
@@ -146,7 +156,7 @@ doppler_tracking = 2
 transform = Transform3D(-4.37114e-08, 0.173648, 0.984808, 8.88178e-16, 0.984808, -0.173648, -1, -7.5904e-09, -4.30473e-08, 0.543045, 0.492003, 0.5)
 stream = ExtResource("8_qfgig")
 volume_db = 25.946
-unit_size = 1.0
+unit_size = 8.0
 autoplay = true
 doppler_tracking = 2
 
@@ -163,7 +173,15 @@ transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 
 visible = false
 
 [node name="FloorFlat1x1n" parent="Geometry" instance=ExtResource("10_grgqj")]
-transform = Transform3D(1, 0, 0, 0, 0.258819, 5.67061, 0, -0.965926, 1.51943, 1, -2.5, -7.55)
+transform = Transform3D(1, 0, 0, 0, 4.91756, 5.67061, 0, -18.3526, 1.51943, 1.00686, -2.57077, -7.76157)
+visible = false
+
+[node name="FloorFlat1x1n3" parent="Geometry" instance=ExtResource("10_grgqj")]
+transform = Transform3D(1, 0, 0, 0, 18.917, 1.69807, 0, -1.77419, 18.1051, 1.00686, 0.197807, -8.02123)
+visible = false
+
+[node name="FloorFlat1x1n2" parent="Geometry" instance=ExtResource("10_grgqj")]
+transform = Transform3D(1, 0, 0, 0, -4.17603, 5.86485, 0, -93.9164, -0.260787, 1.00686, -1.30894, 4.89495)
 visible = false
 
 [editable path="Canvas"]
