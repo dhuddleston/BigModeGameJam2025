@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf1x8kiwnxcbe"]
+[gd_scene load_steps=5 format=3 uid="uid://cf1x8kiwnxcbe"]
 
 [ext_resource type="Material" uid="uid://c0eyq16e63ikx" path="res://Shaders/dither.tres" id="1_eh86q"]
 [ext_resource type="Script" path="res://Scripts/interface.gd" id="2_tyg4i"]
+[ext_resource type="Theme" uid="uid://pby0q1gruyc0" path="res://Prefabs/UI/levelbutton_theme.tres" id="3_kxhs4"]
 [ext_resource type="Theme" uid="uid://s738mrqiyb1c" path="res://Prefabs/UI/ui_theme.tres" id="3_vcudb"]
 
 [node name="Canvas" type="CanvasLayer"]
@@ -41,6 +42,7 @@ offset_left = 484.0
 offset_top = -318.0
 offset_right = 572.0
 offset_bottom = -294.0
+theme = ExtResource("3_kxhs4")
 text = "Stroke:"
 
 [node name="Par" type="Label" parent="Interface"]
@@ -49,6 +51,7 @@ offset_left = 484.0
 offset_top = -300.0
 offset_right = 572.0
 offset_bottom = -276.0
+theme = ExtResource("3_kxhs4")
 text = "Par:"
 
 [node name="PauseMenu" type="Control" parent="Interface"]
