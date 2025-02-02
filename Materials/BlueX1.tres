@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bdubcejykstss"]
+
+[ext_resource type="Texture2D" uid="uid://v4skseh28qf0" path="res://Textures/BlueX1.png" id="1_pitpb"]
+
+[resource]
+albedo_texture = ExtResource("1_pitpb")
+metallic_specular = 0.0
+roughness = 0.0
+texture_filter = 0
