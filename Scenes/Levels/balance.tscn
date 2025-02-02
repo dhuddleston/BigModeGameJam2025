@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://4uvv6qqs87be"]
+[gd_scene load_steps=50 format=4 uid="uid://4uvv6qqs87be"]
 
 [ext_resource type="PackedScene" uid="uid://cf1x8kiwnxcbe" path="res://Prefabs/UI/GameplayCanvas.tscn" id="1_ys321"]
 [ext_resource type="PackedScene" uid="uid://cyeckytrn2v3p" path="res://Prefabs/Gameplay/player_controller_fab.tscn" id="2_67a3u"]
@@ -36,7 +36,7 @@ absorbent = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_ehw53"]
 size = Vector3(2, 0.25, 4)
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_1ryqu"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ji745"]
 _surfaces = [{
 "aabb": AABB(-0.005, 4.71862e-10, -1.49012e-10, 0.005, 0.005, 0.0025),
 "format": 34896613377,
@@ -66,9 +66,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("//8AAP//VNUAAAAA//9U1f//AAAAAFTVAAAAAAAAVNUAAAAA//8AgP///v///wCAAAD/////AID//wAA//8AgP///v8AAP+///8AAP///7///wAAAAD/v////v////+/AAAAAP////8AAP///////wAA//8AAP//AAAAAAAA//8AAP//AABU1f///v///1TV///+/wAAVNUAAP////9U1QAAAAAAAP//AAD//wAA//////7/AAD/////AAAAAP//qipU1aoqVNWqKlTVqipU1f9/////f////3////9/////fwAA/38AAP9/AAD/fwAA/z//f/8//3//P/9//z//f1TVqipU1aoqVNWqKlTVqir///9/////f////3////9/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_1ryqu")
+shadow_mesh = SubResource("ArrayMesh_ji745")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_01243"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_3uu1f"]
 _surfaces = [{
 "aabb": AABB(-0.5, 0, -0.5, 1, 0.25, 1),
 "format": 34896613377,
@@ -98,7 +98,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAD///9/49L//////3/j0v//AAAAAOPSAAAAAAAA49IAAAAA//8brf//AAD//xut//////9/G60AAP///38brf3//H/9//x//f/8f/3//H/9//p//f/6f/3/+n/9//p/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_01243")
+shadow_mesh = SubResource("ArrayMesh_3uu1f")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gi647"]
 points = PackedVector3Array(0.5, 0, -0.5, 0.5, -0.01, -0.5, 0.5, 0.25, 0, 0.5, 0.24, 0, -0.5, 0, -0.5, -0.5, -0.01, -0.5, -0.5, 0.25, 0, -0.5, 0.24, 0)
@@ -106,7 +106,7 @@ points = PackedVector3Array(0.5, 0, -0.5, 0.5, -0.01, -0.5, 0.5, 0.25, 0, 0.5, 0
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_478p8"]
 points = PackedVector3Array(0.5, 0, -0.5, 0.5, -0.01, -0.5, -0.5, 0.25, 0, -0.5, 0.24, 0, -0.5, 0, -0.5, -0.5, -0.01, -0.5, 0.5, 0.25, 0, 0.5, 0.24, 0)
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_5kjmw"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_mmtpt"]
 _surfaces = [{
 "aabb": AABB(-0.5, 0, -0.5, 1, 0.5, 1),
 "format": 34896613377,
@@ -136,12 +136,12 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAD/////49L//wAAAADj0gAAAAAAAOPS////////49L///9/////f////3////9/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_5kjmw")
+shadow_mesh = SubResource("ArrayMesh_mmtpt")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ksmsg"]
 points = PackedVector3Array(0, 0, 1, 1, 0, 1, 0, 0.5, 0, 1, 0.5, 0, 0, -0.01, 1, 1, -0.01, 1, 0, 0.49, 0, 1, 0.49, 0)
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_i1671"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_hendw"]
 _surfaces = [{
 "aabb": AABB(-0.5, 0, -0.5, 1, 1e-05, 1),
 "format": 34896613377,
@@ -171,11 +171,11 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAAAAP///7///wAA////v///AAAAAP+/AAAAAAAA/7/+//9//v//f/7//3////9/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_i1671")
+shadow_mesh = SubResource("ArrayMesh_hendw")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eu50g"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_r8d2o"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ncotn"]
 _surfaces = [{
 "aabb": AABB(-0.04, 0, -0.015, 0.0575, 0.015, 0.03),
 "format": 34896613377,
@@ -205,7 +205,21 @@ _surfaces = [{
 "vertex_data": PackedByteArray("mt5VVVS1/7+a3lVVqkr/v7zpVVWqSv+/vOlVVVS1/7+a3lVVVLVU1Zre/3+qSlTVmt5VVapKVNWa3v9/VLVU1bzp/39Utf//vOn/f6pK//+a3v9/qkr//5re/39Utf//vOlVVVS1VNW86VVVqkpU1bzp/3+qSlTVvOn/f1S1VNW86QAAVNUKwfSmAABU1QrB9KYAAKqqCsG86QAA//8KwbzpAAD///+/vOkAAFTV/7+86aoqVNX/v7zpqir///+/9KYAAKqq/7/0plVVVNX/v/SmVVWqqv+/9KYAAFTV/7/0plVVVNVTwrzpqipU1VPC9KZVVaqqU8K86aoq//9TwrzpqipU1ePy9KYAAKqq6/L0plVVqqrt8rzpAABU1ePyvOmqKv//KI30pgAAVNVNjrzpAAD//xuN9KZVVVTVkY6xkAAAVNUmwixkAABU1SbCLGQAAKqqJsKxkAAA//8mwrGQAAD///+/sZAAAFTV/7+xkKoqVNX/v7GQqir///+/LGQAAKqq/78sZFVVVNX/vyxkVVWqqv+/LGQAAFTV/78sZFVVVNXBxLGQqir//8HEsZCqKlTVwcQsZFVVqqrBxLGQqipU1RztLGQAAKqqMe0sZFVVqqo47bGQAABU1RvtsZCqKv//A5MsZAAAVNVglLGQAAD//+OSLGRVVVTV35SxkAAAqiomwixkAABVVSbCLGQAAKoqJsKxkAAAAAAmwrGQAACqKv+/sZAAAAAA/7+xkKoqAAD/v7GQqiqqKv+/LGQAAKoq/78sZFVVVVX/vyxkVVWqKv+/LGQAAFVV/78sZFVVqipuwLGQqiqqKm7AsZCqKgAAbsAsZFVVVVVuwLGQqioAABztLGQAAKoqMe0sZFVVqio47bGQAAAAABvtsZCqKqoqA5MsZAAAVVVglLGQAACqKuOSLGRVVVVV35S86QAAqioKwfSmAACqKgrBvOkAAAAACsH0pgAAVVUKwbzpAACqKv+/vOkAAAAA/7+86aoqAAD/v7zpqiqqKv+/9KYAAKoq/7/0plVVVVX/v/SmVVWqKv+/9KYAAFVV/7/0plVVqio7wLzpqiqqKjvAvOmqKgAAO8D0plVVVVU7wLzpqioAAOPy9KYAAKoq6/L0plVVqirt8rzpAAAAAOPyvOmqKqoqKI30plVVVVWRjvSmAABVVU2OvOkAAKoqG40sZAAAVJX/vwAAAACqav+/LGQAAKpq/78AAAAAVJX/vwAAAACqav+/AABVVVSV/78AAFVVqmr/vwAAAABUlf+/AABVVVSV/78sZFVVVJX/vyxkVVWqav+/AABVVapq/78sZAAAqmr//wAAVVWqav//LGRVVapq//8AAAAAqmr//yxkVVVUlQCAAAAAAFSVAIAsZAAAVJUAgAAAVVVUlQCAWMgAAP+/BcDIQgAAVVUCwFjIAAD/PxHAyEIAAKqqEcBYyAAA/79kwFjIAAD/P2TANr1U1VVVZMA2vVTVqqpkwMhCAABVVefCLGRU1aqq58IsZFTVVVXnwshCAACqqufCLGRU1aqq/782vVTVVVX/vyxkVNVVVf+/Nr1U1aqq/79YyAAA/z/3/SxkVNVVVfX9Nr1U1VVV+f3IQgAAVVX0/VjIAAD/v+WELGRU1aqq5oTIQgAAqqrnhDa9VNWqquaEvOlVVapK//+a3v9/qkr//7zp/3+qSv//mt5VVapK//+86f9/VLUAgJreVVVUtQCAvOlVVVS1AICa3v9/VLUAgHnT//+qqibCmt6qqqqqJsJ50///VJUmwpreqqpUlSbCWMiqqlSVJsJ50///qqomwnnT//9UlSbCWMiqqqqqJsJ50///VJX+f3nT//9Ulf5/edP//6qq/n950///qqr+f3nT//9Ulf//edP//1SV//+a3qqqVJX//1jIqqpUlf//WMiqqqqqAIB50///qqoAgHnT//+qqv5/mt6qqqqqAIB50///qmomwpreqqqqaibCedP//1VVJsKa3qqqVVUmwljIqqpVVSbCedP//6pqJsJ50///VVUmwljIqqqqaibCedP//1VV/n950///VVX+f3nT//+qav5/edP//6pq/n950///VVX//3nT//9VVf//mt6qqlVV//9YyKqqVVX//1jIqqqqagCAedP//6pqAIB50///qmr+f5reqqqqagCA//8AAKqq/79YyAAAVVX/v///AABVVf+/WMgAAKqq/7///wAAqqqawP//AABVVZrA3fSqqlVVmsDd9KqqqqqawDa9qqqqqv+/3fSqqlVV/782vaqqVVX/v930qqqqqv+/3fSqqlVV//9YyAAAVVX//za9qqpVVf////8AAFVV//9YyAAAqqoAgP//AACqqgCA3fSqqqqqAIA2vaqqqqoAgAAA/38AAP9/AAD/fwAA/39UVaqqVFWqqlRVqqpUVaqq/3//v/9//7//f/+//3//v6oqqiqqKqoqqiqqKqoqqiquD1yfrg9cn64PXJ+uD1yf/38AAP9/AAD/fwAA/38AAP9/////f////3////9///8/4W2HP+Fthz/hbYc/4W2H633JAUZ2XQhJdTcJ/38AAFl+LfT9efXU/3///5B559GGFAyphhQMqYYUDKmGFAyp/38AAP9/AAD/fwAA/38AAP9/////f////3////9///932CuJd9griXfYK4l32CuJ33tWA41y4AqfcHAM/38AAPl8K/Dhd33V/3///wp3GdENKXhrDSl4aw0peGsNKXhr/38AAP9/AAD/fwAA/38AAP9/////f////3////9///9w4OdWcODnVnDg51Zw4OdWH4So/HGNHvVfj47z/3///wWD0w8diIEq/38AAPSI5S5dH1BwXR9QcF0fUHBdH1Bw/38AAP9/AAD/fwAA/38AAP9/////f////3////9///806KBgNOigYDTooGA06KBgE4I1/riJofe1isf2/3///6WB0QtuhhcuAYYJK/9/AAAAAP9/AAD/fwAA/38AAP9//3////9/////f////3///////3////9/////f////3//f////3////9/////f////3////9/////f////3///+gFC30sAliE1AkVe+oE1IkolZQKKJWUCiiVlAoolZQK0JZd0tCWXdLQll3S0JZd0v///3////9/////f////38JgE/5P4Ad+dV/L/ligP34n9fcp5zVIadm1K+mxNhgqf+//7//v/+//7//v/+//7//f////3////9/////f///DKmGFAyphhQMqYYUDKmGFIaU8daGlPHWhpTx1oaU8db/f////3////9/////f////3///////3//f////3////9/////f////3////9///8MqYYUDKmGFAyphhQMqYYUhpTx1oaU8daGlPHWhpTx1v9/////f////3////9/////f///////f/9/////f////3////9/////f////3///wAA/38AAP9/AAD/fwAA/39JmaQMSZmkDEmZpAxJmaQM////f////3////9/////f/9/////f////3////9/////f////3////9/////f///")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_r8d2o")
+shadow_mesh = SubResource("ArrayMesh_ncotn")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_i1i2u"]
+_surfaces = [{
+"aabb": AABB(-0.005, 4.71862e-10, -1.49012e-10, 0.005, 0.005, 0.0025),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAACAAEAAwABAAIAAQAFAAQABAAAAAEABgACAAAAAAAEAAYAAQAHAAUAAQADAAcABwAGAAQABAAFAAcAAwAGAAcAAgAGAAMA"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAP//AAAAAAAA//8AAP//AAAAAAAAAAAAAAAAAAD///7///8AAAAA/////wAA///+/wAAAAAAAP//AAAAAA==")
+}]
+blend_shape_mode = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xgo0h"]
 resource_name = "Root Scene_Stair_004"
@@ -223,7 +237,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("//8AAP//VNUAAAAA//9U1f//AAAAAFTVAAAAAAAAVNUAAAAA//8AgP///v///wCAAAD/////AID//wAA//8AgP///v8AAP+///8AAP///7///wAAAAD/v////v////+/AAAAAP////8AAP///////wAA//8AAP//AAAAAAAA//8AAP//AABU1f///v///1TV///+/wAAVNUAAP////9U1QAAAAAAAP//AAD//wAA//////7/AAD/////AAAAAP//qipU1aoqVNWqKlTVqipU1f9/////f////3////9/////fwAA/38AAP9/AAD/fwAA/z//f/8//3//P/9//z//f1TVqipU1aoqVNWqKlTVqir///9/////f////3////9/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_1ryqu")
+shadow_mesh = SubResource("ArrayMesh_i1i2u")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_fxdi4"]
 material = ExtResource("24_yxfjd")
@@ -237,38 +251,54 @@ top_radius = 0.2
 bottom_radius = 0.2
 height = 0.55
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dj2v4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kqh81"]
 render_priority = 0
 shader = ExtResource("25_wmqij")
 shader_parameter/color = Color(1, 0.92549, 0.152941, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qtq50"]
-material = SubResource("ShaderMaterial_dj2v4")
+material = SubResource("ShaderMaterial_kqh81")
 top_radius = 0.2
 bottom_radius = 0.2
 height = 0.55
 
-[node name="Root" type="Node3D"]
+[node name="BalanceLevel" type="Node3D"]
 
 [node name="Canvas" parent="." instance=ExtResource("1_ys321")]
 
 [node name="PlayerController" parent="." instance=ExtResource("2_67a3u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.125, 1)
 maxLightRange = 2.0
 
-[node name="FloorFlat2x2n3" parent="." instance=ExtResource("3_c8hkr")]
+[node name="AmbientGolfMusic" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.398892, 1.29034, 1.06006)
+stream = ExtResource("26_85kk5")
+autoplay = true
+
+[node name="Rain" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.51141, 0.0603846, -3.43623)
+stream = ExtResource("27_xf04v")
+attenuation_model = 2
+volume_db = 12.609
+autoplay = true
+max_distance = 25.0
+doppler_tracking = 2
+
+[node name="LevelGeo" type="Node3D" parent="."]
+
+[node name="FloorFlat2x2n3" parent="LevelGeo" instance=ExtResource("3_c8hkr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1.25, 0)
 
-[node name="FloorFlat2x2n2" parent="." instance=ExtResource("3_c8hkr")]
+[node name="FloorFlat2x2n2" parent="LevelGeo" instance=ExtResource("3_c8hkr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.625, -6)
 
-[node name="FloorFlat2x2n4" parent="." instance=ExtResource("3_c8hkr")]
+[node name="FloorFlat2x2n4" parent="LevelGeo" instance=ExtResource("3_c8hkr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.625, -6)
 
-[node name="FloorFlat2x2n6" parent="." instance=ExtResource("3_c8hkr")]
+[node name="FloorFlat2x2n6" parent="LevelGeo" instance=ExtResource("3_c8hkr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.625, -6)
 
-[node name="Spinner" type="RigidBody3D" parent="."]
+[node name="Spinner" type="RigidBody3D" parent="LevelGeo"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -3.125)
 axis_lock_linear_x = true
 axis_lock_linear_y = true
@@ -284,788 +314,728 @@ script = ExtResource("4_c28ta")
 speed = 0.2
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Spinner"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelGeo/Spinner"]
 shape = SubResource("BoxShape3D_ehw53")
 
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="Spinner"]
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="LevelGeo/Spinner"]
 transform = Transform3D(400, 0, 0, 0, -1.74846e-05, 100, 0, -400, -4.37114e-06, 1, -0.125, 2)
 mesh = SubResource("ArrayMesh_45vwq")
 skeleton = NodePath("")
 
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="Spinner"]
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="LevelGeo/Spinner"]
 transform = Transform3D(400, 0, 0, 0, -1.74846e-05, 100, 0, -400, -4.37114e-06, 1, -0.125, 0)
 mesh = SubResource("ArrayMesh_45vwq")
 skeleton = NodePath("")
 
-[node name="LanternPole" parent="." instance=ExtResource("5_o33b5")]
+[node name="LanternPole" parent="LevelGeo" instance=ExtResource("5_o33b5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.875, -5.125)
 baseRange = 2.5
 maxRange = 2.5
 
-[node name="LanternPole2" parent="." instance=ExtResource("5_o33b5")]
+[node name="LanternPole2" parent="LevelGeo" instance=ExtResource("5_o33b5")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 0.5, -1)
 baseRange = 2.5
 maxRange = 2.5
 
-[node name="FloorFlat1x1n5" parent="." instance=ExtResource("9_w0vpo")]
+[node name="FloorFlat1x1n5" parent="LevelGeo" instance=ExtResource("9_w0vpo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 0.375, -3)
 
-[node name="FloorFlat1x1n6" parent="." instance=ExtResource("9_w0vpo")]
+[node name="FloorFlat1x1n6" parent="LevelGeo" instance=ExtResource("9_w0vpo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0.375, -3)
 
-[node name="FloorFlat1x1n7" parent="." instance=ExtResource("9_w0vpo")]
+[node name="FloorFlat1x1n7" parent="LevelGeo" instance=ExtResource("9_w0vpo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 0.375, -2)
 
-[node name="FloorFlat1x1n8" parent="." instance=ExtResource("9_w0vpo")]
+[node name="FloorFlat1x1n8" parent="LevelGeo" instance=ExtResource("9_w0vpo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0.375, -2)
 
-[node name="FloorRidge1x1n" type="StaticBody3D" parent="."]
+[node name="FloorRidge1x1n" type="StaticBody3D" parent="LevelGeo"]
 transform = Transform3D(-4, 0, 0, 0, 2, -1.74846e-07, 0, 1.74846e-07, 2, 1, -1.25, 0)
 physics_material_override = ExtResource("4_lf5jc")
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="FloorRidge1x1n"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelGeo/FloorRidge1x1n"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5)
 mesh = SubResource("ArrayMesh_j1nt6")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="FloorRidge1x1n"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="LevelGeo/FloorRidge1x1n"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5)
 shape = SubResource("ConvexPolygonShape3D_gi647")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="FloorRidge1x1n"]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="LevelGeo/FloorRidge1x1n"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0, 0.5)
 shape = SubResource("ConvexPolygonShape3D_478p8")
 
-[node name="FloorRidge1x1n2" type="StaticBody3D" parent="."]
+[node name="FloorRidge1x1n2" type="StaticBody3D" parent="LevelGeo"]
 transform = Transform3D(-4, 0, 0, 0, 2, -1.74846e-07, 0, 1.74846e-07, 2, 1, -1.25, -2)
 physics_material_override = ExtResource("4_lf5jc")
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="FloorRidge1x1n2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelGeo/FloorRidge1x1n2"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5)
 mesh = SubResource("ArrayMesh_j1nt6")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="FloorRidge1x1n2"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="LevelGeo/FloorRidge1x1n2"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0.5)
 shape = SubResource("ConvexPolygonShape3D_gi647")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="FloorRidge1x1n2"]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="LevelGeo/FloorRidge1x1n2"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0, 0.5)
 shape = SubResource("ConvexPolygonShape3D_478p8")
 
-[node name="FloorRampMiddle1x1n2" parent="." instance=ExtResource("10_84wkk")]
+[node name="FloorRampMiddle1x1n2" parent="LevelGeo" instance=ExtResource("10_84wkk")]
 transform = Transform3D(-1, 0, 0, 0, 0.5, 0, 0, 0, 1, -3, 0.375, -5)
 
-[node name="FloorRampMiddle1x1n3" parent="." instance=ExtResource("10_84wkk")]
+[node name="FloorRampMiddle1x1n3" parent="LevelGeo" instance=ExtResource("10_84wkk")]
 transform = Transform3D(-1, 0, 0, 0, 0.5, 0, 0, 0, 1, -2, 0.375, -5)
 
-[node name="FloorRampMiddle1x1n6" type="StaticBody3D" parent="."]
+[node name="FloorRampMiddle1x1n6" type="StaticBody3D" parent="LevelGeo"]
 transform = Transform3D(-2, 0, 0, 0, 1, -1.74846e-07, 0, 8.74228e-08, 2, 4, 0.125, -7)
 physics_material_override = ExtResource("4_lf5jc")
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="FloorRampMiddle1x1n6"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelGeo/FloorRampMiddle1x1n6"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.5, 0, 0.5)
 mesh = SubResource("ArrayMesh_fthwl")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="FloorRampMiddle1x1n6"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="LevelGeo/FloorRampMiddle1x1n6"]
 shape = SubResource("ConvexPolygonShape3D_ksmsg")
 
-[node name="FloorRampMiddle1x1n4" parent="." instance=ExtResource("10_84wkk")]
+[node name="FloorRampMiddle1x1n4" parent="LevelGeo" instance=ExtResource("10_84wkk")]
 transform = Transform3D(-1, 0, 0, 0, 0.5, 0, 0, 0, 1, -3, 0.125, -2)
 
-[node name="FloorRampMiddle1x1n5" parent="." instance=ExtResource("10_84wkk")]
+[node name="FloorRampMiddle1x1n5" parent="LevelGeo" instance=ExtResource("10_84wkk")]
 transform = Transform3D(-1, 0, 0, 0, 0.5, 0, 0, 0, 1, -2, 0.125, -2)
 
-[node name="ObstacleWallSingle" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.125, 0.375, -2.125)
 
-[node name="ObstacleWallSingle25" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle25" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3, 0.625, -5.125)
 
-[node name="ObstacleBlockRect" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -0.676777, 0.625, -6.875)
 
-[node name="ObstacleBlockRect2" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect2" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -0.323223, 0.625, -6.875)
 
-[node name="ObstacleBlockRect3" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect3" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -0.676777, 1.125, -6.875)
 
-[node name="ObstacleBlockRect4" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect4" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -0.323223, 1.125, -6.875)
 
-[node name="ObstacleBlockRect5" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect5" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -0.676777, 1.625, -6.875)
 
-[node name="ObstacleBlockRect6" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect6" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -0.323, 1.624, -6.875)
 
-[node name="ObstacleBlockRect7" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect7" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -3.875, -0.24, 1.177)
 
-[node name="ObstacleBlockRect8" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect8" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -3.875, -0.25, 0.823223)
 
-[node name="ObstacleCornerTriple" parent="." instance=ExtResource("13_uili7")]
+[node name="ObstacleCornerTriple" parent="LevelGeo" instance=ExtResource("13_uili7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3)
 
-[node name="ObstacleCornerDouble" parent="." instance=ExtResource("14_7yd58")]
+[node name="ObstacleCornerDouble" parent="LevelGeo" instance=ExtResource("14_7yd58")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
 
-[node name="ObstacleCornerDouble7" parent="." instance=ExtResource("14_7yd58")]
+[node name="ObstacleCornerDouble7" parent="LevelGeo" instance=ExtResource("14_7yd58")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 0, 0)
 
-[node name="ObstacleCornerDouble2" parent="." instance=ExtResource("14_7yd58")]
+[node name="ObstacleCornerDouble2" parent="LevelGeo" instance=ExtResource("14_7yd58")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="ObstacleCornerDouble3" parent="." instance=ExtResource("14_7yd58")]
+[node name="ObstacleCornerDouble3" parent="LevelGeo" instance=ExtResource("14_7yd58")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, -1)
 
-[node name="ObstacleWallElbow" parent="." instance=ExtResource("15_rxhqx")]
+[node name="ObstacleWallElbow" parent="LevelGeo" instance=ExtResource("15_rxhqx")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 3)
 
-[node name="ObstacleWallSingle7" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle7" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="ObstacleWallSingle8" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle8" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 3)
 
-[node name="ObstacleCornerDouble4" parent="." instance=ExtResource("14_7yd58")]
+[node name="ObstacleCornerDouble4" parent="LevelGeo" instance=ExtResource("14_7yd58")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1.25, 1)
 
-[node name="ObstacleCornerDouble9" parent="." instance=ExtResource("14_7yd58")]
+[node name="ObstacleCornerDouble9" parent="LevelGeo" instance=ExtResource("14_7yd58")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, -1.25, -1)
 
-[node name="ObstacleWallSingle14" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle14" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, -1.25, 1)
 
-[node name="ObstacleWallSingle32" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle32" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, -1.25, 1)
 
-[node name="ObstacleWallSingle33" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle33" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4, -1.25, 0)
 
-[node name="ObstacleWallSingle34" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle34" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4, -1.25, -1)
 
-[node name="ObstacleCornerDouble5" parent="." instance=ExtResource("14_7yd58")]
+[node name="ObstacleCornerDouble5" parent="LevelGeo" instance=ExtResource("14_7yd58")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1.25, 1)
 
-[node name="ObstacleWallSingle15" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle15" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, -1.25, 1)
 
-[node name="ObstacleCornerDouble6" parent="." instance=ExtResource("14_7yd58")]
+[node name="ObstacleCornerDouble6" parent="LevelGeo" instance=ExtResource("14_7yd58")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1.25, -1)
 
-[node name="ObstacleWallSingle16" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle16" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, -1.25, -1)
 
-[node name="ObstacleWallSingle35" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle35" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.875, -0.875, -3.375)
 
-[node name="ObstacleWallSingle36" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle36" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.875, -0.875, -2.875)
 
-[node name="ObstacleWallSingle9" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle9" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0, 3)
 
-[node name="ObstacleWallSingle10" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle10" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3, 0, 3)
 
-[node name="ObstacleWallSingle11" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle11" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 0, 3)
 
-[node name="ObstacleWallSingle12" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle12" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 1)
 
-[node name="ObstacleWallSingle26" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle26" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2)
 
-[node name="ObstacleCornerDouble8" parent="." instance=ExtResource("14_7yd58")]
+[node name="ObstacleCornerDouble8" parent="LevelGeo" instance=ExtResource("14_7yd58")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, 1)
 
-[node name="ObstacleWallSingle28" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle28" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
 
-[node name="ObstacleWallSingle29" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle29" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
 
-[node name="ObstacleWallSingle27" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle27" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3)
 
-[node name="ObstacleWallSingle13" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle13" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 
-[node name="ObstacleCorner" parent="." instance=ExtResource("16_xmy2b")]
+[node name="ObstacleCorner" parent="LevelGeo" instance=ExtResource("16_xmy2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
 
-[node name="ObstacleCorner2" parent="." instance=ExtResource("16_xmy2b")]
+[node name="ObstacleCorner2" parent="LevelGeo" instance=ExtResource("16_xmy2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1)
 
-[node name="ObstacleCorner3" parent="." instance=ExtResource("16_xmy2b")]
+[node name="ObstacleCorner3" parent="LevelGeo" instance=ExtResource("16_xmy2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.625, -5.125)
 
-[node name="ObstacleCorner4" parent="." instance=ExtResource("16_xmy2b")]
+[node name="ObstacleCorner4" parent="LevelGeo" instance=ExtResource("16_xmy2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.625, -5.125)
 
-[node name="ObstacleWallSingle17" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle17" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0.625, -7)
 
-[node name="ObstacleWallSingle21" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle21" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3, 0.625, -7)
 
-[node name="ObstacleWallSingle22" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle22" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 0.625, -7)
 
-[node name="ObstacleWallSingle23" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle23" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4, 0.625, -7)
 
-[node name="ObstacleWallSingle24" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle24" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4, 0.625, -6)
 
-[node name="ObstacleWallSingle18" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle18" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.25, 0.625, -7)
 
-[node name="ObstacleWallSingle19" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle19" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.75, 0.625, -7)
 
-[node name="ObstacleWallSingle20" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle20" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.625, -7)
 
-[node name="ObstacleWallSingle30" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle30" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0.625, -7)
 
-[node name="ObstacleWallSingle31" parent="." instance=ExtResource("11_6wojl")]
+[node name="ObstacleWallSingle31" parent="LevelGeo" instance=ExtResource("11_6wojl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0.625, -5.125)
 
-[node name="ObstacleCorner5" parent="." instance=ExtResource("16_xmy2b")]
+[node name="ObstacleCorner5" parent="LevelGeo" instance=ExtResource("16_xmy2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.625, -7)
 
-[node name="ObstacleCorner6" parent="." instance=ExtResource("16_xmy2b")]
+[node name="ObstacleCorner6" parent="LevelGeo" instance=ExtResource("16_xmy2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.625, -7)
 
-[node name="ObstacleCornerTriple2" parent="." instance=ExtResource("13_uili7")]
+[node name="ObstacleCornerTriple2" parent="LevelGeo" instance=ExtResource("13_uili7")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 0.625, -7)
 
-[node name="ObstacleCorner7" parent="." instance=ExtResource("16_xmy2b")]
+[node name="ObstacleCorner7" parent="LevelGeo" instance=ExtResource("16_xmy2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.625, -5)
 
-[node name="FloorFlat4x4n" parent="." instance=ExtResource("17_vfy0a")]
+[node name="FloorFlat4x4n" parent="LevelGeo" instance=ExtResource("17_vfy0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.125, 1)
 
-[node name="FloorFlat4x4n2" parent="." instance=ExtResource("17_vfy0a")]
+[node name="FloorFlat4x4n2" parent="LevelGeo" instance=ExtResource("17_vfy0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.125, 1)
 
-[node name="Backwall" type="StaticBody3D" parent="."]
+[node name="Backwall" type="StaticBody3D" parent="LevelGeo"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -4, 0.125, 1)
 physics_material_override = ExtResource("4_lf5jc")
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Backwall"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelGeo/Backwall"]
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0)
 mesh = SubResource("ArrayMesh_lj8p2")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Backwall"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelGeo/Backwall"]
 transform = Transform3D(4, 0, 0, 0, 0.01, 0, 0, 0, 4, 0, -0.005, 0)
 shape = SubResource("BoxShape3D_eu50g")
 
-[node name="Backwall2" type="StaticBody3D" parent="."]
+[node name="Backwall2" type="StaticBody3D" parent="LevelGeo"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -4, 0.125, -3)
 physics_material_override = ExtResource("4_lf5jc")
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Backwall2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelGeo/Backwall2"]
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0)
 mesh = SubResource("ArrayMesh_lj8p2")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Backwall2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelGeo/Backwall2"]
 transform = Transform3D(4, 0, 0, 0, 0.01, 0, 0, 0, 4, 0, -0.005, 0)
 shape = SubResource("BoxShape3D_eu50g")
 
-[node name="FloorFlat1x1n" parent="." instance=ExtResource("9_w0vpo")]
+[node name="FloorFlat1x1n" parent="LevelGeo" instance=ExtResource("9_w0vpo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1.25, -1)
 
-[node name="FloorFlat1x1n2" parent="." instance=ExtResource("9_w0vpo")]
+[node name="FloorFlat1x1n2" parent="LevelGeo" instance=ExtResource("9_w0vpo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1.25, 0)
 
-[node name="GoalTile" parent="." instance=ExtResource("19_i1ix8")]
+[node name="GoalTile" parent="LevelGeo" instance=ExtResource("19_i1ix8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -0.75, -4)
 
-[node name="FloorRampMiddle1x1n" parent="." instance=ExtResource("10_84wkk")]
+[node name="FloorRampMiddle1x1n" parent="LevelGeo" instance=ExtResource("10_84wkk")]
 transform = Transform3D(-1, 0, 0, 0, 1.5, -8.74228e-08, 0, 1.31134e-07, 1, 4, -1.25, -2)
 
-[node name="FloorRampMiddle1x1n7" parent="." instance=ExtResource("10_84wkk")]
+[node name="FloorRampMiddle1x1n7" parent="LevelGeo" instance=ExtResource("10_84wkk")]
 transform = Transform3D(-1, 0, 0, 0, 1.5, -8.74228e-08, 0, 1.31134e-07, 1, 3, -1.25, -2)
 
-[node name="FloorRampMiddle1x1n8" parent="." instance=ExtResource("10_84wkk")]
+[node name="FloorRampMiddle1x1n8" parent="LevelGeo" instance=ExtResource("10_84wkk")]
 transform = Transform3D(1, 4.37114e-08, 8.74228e-08, -8.74228e-08, 0.5, -8.74228e-08, 8.74228e-08, -4.37114e-08, -1, 2, -0.75, -2)
 
-[node name="FloorRampMiddle1x1n9" parent="." instance=ExtResource("10_84wkk")]
+[node name="FloorRampMiddle1x1n9" parent="LevelGeo" instance=ExtResource("10_84wkk")]
 transform = Transform3D(1, 4.37114e-08, 8.74228e-08, -8.74228e-08, 0.5, -8.74228e-08, 8.74228e-08, -4.37114e-08, -1, 3, -0.75, -2)
 
-[node name="FloorRampMiddle1x1n10" parent="." instance=ExtResource("10_84wkk")]
+[node name="FloorRampMiddle1x1n10" parent="LevelGeo" instance=ExtResource("10_84wkk")]
 transform = Transform3D(1, -7.54979e-08, -1.50996e-07, 1.50996e-07, 0.5, -8.74228e-08, 1.50996e-07, 4.37114e-08, 1, 3, -0.125, -5)
 
-[node name="FloorRampMiddle1x1n11" parent="." instance=ExtResource("10_84wkk")]
+[node name="FloorRampMiddle1x1n11" parent="LevelGeo" instance=ExtResource("10_84wkk")]
 transform = Transform3D(1, -7.54979e-08, -1.50996e-07, 1.50996e-07, 0.5, -8.74228e-08, 1.50996e-07, 4.37114e-08, 1, 2, -0.125, -5)
 
-[node name="FloorFlat1x1n3" parent="." instance=ExtResource("9_w0vpo")]
+[node name="FloorFlat1x1n3" parent="LevelGeo" instance=ExtResource("9_w0vpo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.75, -4)
 
-[node name="ObstacleBlockRect9" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect9" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82137e-15, -1, -8.74228e-08, 4.37114e-08, 1.75, 0.625, -6.5)
 
-[node name="ObstacleBlockRect10" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect10" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82137e-15, -1, -8.74228e-08, 4.37114e-08, 1.75, 0.625, -5.5)
 
-[node name="ObstacleBlockRect11" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect11" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(4.37114e-08, 0, -1, 0, 1, 0, -1, 0, -4.37114e-08, 1.75, -0.125, -4.5)
 
-[node name="ObstacleBlockRect12" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect12" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(-7.54979e-08, -8.74228e-08, 1, 8.74228e-08, 1, 8.74228e-08, 1, -8.74228e-08, 7.54979e-08, 4.25, 0.375, -6.5)
 
-[node name="ObstacleBlockRect15" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect15" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(-1, 8.74228e-08, -1.19209e-07, 8.74228e-08, 1, 8.74228e-08, -1.19209e-07, -8.74228e-08, 1, 4, 0.375, -7.25)
 
-[node name="ObstacleBlockRect16" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect16" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(-1, 8.74228e-08, -1.19209e-07, 8.74228e-08, 1, 8.74228e-08, -1.19209e-07, -8.74228e-08, 1, 3, 0.375, -7.25)
 
-[node name="ObstacleBlockRect17" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect17" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(-1, 8.74228e-08, -1.19209e-07, 8.74228e-08, 1, 8.74228e-08, -1.19209e-07, -8.74228e-08, 1, 2, 0.375, -7.25)
 
-[node name="ObstacleBlockRect13" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect13" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(4.37114e-08, -8.74228e-08, 1, -8.74228e-08, 1, 8.74228e-08, -1, -8.74228e-08, 4.37114e-08, 4.25, 0.125, -5.5)
 
-[node name="ObstacleBlockRect14" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect14" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(4.37114e-08, 0, -1, 0, 1, 0, -1, 0, -4.37114e-08, 4.25, -0.125, -4.5)
 
-[node name="ObstacleBlockRect30" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect30" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(4.37114e-08, 0, -1, 0, 1, 0, -1, 0, -4.37114e-08, 4.25, -0.125, -3.5)
 
-[node name="ObstacleBlockRect18" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect18" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.625, -4.25)
 
-[node name="ObstacleBlockRect19" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect19" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -0.625, -4.25)
 
-[node name="ObstacleBlockRect20" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect20" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.625, -4.25)
 
-[node name="ObstacleBlockRect21" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect21" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1.125, -4.25)
 
-[node name="ObstacleBlockRect24" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect24" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(4.37114e-08, 0, -1, 0, 1, 0, -1, 0, -4.37114e-08, 4.25, -1.125, -3.5)
 
-[node name="ObstacleBlockRect25" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect25" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(4.37114e-08, 0, -1, 0, 1, 0, -1, 0, -4.37114e-08, 4.25, -1.125, -2.5)
 
-[node name="ObstacleBlockRect27" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect27" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(4.37114e-08, 0, -1, 0, 1, 0, -1, 0, -4.37114e-08, 4.25, -0.625, -2)
 
-[node name="ObstacleBlockRect28" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect28" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(4.37114e-08, 0, -1, 0, 1, 0, -1, 0, -4.37114e-08, 4.25, -0.625, -3)
 
-[node name="ObstacleBlockRect29" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect29" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(4.37114e-08, 0, -1, 0, 1, 0, -1, 0, -4.37114e-08, 4.25, -0.625, -4)
 
-[node name="ObstacleBlockRect26" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect26" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(4.37114e-08, 0, -1, 0, 1, 0, -1, 0, -4.37114e-08, 4.25, -1.125, -1.5)
 
-[node name="ObstacleBlockRect22" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect22" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1.125, -4.25)
 
-[node name="ObstacleBlockRect23" parent="." instance=ExtResource("12_vtwus")]
+[node name="ObstacleBlockRect23" parent="LevelGeo" instance=ExtResource("12_vtwus")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1.125, -4.25)
 
-[node name="FloorTrough1x1n" parent="." instance=ExtResource("20_kyafh")]
+[node name="FloorTrough1x1n" parent="LevelGeo" instance=ExtResource("20_kyafh")]
 transform = Transform3D(-2.1111e-08, 0.12941, 0.482963, 5.65667e-09, 0.482963, -0.12941, -0.5, 0, -2.18557e-08, 0.883519, -0.185295, -3.25)
 
-[node name="FloorTrough1x1n3" parent="." instance=ExtResource("20_kyafh")]
+[node name="FloorTrough1x1n3" parent="LevelGeo" instance=ExtResource("20_kyafh")]
 transform = Transform3D(-2.1111e-08, 0.12941, 0.482963, 5.65667e-09, 0.482963, -0.12941, -0.5, 0, -2.18557e-08, 1.36648, -0.314705, -3.25)
 
-[node name="FloorTrough1x1n4" parent="." instance=ExtResource("20_kyafh")]
+[node name="FloorTrough1x1n4" parent="LevelGeo" instance=ExtResource("20_kyafh")]
 transform = Transform3D(-2.1111e-08, 0.12941, 0.482963, 5.65667e-09, 0.482963, -0.12941, -0.5, 0, -2.18557e-08, 1.84944, -0.444114, -3.25)
 
-[node name="FloorTrough1x1n2" parent="." instance=ExtResource("20_kyafh")]
+[node name="FloorTrough1x1n2" parent="LevelGeo" instance=ExtResource("20_kyafh")]
 transform = Transform3D(-2.1111e-08, 0.12941, 0.482963, 5.65667e-09, 0.482963, -0.12941, -0.5, 0, -2.18557e-08, 0.400556, -0.0558857, -3.25)
 
-[node name="ObstacleBlockRamp" parent="." instance=ExtResource("21_p8f1v")]
+[node name="ObstacleBlockRamp" parent="LevelGeo" instance=ExtResource("21_p8f1v")]
 transform = Transform3D(4.37114e-08, 1, -4.37114e-08, 0, 4.37114e-08, 1, -1, 4.37114e-08, -1.91069e-15, 2, 0.125, -4.5)
 
-[node name="ObstacleCorner8" parent="." instance=ExtResource("16_xmy2b")]
+[node name="ObstacleCorner8" parent="LevelGeo" instance=ExtResource("16_xmy2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1.25, 1)
 
-[node name="FloorFlat1x1n4" parent="." instance=ExtResource("9_w0vpo")]
+[node name="FloorFlat1x1n4" parent="LevelGeo" instance=ExtResource("9_w0vpo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1.25, 1)
 
-[node name="FloorFlat1x1n9" parent="." instance=ExtResource("9_w0vpo")]
+[node name="FloorFlat1x1n9" parent="LevelGeo" instance=ExtResource("9_w0vpo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1.25, 2)
 
-[node name="Kitty" type="Node3D" parent="."]
+[node name="Kitty" type="Node3D" parent="LevelGeo"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, -0.875, 2.75)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Kitty"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LevelGeo/Kitty"]
 transform = Transform3D(7.07107, 0, 7.07107, 0, 10, 0, -7.07107, 0, 7.07107, -0.125, -0.375, 0)
 mesh = SubResource("ArrayMesh_7t8su")
 
-[node name="SpinLight" type="Node3D" parent="."]
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="SpinLight" type="Node3D" parent="Lights"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 5, -3.5)
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SpinLight"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Lights/SpinLight"]
 script = ExtResource("4_c28ta")
 speed = 0.8
 maxRotation = 360.0
 reverseDir = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpinLight/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight/StaticBody3D"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.25, -0.25, 0)
 mesh = SubResource("ArrayMesh_xgo0h")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="SpinLight/StaticBody3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Lights/SpinLight/StaticBody3D"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.25, -0.25, -0.25)
 mesh = SubResource("ArrayMesh_xgo0h")
 
-[node name="X-Pole" type="Node3D" parent="SpinLight/StaticBody3D"]
+[node name="X-Pole" type="Node3D" parent="Lights/SpinLight/StaticBody3D"]
 visible = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpinLight/StaticBody3D/X-Pole"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight/StaticBody3D/X-Pole"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_fxdi4")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="SpinLight/StaticBody3D/X-Pole"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight/StaticBody3D/X-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="SpinLight/StaticBody3D/X-Pole"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight/StaticBody3D/X-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="Y-Pole" type="Node3D" parent="SpinLight/StaticBody3D"]
+[node name="Y-Pole" type="Node3D" parent="Lights/SpinLight/StaticBody3D"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpinLight/StaticBody3D/Y-Pole"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight/StaticBody3D/Y-Pole"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_8ouma")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="SpinLight/StaticBody3D/Y-Pole"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight/StaticBody3D/Y-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="SpinLight/StaticBody3D/Y-Pole"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight/StaticBody3D/Y-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="Z-Pole" type="Node3D" parent="SpinLight/StaticBody3D"]
+[node name="Z-Pole" type="Node3D" parent="Lights/SpinLight/StaticBody3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpinLight/StaticBody3D/Z-Pole"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight/StaticBody3D/Z-Pole"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_qtq50")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="SpinLight/StaticBody3D/Z-Pole"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight/StaticBody3D/Z-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="SpinLight/StaticBody3D/Z-Pole"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight/StaticBody3D/Z-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="SpinLight2" type="Node3D" parent="."]
+[node name="SpinLight2" type="Node3D" parent="Lights"]
 transform = Transform3D(0.258819, 0.965926, 0, -0.933013, 0.25, -0.258819, -0.25, 0.0669873, 0.965926, 7.625, 3.375, 1.25)
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SpinLight2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Lights/SpinLight2"]
 script = ExtResource("4_c28ta")
 speed = 0.3
 maxRotation = 360.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpinLight2/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight2/StaticBody3D"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.25, -0.25, 0)
 mesh = SubResource("ArrayMesh_xgo0h")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="SpinLight2/StaticBody3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Lights/SpinLight2/StaticBody3D"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.25, -0.25, -0.25)
 mesh = SubResource("ArrayMesh_xgo0h")
 
-[node name="X-Pole" type="Node3D" parent="SpinLight2/StaticBody3D"]
+[node name="X-Pole" type="Node3D" parent="Lights/SpinLight2/StaticBody3D"]
 visible = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpinLight2/StaticBody3D/X-Pole"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight2/StaticBody3D/X-Pole"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_fxdi4")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="SpinLight2/StaticBody3D/X-Pole"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight2/StaticBody3D/X-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="SpinLight2/StaticBody3D/X-Pole"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight2/StaticBody3D/X-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="Y-Pole" type="Node3D" parent="SpinLight2/StaticBody3D"]
+[node name="Y-Pole" type="Node3D" parent="Lights/SpinLight2/StaticBody3D"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpinLight2/StaticBody3D/Y-Pole"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight2/StaticBody3D/Y-Pole"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_8ouma")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="SpinLight2/StaticBody3D/Y-Pole"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight2/StaticBody3D/Y-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="SpinLight2/StaticBody3D/Y-Pole"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight2/StaticBody3D/Y-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="Z-Pole" type="Node3D" parent="SpinLight2/StaticBody3D"]
+[node name="Z-Pole" type="Node3D" parent="Lights/SpinLight2/StaticBody3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpinLight2/StaticBody3D/Z-Pole"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight2/StaticBody3D/Z-Pole"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_qtq50")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="SpinLight2/StaticBody3D/Z-Pole"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight2/StaticBody3D/Z-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="SpinLight2/StaticBody3D/Z-Pole"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight2/StaticBody3D/Z-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="SpinLight3" type="Node3D" parent="."]
+[node name="SpinLight3" type="Node3D" parent="Lights"]
 transform = Transform3D(0.0969183, 0.628871, -0.771445, -0.960267, 0.262894, 0.0936671, 0.261713, 0.731715, 0.629364, 4.875, 3.625, 5.125)
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SpinLight3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Lights/SpinLight3"]
 script = ExtResource("4_c28ta")
 speed = 0.5
 maxRotation = 360.0
 reverseDir = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpinLight3/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight3/StaticBody3D"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.25, -0.25, 0)
 mesh = SubResource("ArrayMesh_xgo0h")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="SpinLight3/StaticBody3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Lights/SpinLight3/StaticBody3D"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.25, -0.25, -0.25)
 mesh = SubResource("ArrayMesh_xgo0h")
 
-[node name="X-Pole" type="Node3D" parent="SpinLight3/StaticBody3D"]
+[node name="X-Pole" type="Node3D" parent="Lights/SpinLight3/StaticBody3D"]
 visible = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpinLight3/StaticBody3D/X-Pole"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight3/StaticBody3D/X-Pole"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_fxdi4")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="SpinLight3/StaticBody3D/X-Pole"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight3/StaticBody3D/X-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="SpinLight3/StaticBody3D/X-Pole"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight3/StaticBody3D/X-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="Y-Pole" type="Node3D" parent="SpinLight3/StaticBody3D"]
+[node name="Y-Pole" type="Node3D" parent="Lights/SpinLight3/StaticBody3D"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpinLight3/StaticBody3D/Y-Pole"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight3/StaticBody3D/Y-Pole"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_8ouma")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="SpinLight3/StaticBody3D/Y-Pole"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight3/StaticBody3D/Y-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="SpinLight3/StaticBody3D/Y-Pole"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight3/StaticBody3D/Y-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="Z-Pole" type="Node3D" parent="SpinLight3/StaticBody3D"]
+[node name="Z-Pole" type="Node3D" parent="Lights/SpinLight3/StaticBody3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpinLight3/StaticBody3D/Z-Pole"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight3/StaticBody3D/Z-Pole"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_qtq50")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="SpinLight3/StaticBody3D/Z-Pole"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight3/StaticBody3D/Z-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="SpinLight3/StaticBody3D/Z-Pole"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight3/StaticBody3D/Z-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="SpinLight4" type="Node3D" parent="."]
+[node name="SpinLight4" type="Node3D" parent="Lights"]
 transform = Transform3D(-0.51248, -0.804818, -0.299385, -0.856923, 0.501745, 0.11805, 0.0552066, 0.317048, -0.946801, -6, 5.375, 0.5)
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SpinLight4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Lights/SpinLight4"]
 script = ExtResource("4_c28ta")
 speed = 0.3
 reverseDir = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpinLight4/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight4/StaticBody3D"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.25, -0.25, 0)
 mesh = SubResource("ArrayMesh_xgo0h")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="SpinLight4/StaticBody3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Lights/SpinLight4/StaticBody3D"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.25, -0.25, -0.25)
 mesh = SubResource("ArrayMesh_xgo0h")
 
-[node name="X-Pole" type="Node3D" parent="SpinLight4/StaticBody3D"]
+[node name="X-Pole" type="Node3D" parent="Lights/SpinLight4/StaticBody3D"]
 visible = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpinLight4/StaticBody3D/X-Pole"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight4/StaticBody3D/X-Pole"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_fxdi4")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="SpinLight4/StaticBody3D/X-Pole"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight4/StaticBody3D/X-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="SpinLight4/StaticBody3D/X-Pole"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight4/StaticBody3D/X-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="Y-Pole" type="Node3D" parent="SpinLight4/StaticBody3D"]
+[node name="Y-Pole" type="Node3D" parent="Lights/SpinLight4/StaticBody3D"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpinLight4/StaticBody3D/Y-Pole"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight4/StaticBody3D/Y-Pole"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_8ouma")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="SpinLight4/StaticBody3D/Y-Pole"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight4/StaticBody3D/Y-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="SpinLight4/StaticBody3D/Y-Pole"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight4/StaticBody3D/Y-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="Z-Pole" type="Node3D" parent="SpinLight4/StaticBody3D"]
+[node name="Z-Pole" type="Node3D" parent="Lights/SpinLight4/StaticBody3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpinLight4/StaticBody3D/Z-Pole"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/SpinLight4/StaticBody3D/Z-Pole"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_qtq50")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="SpinLight4/StaticBody3D/Z-Pole"]
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights/SpinLight4/StaticBody3D/Z-Pole"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="SpinLight4/StaticBody3D/Z-Pole"]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights/SpinLight4/StaticBody3D/Z-Pole"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 3.82137e-15, -1, -8.74228e-08, -1, 0, -4.37114e-08, 0.375, 0, 0)
-shadow_enabled = true
-shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
-
-[node name="AmbientGolfMusic" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.398892, 1.29034, 1.06006)
-stream = ExtResource("26_85kk5")
-autoplay = true
-
-[node name="Rain" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.51141, 0.0603846, -3.43623)
-stream = ExtResource("27_xf04v")
-attenuation_model = 2
-volume_db = 12.609
-autoplay = true
-max_distance = 25.0
-doppler_tracking = 2
