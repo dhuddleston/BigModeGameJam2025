@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://cvebm3dwfd7op"]
+[gd_scene load_steps=49 format=4 uid="uid://cvebm3dwfd7op"]
 
 [ext_resource type="PackedScene" uid="uid://crm8xscewxoj7" path="res://Prefabs/Gameplay/goal_tile.tscn" id="1_pbkst"]
 [ext_resource type="AudioStream" uid="uid://dlbumg4yexgt2" path="res://Sounds/Rain.wav" id="2_ews6t"]
@@ -26,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://bxyx2xv274s8h" path="res://Prefabs/Floors/Ramp/Corners/FloorRampCornerBottom1x1.tscn" id="23_sb2n2"]
 [ext_resource type="PackedScene" uid="uid://dhwv6f364fvkf" path="res://Prefabs/Floors/Ramp/Corners/FloorRampCornerConvex1x1.tscn" id="24_q85tt"]
 [ext_resource type="Shader" path="res://Shaders/unlit_color.gdshader" id="26_0tw2m"]
+[ext_resource type="PackedScene" uid="uid://xoiljtxb0i82" path="res://Prefabs/Props/archeosaur.tscn" id="27_60882"]
+[ext_resource type="PackedScene" uid="uid://ct1qitk3rutxr" path="res://Prefabs/Props/stegosaurish.tscn" id="28_6mwmc"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ut245"]
 _surfaces = [{
@@ -1157,6 +1159,11 @@ doppler_tracking = 2
 
 [node name="EyeCube030" type="MeshInstance3D" parent="Geometry"]
 transform = Transform3D(-0.293655, -0.00947786, 0.00262004, -0.00250169, 1.03809, 0.0206027, -0.00267527, 0.0696166, -0.306859, -6.73238, 0.121356, -5.76418)
+mesh = SubResource("ArrayMesh_51laq")
+skeleton = NodePath("../../Moon")
+
+[node name="EyeCube031" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(-99.9922, -0.910922, 0.851879, 0.910954, -6.6909, 99.7718, -0.851846, 99.7718, 6.69868, -19.9824, 5.12136, -332.264)
 mesh = SubResource("ArrayMesh_51laq")
 skeleton = NodePath("../../Moon")
 
@@ -6082,10 +6089,10 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -1.25, -
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -2.25, -3.5, 7)
 
 [node name="ObstacleWallSingle54" parent="Walls" instance=ExtResource("18_a1y8s")]
-transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -2, -5.25, -3.775)
+transform = Transform3D(1, 0, -1.74846e-07, 0, 0.2, 0, 1.74846e-07, 0, 1, -2, -5.25, -3.775)
 
 [node name="ObstacleWallSingle55" parent="Walls" instance=ExtResource("18_a1y8s")]
-transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -2.5, -5.25, -3.775)
+transform = Transform3D(1, 0, -1.74846e-07, 0, 0.2, 0, 1.74846e-07, 0, 1, -2.5, -5.25, -3.775)
 
 [node name="ObstacleWallSingle39" parent="Walls" instance=ExtResource("18_a1y8s")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -3.25, -3.5, -3)
@@ -6573,3 +6580,24 @@ mesh = SubResource("ArrayMesh_jpa5g")
 [node name="Moon2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-2.12257, -0.980347, -1.5068, 0.10198, -0.116949, 13.1041, -13.0228, 0.15887, 0.34821, 200.461, -7.51237, -152.197)
 mesh = SubResource("ArrayMesh_jpa5g")
+
+[node name="StaticBody3D" parent="." instance=ExtResource("27_60882")]
+transform = Transform3D(-86.6026, 0, -50, 0, 100, 0, 50, 0, -86.6026, 371, -108.75, -163.5)
+
+[node name="LANTERN3" parent="." instance=ExtResource("15_x2axk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 301.5, 12, -196.5)
+maxRange = 200.0
+
+[node name="LANTERN4" parent="." instance=ExtResource("15_x2axk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200.5, -1.75, -185.75)
+maxRange = 200.0
+
+[node name="LANTERN5" parent="." instance=ExtResource("15_x2axk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.25, 2.75, -269.25)
+maxRange = 200.0
+
+[node name="StaticBody3D2" parent="." instance=ExtResource("27_60882")]
+transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, -2.25, -5.225, -4.45)
+
+[node name="Stegosaurish" parent="." instance=ExtResource("28_6mwmc")]
+transform = Transform3D(-16.5, 0, 28.5788, 0, 33, 0, -28.5788, 0, -16.5, -387.5, 27.75, -177.25)
