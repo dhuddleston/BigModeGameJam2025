@@ -10,7 +10,8 @@ var levels: Array[Level] = [
 	Level.new("res://Scenes/IntroCutscene_Level.tscn", "Prologue", 0),
 	Level.new("res://Scenes/StraightShot_Level.tscn", "Hole 2", 5),
 	Level.new("res://Scenes/ball_test_scene.tscn", "Example 1", 10),
-	Level.new("res://Scenes/Experimental_Level.tscn", "Example 2", 5)
+	Level.new("res://Scenes/Experimental_Level.tscn", "Example 2", 5),
+	Level.new("res://Scenes/Levels/balance.tscn", "Balance", 4)
 ]
 
 var currentLevel: int = 0
