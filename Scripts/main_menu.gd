@@ -16,7 +16,8 @@ func build_level_select():
 		var btn = levelButtonFab.instantiate()
 		btn.level = i
 		var info = Global.levels[i]
-		btn.text = str(info.title," | Par: ", info.par, " | Best: ", info.best)
+		var best = "---" if info.best == null else info.best
+		btn.text = str(info.title," | Par: ", info.par, " | Best: ", best)
 		levelList.add_child(btn)
 
 func _on_play_pressed():

@@ -26,7 +26,7 @@ class Level:
 	var path: String
 	var title: String
 	var par: int
-	var best: int
+	var best
 	func _init(path: String, title: String, par: int):
 		self.path = path
 		self.title = title

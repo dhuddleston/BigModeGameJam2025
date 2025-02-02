@@ -57,7 +57,7 @@ func _on_next_level_button_pressed():
 func show_victory_screen():
 	var par = Global.levels[Global.currentLevel].par
 	var previousBest = Global.levels[Global.currentLevel].best
-	if previousBest == null or Global.strokes < previousBest:
+	if (previousBest == null) or Global.strokes < previousBest:
 		Global.levels[Global.currentLevel].best = Global.strokes
 		SaveData.saveProgress(Global.currentLevel, Global.strokes)
 	

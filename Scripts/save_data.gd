@@ -13,8 +13,8 @@ func loadProgress():
 		var num = int(level.split("_")[1]) #Parse level number
 		var score = int(config.get_value(level, "best"))
 		Global.levels[num].best = score
-		if level > furthestBeaten:
-			furthestBeaten = level
+		if num > furthestBeaten:
+			furthestBeaten = num
 	Global.furthestLevel = furthestBeaten+1
 
 func saveProgress(level: int, score: int):
