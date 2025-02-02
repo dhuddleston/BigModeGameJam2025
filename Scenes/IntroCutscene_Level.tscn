@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bjeb1hkc0h3wn"]
+[gd_scene load_steps=16 format=4 uid="uid://bjeb1hkc0h3wn"]
 
 [ext_resource type="PackedScene" uid="uid://cf1x8kiwnxcbe" path="res://Prefabs/UI/GameplayCanvas.tscn" id="1_3o7bl"]
 [ext_resource type="Script" path="res://Scripts/player_controller.gd" id="2_ua0e2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://crm8xscewxoj7" path="res://Prefabs/Gameplay/goal_tile.tscn" id="7_wutgt"]
 [ext_resource type="AudioStream" uid="uid://dxrtgx7cuo1v8" path="res://Sounds/Intro/Rain_10s.wav" id="8_qfgig"]
 [ext_resource type="PackedScene" uid="uid://uuu0lldfmxi2" path="res://Prefabs/Floors/Flat/FloorFlat4x4.tscn" id="9_t5rvk"]
+[ext_resource type="PackedScene" uid="uid://e8rexjmxsd0w" path="res://Prefabs/Floors/Flat/FloorFlat1x1.tscn" id="10_grgqj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0ujoa"]
 
@@ -67,9 +68,10 @@ maxLightRange = 3.0
 
 [node name="GolfBall" type="RigidBody3D" parent="PlayerController"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+axis_lock_linear_x = true
 mass = 2.0
 physics_material_override = ExtResource("3_nny83")
-continuous_cd = true
+gravity_scale = 0.704
 linear_damp_mode = 1
 linear_damp = 0.4
 angular_damp_mode = 1
@@ -158,6 +160,10 @@ visible = false
 
 [node name="FloorFlat4x4n3" parent="Geometry" instance=ExtResource("9_t5rvk")]
 transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 1.5, -0.668697, 2.88353)
+visible = false
+
+[node name="FloorFlat1x1n" parent="Geometry" instance=ExtResource("10_grgqj")]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 5.67061, 0, -0.965926, 1.51943, 1, -2.5, -7.55)
 visible = false
 
 [editable path="Canvas"]
