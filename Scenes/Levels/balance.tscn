@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://4uvv6qqs87be"]
+[gd_scene load_steps=49 format=4 uid="uid://4uvv6qqs87be"]
 
 [ext_resource type="PackedScene" uid="uid://cf1x8kiwnxcbe" path="res://Prefabs/UI/GameplayCanvas.tscn" id="1_ys321"]
 [ext_resource type="PackedScene" uid="uid://cyeckytrn2v3p" path="res://Prefabs/Gameplay/player_controller_fab.tscn" id="2_67a3u"]
@@ -25,6 +25,8 @@
 [ext_resource type="Material" uid="uid://dp5e42eqr8bf0" path="res://Materials/UnlitTex.tres" id="23_u8d50"]
 [ext_resource type="Material" uid="uid://ci336nb0v3kte" path="res://Materials/UnlitYellow.tres" id="24_yxfjd"]
 [ext_resource type="Shader" path="res://Shaders/unlit_color.gdshader" id="25_wmqij"]
+[ext_resource type="AudioStream" uid="uid://ctfcx5q8k1eq1" path="res://Sounds/Music/AmbientGolfMusic.ogg" id="26_85kk5"]
+[ext_resource type="AudioStream" uid="uid://dlbumg4yexgt2" path="res://Sounds/Rain.wav" id="27_xf04v"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_20k4h"]
 friction = 0.3
@@ -252,6 +254,7 @@ height = 0.55
 
 [node name="PlayerController" parent="." instance=ExtResource("2_67a3u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1)
+maxLightRange = 2.0
 
 [node name="FloorFlat2x2n3" parent="." instance=ExtResource("3_c8hkr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1.25, 0)
@@ -1052,3 +1055,17 @@ shadow_blur = 0.0
 spot_range = 30.0
 spot_angle = 5.0
 spot_angle_attenuation = 0.0424045
+
+[node name="AmbientGolfMusic" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.398892, 1.29034, 1.06006)
+stream = ExtResource("26_85kk5")
+autoplay = true
+
+[node name="Rain" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.51141, 0.0603846, -3.43623)
+stream = ExtResource("27_xf04v")
+attenuation_model = 2
+volume_db = 12.609
+autoplay = true
+max_distance = 25.0
+doppler_tracking = 2
