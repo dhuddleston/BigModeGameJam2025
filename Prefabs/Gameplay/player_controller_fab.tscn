@@ -49,10 +49,13 @@ top_radius = 0.12
 bottom_radius = 0.12
 height = 0.02
 
-[node name="PlayerController" type="Node3D"]
+[node name="PlayerController" type="Node3D" node_paths=PackedStringArray("ballSfxPlayer", "globalSfxPlayer", "announcer")]
 script = ExtResource("1_nv0vu")
 baseLightRange = 1.0
 maxLightRange = 3.0
+ballSfxPlayer = NodePath("GolfBall/BallSfxPlayer")
+globalSfxPlayer = NodePath("GlobalAudioPlayer")
+announcer = NodePath("Announcer")
 
 [node name="Checkpoint" type="Node3D" parent="."]
 
@@ -84,6 +87,8 @@ distance_fade_length = 1.0
 omni_range = 4.0
 omni_attenuation = 0.0
 
+[node name="BallSfxPlayer" type="AudioStreamPlayer3D" parent="GolfBall"]
+
 [node name="CameraRoot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
@@ -107,3 +112,7 @@ texture = ExtResource("3_vpn5j")
 [node name="ReadyVisualizer" type="MeshInstance3D" parent="CameraRoot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 mesh = SubResource("CylinderMesh_0riom")
+
+[node name="GlobalAudioPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Announcer" type="AudioStreamPlayer" parent="."]

@@ -34,6 +34,29 @@ var readyVisual #Visualizer to indicate they player can hit the ball again.
 var golfBall #The golf ball. Has physics, can roll freely.
 var ballLight #Light source of the ball.
 var checkpoint #Stores the last stopped position of the ball in case they go OOB.
+@export var ballSfxPlayer: AudioStreamPlayer3D
+@export var globalSfxPlayer: AudioStreamPlayer
+@export var announcer: AudioStreamPlayer
+
+#Sfx files
+var softPuttSfx = preload("res://Sounds/Sfx/PuttSoft.ogg")
+var midPuttSfx = preload("res://Sounds/Sfx/PuttMedium.ogg")
+var hardPuttSfx = preload("res://Sounds/Sfx/PuttHard.ogg")
+var holeSunkSfx = preload("res://Sounds/Sfx/EnterGoalPit.ogg")
+var victorySfx = preload("res://Sounds/Sfx/VictoryTrill.ogg")
+
+#Voice Lines
+var parLineSfx = preload("res://Sounds/Sfx/Par.ogg")
+var hioLineSfx = preload("res://Sounds/Sfx/HoleInOne.ogg")
+var bogeyLineSfx = preload("res://Sounds/Sfx/Bogey.ogg")
+var bogey2LineSfx = preload("res://Sounds/Sfx/DoubleBogey.ogg")
+var bogey3LineSfx = preload("res://Sounds/Sfx/TripleBogey.ogg")
+var blewItLineSfx = preload("res://Sounds/Sfx/YouBlewIt.ogg")
+var birdieLineSfx = preload("res://Sounds/Sfx/Birdie.ogg")
+var eagleLineSfx = preload("res://Sounds/Sfx/Eagle.ogg")
+var albatrossLineSfx = preload("res://Sounds/Sfx/Albatross.ogg")
+var condorLineSfx = preload("res://Sounds/Sfx/Condor.ogg")
+var unintelligibleLineSfx = preload("res://Sounds/Sfx/Unintelligible.ogg")
 
 #Vars
 var isLooking = false;
@@ -158,6 +181,15 @@ func hitBall():
 	readyVisual.visible = false
 	isRolling = true
 	stoppedTime = 0
+	
+	ballSfxPlayer.stop()
+	if Global.power > 0.7:
+		ballSfxPlayer.stream = hardPuttSfx
+	elif Global.power > 0.3:
+		ballSfxPlayer.stream = softPuttSfx
+	else:
+		ballSfxPlayer.stream = midPuttSfx
+	ballSfxPlayer.play()
 
 func respawn():
 	Global.power = 0.0
@@ -173,3 +205,41 @@ func win():
 	if !levelComplete:
 		levelComplete = true
 		Global.levelUI.show_victory_screen()
+		
+		ballSfxPlayer.stop()
+		ballSfxPlayer.stream = holeSunkSfx
+		ballSfxPlayer.play()
+		
+		globalSfxPlayer.stop()
+		globalSfxPlayer.stream = victorySfx
+		globalSfxPlayer.play()
+		
+		announcer.stop()
+		var par = Global.levels[Global.currentLevel].par
+		var diff = par - Global.strokes
+		if Global.strokes == 1:
+			announcer.stream = hioLineSfx
+		else:
+			match (diff):
+				0: 
+					announcer.stream = parLineSfx
+				-1:
+					announcer.stream = bogeyLineSfx
+				-2:
+					announcer.stream = bogey2LineSfx
+				-3:
+					announcer.stream = bogey3LineSfx
+				1:
+					announcer.stream = birdieLineSfx
+				2:
+					announcer.stream = eagleLineSfx
+				3:
+					announcer.stream = albatrossLineSfx
+				4:
+					announcer.stream = condorLineSfx
+				_:
+					if diff > 0:
+						announcer.stream = unintelligibleLineSfx
+					else:
+						announcer.stream = blewItLineSfx
+		announcer.play()
