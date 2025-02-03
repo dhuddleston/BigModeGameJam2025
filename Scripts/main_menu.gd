@@ -3,6 +3,7 @@ extends Control
 @export var mainMenu: Control
 @export var levelMenu: Control
 @export var levelList: Control
+@export var threeD: Node3D
 var levelButtonFab = preload("res://Prefabs/UI/level_button.tscn")
 
 func _ready():
@@ -30,8 +31,10 @@ func _on_exit_pressed():
 
 func _on_level_select_pressed():
 	mainMenu.visible = false
+	threeD.visible = false
 	levelMenu.visible = true
 
 func _on_back_pressed():
 	mainMenu.visible = true
+	threeD.visible = true
 	levelMenu.visible = false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx8duynv5c5xn"
-path="res://.godot/imported/AShotInTheDarkLogo.png-867792c598262de6df4d69206ee27b63.ctex"
+uid="uid://2s05oy3f7216"
+path="res://.godot/imported/AShotInTheDarkLogo2.png-7c1ca722ab2d213d5a32331da46690e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/AShotInTheDarkLogo.png"
-dest_files=["res://.godot/imported/AShotInTheDarkLogo.png-867792c598262de6df4d69206ee27b63.ctex"]
+source_file="res://Textures/AShotInTheDarkLogo2.png"
+dest_files=["res://.godot/imported/AShotInTheDarkLogo2.png-7c1ca722ab2d213d5a32331da46690e3.ctex"]
 
 [params]
 
