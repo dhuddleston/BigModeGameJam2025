@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=4 uid="uid://ckyrw32r1p05k"]
+
+[ext_resource type="Material" uid="uid://dcm5yqrcjsy44" path="res://Materials/WhiteX2.tres" id="1_1hx8t"]
+[ext_resource type="PhysicsMaterial" uid="uid://h7seibwfgsp4" path="res://PhysMats/wall.tres" id="3_cdiq5"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wutvp"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.25, 1, 0.5, 0.5),
+"format": 34896613377,
+"index_count": 18,
+"index_data": PackedByteArray("AAACAAEAAwACAAAABAADAAAAAQACAAUAAAAFAAQAAAABAAUA"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("AAD/////AAAAAP//AAAAAAAAAAAAAAAAAAAAAP//AAD//wAA//8AAP//AAAAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_axypm"]
+resource_name = "Root Scene_Ramp"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.25, 1, 0.5, 0.5),
+"attribute_data": PackedByteArray("H6j/ByCY/wcgmP4XH6j+Fwuw9h8LkPYPC5D2HwOQ/QcDsP0XA5D9FwCQAAAAkP4fD6D+Hw+gAAA="),
+"format": 34896613399,
+"index_count": 18,
+"index_data": PackedByteArray("AAACAAEAAwACAAAABAAGAAUABwAJAAgACgAMAAsACgANAAwA"),
+"material": ExtResource("1_1hx8t"),
+"name": "GolfCourse",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("AAD//////78AAP//AAD/vwAAAAAAAP+/AAAAAP///7///wAA//8AgAAA/////wCAAAAAAP//AIAAAP//AAAAAP//AAAAAAAAAAAAAAAAAAAAAP////9oy///AAD//2jL//8AAAAAaMsAAP//AABoy/9/////f////3////9/////f////3////9///////9/////f////3/AxmAjwMZgI8DGYCPAxmAj")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_wutvp")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fhxq4"]
+points = PackedVector3Array(0.5, 0, -0.25, 0.5, 0, 0.25, -0.5, 0, -0.25, -0.5, 0, 0.25, -0.5, 0.5, -0.25, -0.5, 0.5, 0.25)
+
+[node name="ObstacleBlockRamp" type="Node3D"]
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.5, 0.25, 0)
+mesh = SubResource("ArrayMesh_axypm")
+
+[node name="Wallstuff" type="StaticBody3D" parent="."]
+physics_material_override = ExtResource("3_cdiq5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wallstuff"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.5, 0.25, 0)
+shape = SubResource("ConvexPolygonShape3D_fhxq4")
