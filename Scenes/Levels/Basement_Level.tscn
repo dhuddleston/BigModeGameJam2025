@@ -368,10 +368,10 @@ shape = SubResource("CylinderShape3D_jmu16")
 [node name="Floors" type="Node3D" parent="Geometry"]
 
 [node name="FloorFlat2x2n" parent="Geometry/Floors" instance=ExtResource("7_h7fr2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0.01, 10.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, -0.005, 10.5)
 
 [node name="FloorFlat2x2n2" parent="Geometry/Floors" instance=ExtResource("7_h7fr2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, -0.01, 6.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, -0.015, 6.5)
 
 [node name="FloorFlat2x2n14" parent="Geometry/Floors" instance=ExtResource("7_h7fr2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, -0.01, 8.5)
