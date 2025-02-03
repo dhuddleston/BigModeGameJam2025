@@ -242,4 +242,5 @@ func win():
 						announcer.stream = unintelligibleLineSfx
 					else:
 						announcer.stream = blewItLineSfx
+		await get_tree().create_timer(1).timeout
 		announcer.play()
