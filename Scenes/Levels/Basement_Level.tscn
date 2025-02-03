@@ -385,6 +385,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, -0.03, 2.5)
 [node name="FloorFlat2x2n15" parent="Geometry/Floors" instance=ExtResource("7_h7fr2")]
 transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, -2.25, -0.025, 8.5)
 
+[node name="FloorFlat2x2n20" parent="Geometry/Floors" instance=ExtResource("7_h7fr2")]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, -2.25, -0.025, 10.5)
+
 [node name="FloorFlat2x2n16" parent="Geometry/Floors" instance=ExtResource("7_h7fr2")]
 transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, -2.25, -0.025, 6.5)
 
