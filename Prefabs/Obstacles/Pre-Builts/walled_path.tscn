@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://7dmolv6d6qy6"]
+
+[ext_resource type="PackedScene" uid="uid://dxfqcbof48po" path="res://Prefabs/Floors/Flat/FloorFlat2x2.tscn" id="1_vg3e7"]
+[ext_resource type="PackedScene" uid="uid://c8xxp81lobgnj" path="res://Prefabs/Obstacles/Walls/ObstacleWallSingle.tscn" id="2_tu0qn"]
+[ext_resource type="PackedScene" uid="uid://b5fjlgqxeaioc" path="res://Prefabs/Obstacles/Corners/ObstacleCorner.tscn" id="3_igaf7"]
+
+[node name="WalledPath" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -2.5, -11.5)
+metadata/_edit_group_ = true
+
+[node name="FloorFlat2x2n4" parent="." instance=ExtResource("1_vg3e7")]
+
+[node name="ObstacleWallSingle" parent="." instance=ExtResource("2_tu0qn")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 1)
+
+[node name="ObstacleWallSingle2" parent="." instance=ExtResource("2_tu0qn")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 1)
+
+[node name="ObstacleWallSingle3" parent="." instance=ExtResource("2_tu0qn")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, -1)
+
+[node name="ObstacleWallSingle4" parent="." instance=ExtResource("2_tu0qn")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -1)
+
+[node name="ObstacleCorner" parent="." instance=ExtResource("3_igaf7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="ObstacleCorner2" parent="." instance=ExtResource("3_igaf7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="ObstacleCorner4" parent="." instance=ExtResource("3_igaf7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="ObstacleCorner5" parent="." instance=ExtResource("3_igaf7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
