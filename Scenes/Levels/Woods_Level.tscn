@@ -544,7 +544,7 @@ transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107
 shape = SubResource("BoxShape3D_jguo8")
 
 [node name="GOALTRIGGER" type="Area3D" parent="Geometry/GoalTile4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.05, 0.5)
+transform = Transform3D(5.95, 0, 0, 0, 1, 0, 0, 0, 5.95, 0.5, 0.05, 0.5)
 script = ExtResource("10_75eoj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/GoalTile4/GOALTRIGGER"]
@@ -1067,8 +1067,37 @@ transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 
 
 [node name="LowerArea" type="Node3D" parent="Geometry"]
 
+[node name="LANTERN" type="StaticBody3D" parent="Geometry/LowerArea" node_paths=PackedStringArray("light")]
+transform = Transform3D(-4.37114e-08, 1.49012e-08, 1, -4.40041e-15, 1, -1.49012e-08, -1, -1.77636e-15, -4.37114e-08, -13.0858, -3.79062, -12)
+physics_material_override = ExtResource("3_02u2s")
+script = ExtResource("4_eaddi")
+maxRange = 8.0
+changeSpeed = 2.0
+light = NodePath("OmniLight3D")
+metadata/_edit_group_ = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Geometry/LowerArea/LANTERN"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+light_color = Color(0.717361, 0.113943, 0, 1)
+light_size = 1.6
+shadow_enabled = true
+omni_range = 2.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/LowerArea/LANTERN"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0)
+material_override = ExtResource("5_gqrb8")
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_s8xac")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/LowerArea/LANTERN"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+shape = SubResource("CylinderShape3D_jmu16")
+
+[node name="LanternPole" parent="Geometry/LowerArea" instance=ExtResource("16_ch4fs")]
+transform = Transform3D(0.612372, 0.353553, -0.707107, -0.5, 0.866025, 0, 0.612372, 0.353553, 0.707107, -14.0048, -4.52452, -12.9441)
+
 [node name="GoalTile4" parent="Geometry/LowerArea" instance=ExtResource("1_4m0c5")]
-transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -13.5, -5, -12.5)
+transform = Transform3D(2, 0, 2.13162e-14, 0, 2, 0, -2.13162e-14, 0, 2, -13.85, -5.01, -13)
 
 [node name="Rain" type="AudioStreamPlayer3D" parent="Geometry/LowerArea/GoalTile4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
@@ -1079,32 +1108,6 @@ unit_size = 20.0
 autoplay = true
 max_distance = 25.0
 doppler_tracking = 2
-
-[node name="LANTERN" type="StaticBody3D" parent="Geometry/LowerArea/GoalTile4" node_paths=PackedStringArray("light")]
-transform = Transform3D(-4.37114e-08, 1.49012e-08, 1, -4.40041e-15, 1, -1.49012e-08, -1, -1.77636e-15, -4.37114e-08, 0.464182, 1.00938, 0.499999)
-physics_material_override = ExtResource("3_02u2s")
-script = ExtResource("4_eaddi")
-maxRange = 8.0
-changeSpeed = 2.0
-light = NodePath("OmniLight3D")
-metadata/_edit_group_ = true
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Geometry/LowerArea/GoalTile4/LANTERN"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
-light_color = Color(0.717361, 0.113943, 0, 1)
-light_size = 1.6
-shadow_enabled = true
-omni_range = 2.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry/LowerArea/GoalTile4/LANTERN"]
-transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0)
-material_override = ExtResource("5_gqrb8")
-cast_shadow = 0
-mesh = SubResource("ArrayMesh_s8xac")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/LowerArea/GoalTile4/LANTERN"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
-shape = SubResource("CylinderShape3D_jmu16")
 
 [node name="FloorFlat4x4n33" parent="Geometry/LowerArea" instance=ExtResource("10_vl1gn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, -5, -24.25)
@@ -1472,7 +1475,7 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -3.25, -0.
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 3.75, -0.5, 1.75)
 
 [node name="Log7" parent="Geometry/LowerArea" instance=ExtResource("17_4nugm")]
-transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 7.25, -0.5, -4)
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 8.71623, -0.5, -3.3576)
 
 [node name="Log8" parent="Geometry/LowerArea" instance=ExtResource("17_4nugm")]
 transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 16.25, -0.5, -7.75)
@@ -1538,7 +1541,7 @@ transform = Transform3D(-0.266095, -0.402431, 2.81502, -0.899771, 1.15143, -0.57
 transform = Transform3D(-0.11855, -0.0439738, 2.94327, -1.78772, -0.281557, -0.197612, 0.173203, -2.9362, -0.02513, 14.3452, 0.773871, -12.5837)
 
 [node name="Log11" parent="Geometry/LowerArea" instance=ExtResource("17_4nugm")]
-transform = Transform3D(0.0225576, -0.760611, 2.84948, -0.996195, -0.25711, 1.75165e-07, 0.084186, -2.83864, -0.763516, -0.25, -0.75, 7)
+transform = Transform3D(0.0225576, -0.760611, 2.84948, -0.996195, -0.25711, 1.75165e-07, 0.084186, -2.83864, -0.763516, -0.956731, -0.999049, 7.21193)
 
 [node name="Log12" parent="Geometry/LowerArea" instance=ExtResource("17_4nugm")]
 transform = Transform3D(-0.0643523, -0.780125, 2.83864, -0.997923, 0.0582865, -0.180859, -0.00279939, -2.84438, -0.782256, -4.5, -0.75, -1)
@@ -1557,6 +1560,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, -5, -29.5)
 
 [node name="FloorFlat2x2n" parent="Geometry/LowerArea" instance=ExtResource("8_166gq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, -5, -18.5)
+
+[node name="FloorFlat2x2n2" parent="Geometry/LowerArea" instance=ExtResource("8_166gq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, -0.5, -3.5)
 
 [node name="Log" type="StaticBody3D" parent="Geometry"]
 transform = Transform3D(-4.37114e-08, -3.7, 0, 1, -1.61732e-07, 0, 0, 0, 3.7, 4.825, -5.5, -26)
@@ -1695,6 +1701,12 @@ transform = Transform3D(-0.181536, 0.247522, -0.982694, -0.408218, 6.09039, 0.10
 [node name="ObstacleBlockPlus39" parent="." instance=ExtResource("24_qtra0")]
 transform = Transform3D(-0.203662, 0.248305, -1.40393, -0.457972, 6.10965, 0.156268, 1.00369, 2.83814, -0.213571, -12.9814, -9.11771, -15.8883)
 
+[node name="ObstacleBlockPlus46" parent="." instance=ExtResource("24_qtra0")]
+transform = Transform3D(-0.92357, -0.374286, -0.795381, -0.237064, 3.27003, 0.169949, 0.591126, 0.726618, -1.17454, -13.6834, -9.03958, -15.9951)
+
+[node name="ObstacleBlockPlus47" parent="." instance=ExtResource("24_qtra0")]
+transform = Transform3D(-0.92357, -1.26241, -0.609498, -0.237064, 3.03241, -0.545826, 0.591126, -0.756276, -1.17117, -13.6043, -8.64319, -17.3094)
+
 [node name="ObstacleBlockPlus42" parent="." instance=ExtResource("24_qtra0")]
 transform = Transform3D(0.972053, 2.84744, -0.380281, -0.457972, 6.10965, 0.156268, 0.322479, 0.0936133, 1.36821, -5.48136, -10.2245, -17.7255)
 
@@ -1759,7 +1771,7 @@ transform = Transform3D(0.823235, 0.247522, 0.566505, 0.211309, 6.09039, -0.3659
 transform = Transform3D(-0.181536, 0.247522, -0.982694, -0.408218, 6.09039, 0.109382, 0.894652, 2.82919, -0.149491, -1.1084, -8.92048, -18.5574)
 
 [node name="ObstacleBlockPlus34" parent="." instance=ExtResource("24_qtra0")]
-transform = Transform3D(0.823235, 0.247522, 0.566505, 0.116602, 6.48915, -0.23223, -0.555597, 1.72862, 0.790659, -2.11017, -9.11169, -18.5691)
+transform = Transform3D(0.823235, 0.247522, 0.566505, 0.164582, 6.3138, -0.300257, -0.54332, 2.28761, 0.76741, -2.11017, -9.11169, -18.5691)
 
 [node name="ObstacleBlockPlus35" parent="." instance=ExtResource("24_qtra0")]
 transform = Transform3D(0.823235, 0.247522, 0.566505, 0.116602, 6.48915, -0.23223, -0.555597, 1.72862, 0.790659, -3.1129, -9.08358, -18.4097)
