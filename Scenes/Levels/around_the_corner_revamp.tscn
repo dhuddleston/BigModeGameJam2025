@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://bj7x510n4j3hw"]
+[gd_scene load_steps=59 format=4 uid="uid://bj7x510n4j3hw"]
 
 [ext_resource type="PackedScene" uid="uid://cf1x8kiwnxcbe" path="res://Prefabs/UI/GameplayCanvas.tscn" id="1_kfive"]
 [ext_resource type="PackedScene" uid="uid://e8rexjmxsd0w" path="res://Prefabs/Floors/Flat/FloorFlat1x1.tscn" id="2_qlnan"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://Scripts/goaltrigger.gd" id="20_j4qis"]
 [ext_resource type="PackedScene" uid="uid://cyyd4576kyhep" path="res://Prefabs/Gameplay/dynamic_lantern.tscn" id="21_qv40q"]
 [ext_resource type="PackedScene" uid="uid://bor10boo3asjy" path="res://Prefabs/Props/tree2.tscn" id="22_yxgin"]
+[ext_resource type="Script" path="res://Scripts/orbit.gd" id="23_qgqrk"]
 [ext_resource type="Shader" path="res://Shaders/unlit_color.gdshader" id="23_r2jcc"]
 [ext_resource type="Material" uid="uid://cipg16b0p6ejq" path="res://Materials/PinkX1.tres" id="24_lqs7q"]
 [ext_resource type="PackedScene" uid="uid://bu3p8k30ah037" path="res://Prefabs/Props/gnome.tscn" id="25_vjbs0"]
@@ -180,6 +181,49 @@ shader_parameter/color = Color(1, 1, 1, 1)
 
 [sub_resource type="PrismMesh" id="PrismMesh_nieov"]
 material = SubResource("ShaderMaterial_4eria")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dkmmg"]
+render_priority = 0
+shader = ExtResource("23_r2jcc")
+shader_parameter/color = Color(1, 0.639216, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_iudtv"]
+material = SubResource("ShaderMaterial_dkmmg")
+top_radius = 2.0
+bottom_radius = 2.0
+height = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v6rva"]
+render_priority = 0
+shader = ExtResource("23_r2jcc")
+shader_parameter/color = Color(0.372549, 0.341176, 0.309804, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nogk6"]
+material = SubResource("ShaderMaterial_v6rva")
+top_radius = 2.0
+bottom_radius = 2.0
+height = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lds7m"]
+render_priority = 0
+shader = ExtResource("23_r2jcc")
+shader_parameter/color = Color(1, 0.466667, 0.658824, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_e8xpw"]
+material = SubResource("ShaderMaterial_lds7m")
+radius = 2.0
+height = 4.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gxym0"]
+render_priority = 0
+shader = ExtResource("23_r2jcc")
+shader_parameter/color = Color(0.513726, 0.462745, 0.611765, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yt47o"]
+material = SubResource("ShaderMaterial_gxym0")
+top_radius = 3.0
+bottom_radius = 3.0
+height = 0.1
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_oq4s7"]
 _surfaces = [{
@@ -567,12 +611,12 @@ baseRange = 1.5
 maxRange = 6.0
 
 [node name="AmbientGolfMusic" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.198892, 1.29034, 11.7101)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.198892, 1.29034, -2.9149)
 stream = ExtResource("15_mrpou")
 autoplay = true
 
 [node name="Rain" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.23859, 3.71038, -19.0362)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.98859, 1.96038, -7.5362)
 stream = ExtResource("16_l6pwe")
 attenuation_model = 2
 volume_db = 12.609
@@ -868,103 +912,154 @@ transform = Transform3D(0.0635085, -0.288496, -0.102328, 0.0204913, 0.253511, -0
 transform = Transform3D(0.224027, -0.060561, -0.00104906, 0.0243958, 0.253511, 0.126087, -0.0255904, -0.288496, 0.111017, 1.73619, 1.375, 3.24963)
 
 [node name="Sky" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.625, 0)
+script = ExtResource("23_qgqrk")
+isRandom = false
+setSpeed = 0.05
+metadata/_edit_group_ = true
 
 [node name="Pivot" type="Node3D" parent="Sky"]
 transform = Transform3D(0.846497, -0.233092, 0.478656, 0.262338, 0.964958, 0.00596524, -0.463273, 0.12052, 0.877983, 0, 0, 0)
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="Sky/Pivot"]
-transform = Transform3D(0.707107, -0.612372, 0.353553, 0.707107, 0.612372, -0.353553, 0, 0.5, 0.866025, 0, 16.625, -33.375)
-mesh = SubResource("PrismMesh_nieov")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Sky"]
 transform = Transform3D(0.707107, -0.612372, 0.353553, 0.707107, 0.612372, -0.353553, 0, 0.5, 0.866025, 0, 16.625, -33.375)
 mesh = SubResource("PrismMesh_nieov")
 skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Sky"]
 transform = Transform3D(0.675929, -0.726039, 0.126439, 0.676284, 0.5429, -0.497895, 0.292848, 0.422051, 0.857971, 8.27245, 21.7351, -29.145)
 mesh = SubResource("PrismMesh_nieov")
 skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Sky"]
 transform = Transform3D(0.654654, -0.728965, -0.200095, 0.68344, 0.683874, -0.255394, 0.323013, 0.0304417, 0.945905, 19.3987, 12.4674, -29.3008)
 mesh = SubResource("PrismMesh_nieov")
 skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Sky"]
 transform = Transform3D(0.450023, -0.808222, -0.379812, 0.709605, 0.581853, -0.397376, 0.542163, -0.0906886, 0.835365, 23.7597, 18.3771, -22.0916)
 mesh = SubResource("PrismMesh_nieov")
 skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="Sky"]
 transform = Transform3D(0.370688, -0.568722, -0.734265, 0.684541, 0.701613, -0.197846, 0.627689, -0.429295, 0.649393, 33.597, 10.3633, -12.4146)
 mesh = SubResource("PrismMesh_nieov")
 skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Sky"]
 transform = Transform3D(-0.0465368, -0.651396, -0.75731, 0.719971, 0.503658, -0.477461, 0.692442, -0.567461, 0.445548, 30.0317, 21.7933, -3.66432)
 mesh = SubResource("PrismMesh_nieov")
 skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="Sky"]
 transform = Transform3D(-0.0930182, -0.427963, -0.898997, 0.685269, 0.627518, -0.369631, 0.722325, -0.650437, 0.234899, 32.9596, 16.8289, 4.55354)
 mesh = SubResource("PrismMesh_nieov")
 skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="Sky"]
 transform = Transform3D(-0.258071, -0.0550346, -0.964557, 0.700097, 0.677351, -0.225961, 0.66578, -0.733598, -0.136275, 30.873, 11.682, 17.3399)
 mesh = SubResource("PrismMesh_nieov")
 skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="Sky"]
 transform = Transform3D(-0.491724, 0.00671715, -0.870726, 0.726266, 0.554809, -0.405863, 0.48036, -0.831951, -0.277691, 24.4608, 19.0442, 20.7188)
 mesh = SubResource("PrismMesh_nieov")
 skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
 
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="Sky"]
 transform = Transform3D(-0.590682, 0.357593, -0.723341, 0.70181, 0.670053, -0.24185, 0.398193, -0.650505, -0.646751, 15.8882, 12.3022, 31.4086)
 mesh = SubResource("PrismMesh_nieov")
 skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="Sky"]
 transform = Transform3D(-0.658742, 0.531279, -0.532731, 0.728742, 0.626609, -0.276216, 0.187066, -0.570179, -0.799939, 7.32825, 14.0968, 33.7322)
 mesh = SubResource("PrismMesh_nieov")
 skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="Sky"]
 transform = Transform3D(-0.670645, 0.651623, -0.354433, 0.740593, 0.561201, -0.36956, -0.0419057, -0.510334, -0.858955, 0.203813, 17.9083, 32.7037)
 mesh = SubResource("PrismMesh_nieov")
 skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
 
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="Sky"]
 transform = Transform3D(-0.69565, 0.70804, -0.121449, 0.718057, 0.680254, -0.147135, -0.0215617, -0.189562, -0.981632, -8.56075, 9.13251, 35.1225)
 mesh = SubResource("PrismMesh_nieov")
 skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
 
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="Sky"]
 transform = Transform3D(-0.579783, 0.812011, 0.0670039, 0.766091, 0.571296, -0.29449, -0.277408, -0.119409, -0.953303, -14.4298, 15.5314, 30.6731)
 mesh = SubResource("PrismMesh_nieov")
 skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
 
 [node name="MeshInstance3D15" type="MeshInstance3D" parent="Sky"]
 transform = Transform3D(-0.544379, 0.647914, 0.532784, 0.740066, 0.669977, -0.0585802, -0.394908, 0.362406, -0.844221, -29.1464, 6.37805, 22.3627)
 mesh = SubResource("PrismMesh_nieov")
 skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Sky"]
 transform = Transform3D(-0.308237, 0.666478, 0.678821, 0.804971, 0.562995, -0.187239, -0.506963, 0.488716, -0.710031, -31.5705, 12.3121, 15.5562)
 mesh = SubResource("PrismMesh_nieov")
 skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
 
 [node name="MeshInstance3D17" type="MeshInstance3D" parent="Sky"]
 transform = Transform3D(-0.102812, 0.53014, 0.841654, 0.824958, 0.518203, -0.225633, -0.555765, 0.671131, -0.490621, -33.9321, 14.1739, 6.1642)
 mesh = SubResource("PrismMesh_nieov")
 skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
 
 [node name="MeshInstance3D18" type="MeshInstance3D" parent="Sky"]
 transform = Transform3D(0.070574, 0.110253, 0.991395, 0.820656, 0.558565, -0.120537, -0.567048, 0.822101, -0.051059, -34.3699, 10.2053, -10.2394)
 mesh = SubResource("PrismMesh_nieov")
 skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="Sky"]
+transform = Transform3D(0.433743, -0.421782, 0.796221, 0.867829, 0.433247, -0.243247, -0.242363, 0.79649, 0.553953, -19.8503, 15.8433, -27.299)
+mesh = SubResource("PrismMesh_nieov")
+skeleton = NodePath("../Pivot")
+script = ExtResource("23_qgqrk")
+
+[node name="moon" type="Node3D" parent="."]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 0, 0, 0)
+
+[node name="moon1" type="MeshInstance3D" parent="moon"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -4.125, 7.75, -29.75)
+mesh = SubResource("CylinderMesh_iudtv")
+skeleton = NodePath("../../Sky/Pivot")
+
+[node name="moon2" type="MeshInstance3D" parent="moon"]
+transform = Transform3D(0.8, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -4.54823, 7.75, -29.625)
+mesh = SubResource("CylinderMesh_nogk6")
+skeleton = NodePath("../../Sky/Pivot")
+
+[node name="moon2" type="Node3D" parent="."]
+transform = Transform3D(-0.612372, -0.324469, -0.720916, -0.353553, 0.928023, -0.117362, 0.707107, 0.183013, -0.683013, 0, 0, 0)
+
+[node name="moon1" type="MeshInstance3D" parent="moon2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -4.125, 7.75, -29.75)
+mesh = SubResource("SphereMesh_e8xpw")
+skeleton = NodePath("../../Sky/Pivot")
+
+[node name="moon2" type="MeshInstance3D" parent="moon2"]
+transform = Transform3D(0.708037, 0.693786, 0.131697, 0.702993, -0.710165, -0.0382931, 0.0669595, 0.119695, -0.99055, -4.125, 7.75, -29.75)
+mesh = SubResource("CylinderMesh_yt47o")
+skeleton = NodePath("../../Sky/Pivot")
 
 [node name="Gnome" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.625, 1.625, -4.375)
