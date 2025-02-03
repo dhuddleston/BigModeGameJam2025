@@ -12,7 +12,8 @@ var levels: Array[Level] = [
 	Level.new("res://Scenes/Levels/StraightShot_Level.tscn", "Approach", 5),
 	Level.new("res://Scenes/Levels/balance.tscn", "Balance", 4),
 	Level.new("res://Scenes/Levels/Woods_Level.tscn", "Through the Woods", 6),
-	Level.new("res://Scenes/Levels/Basement_Level.tscn", "Worlds Below", 6)
+	Level.new("res://Scenes/Levels/Basement_Level.tscn", "Worlds Below", 6),
+	Level.new("res://Scenes/Levels/lighthouse.tscn", "Bonus: Beacon", 16)
 ]
 
 var currentLevel: int = 0
