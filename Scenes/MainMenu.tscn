@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://jkjucx40iky1"]
+[gd_scene load_steps=11 format=3 uid="uid://jkjucx40iky1"]
 
 [ext_resource type="Material" uid="uid://c0eyq16e63ikx" path="res://Shaders/dither.tres" id="1_n081e"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="2_edq4h"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://pby0q1gruyc0" path="res://Prefabs/UI/levelbutton_theme.tres" id="2_opnrq"]
 [ext_resource type="PackedScene" uid="uid://dxfqcbof48po" path="res://Prefabs/Floors/Flat/FloorFlat2x2.tscn" id="2_uttdw"]
 [ext_resource type="Script" path="res://Scripts/start_screen_anim.gd" id="5_8l04g"]
+[ext_resource type="PackedScene" path="res://Prefabs/Props/gnome.tscn" id="7_0m8pi"]
 
 [sub_resource type="Environment" id="Environment_dy87g"]
 background_mode = 1
@@ -130,6 +131,9 @@ cam = NodePath("CameraRoot")
 [node name="Camera3D" type="Camera3D" parent="StartScreenAnim/CameraRoot"]
 transform = Transform3D(0.707107, -0.183013, 0.683013, 0, 0.965926, 0.258819, -0.707107, -0.183013, 0.683013, 2.63397, 1.48236, 2.63397)
 environment = SubResource("Environment_dy87g")
+
+[node name="Gnome" parent="StartScreenAnim/CameraRoot/Camera3D" instance=ExtResource("7_0m8pi")]
+transform = Transform3D(-0.0403495, 0.0606755, 20.2143, 1.64684, 4.26285, -0.0517867, -2.50725, 2.799, -0.359326, 0.0297729, 1.27902, -6.5145)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="StartScreenAnim"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

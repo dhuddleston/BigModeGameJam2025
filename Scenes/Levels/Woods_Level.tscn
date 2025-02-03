@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://5rx6toj4pemq"]
+[gd_scene load_steps=74 format=4 uid="uid://5rx6toj4pemq"]
 
 [ext_resource type="PackedScene" uid="uid://crm8xscewxoj7" path="res://Prefabs/Gameplay/goal_tile.tscn" id="1_4m0c5"]
 [ext_resource type="AudioStream" uid="uid://dlbumg4yexgt2" path="res://Sounds/Rain.wav" id="2_d8mg3"]
@@ -33,6 +33,11 @@
 [ext_resource type="Material" uid="uid://cywujqu2ubens" path="res://Materials/MainMaterial.tres" id="28_dqyeg"]
 [ext_resource type="PackedScene" uid="uid://du4n6roiapajx" path="res://Prefabs/Floors/Ramp/FloorRampMiddle1x1.tscn" id="30_1pvbn"]
 [ext_resource type="PackedScene" uid="uid://dhwv6f364fvkf" path="res://Prefabs/Floors/Ramp/Corners/FloorRampCornerConvex1x1.tscn" id="31_thmdj"]
+[ext_resource type="PackedScene" uid="uid://c3ck8q7l4ck51" path="res://Prefabs/Props/magnet.tscn" id="34_48igr"]
+[ext_resource type="PackedScene" uid="uid://brtec18lfit5v" path="res://Prefabs/Props/fan.tscn" id="35_o8wnf"]
+[ext_resource type="PackedScene" uid="uid://ckis07h2stx8l" path="res://Prefabs/Props/table.tscn" id="36_qp0j0"]
+[ext_resource type="PackedScene" uid="uid://dua8ojthnomr1" path="res://Prefabs/Props/chair.tscn" id="37_nymtp"]
+[ext_resource type="PackedScene" path="res://Prefabs/Props/gnome.tscn" id="38_wivp1"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ut245"]
 _surfaces = [{
@@ -1483,6 +1488,9 @@ transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819
 [node name="Log2" parent="Geometry/LowerArea" instance=ExtResource("17_4nugm")]
 transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0.5, -0.5, 2.5)
 
+[node name="Log29" parent="Geometry/LowerArea" instance=ExtResource("17_4nugm")]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -4.21169, -0.5, 9.8391)
+
 [node name="Log3" parent="Geometry/LowerArea" instance=ExtResource("17_4nugm")]
 transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 15.5, -0.5, -11)
 
@@ -1509,6 +1517,18 @@ transform = Transform3D(-5.92384e-08, 1.34623e-07, -2.95, -0.984808, 0.512262, 1
 
 [node name="Log22" parent="Geometry/LowerArea" instance=ExtResource("17_4nugm")]
 transform = Transform3D(-1.71197e-07, 9.11027e-08, -2.95, -1.69145, -1.00896, 1.89028e-07, -0.615636, 2.77209, 1.17891e-07, -3.26752, 0.687453, 3.51752)
+
+[node name="Log30" parent="Geometry/LowerArea" instance=ExtResource("17_4nugm")]
+transform = Transform3D(-5.92384e-08, 1.34623e-07, -2.95, -0.984808, 0.512262, 1.58174e-07, 0.173648, 2.90518, 2.48587e-08, -4.74252, -0.00379801, 6.93907)
+
+[node name="Log31" parent="Geometry/LowerArea" instance=ExtResource("17_4nugm")]
+transform = Transform3D(-1.71197e-07, 9.11027e-08, -2.95, -1.69145, -1.00896, 1.89028e-07, -0.615636, 2.77209, 1.17891e-07, -4.74252, 0.860315, 8.17143)
+
+[node name="Log32" parent="Geometry/LowerArea" instance=ExtResource("17_4nugm")]
+transform = Transform3D(-0.167731, -2.80619, -0.763516, -0.984808, 0.512262, 1.58174e-07, 0.0449433, 0.751916, -2.84948, -1.64734, -0.00379801, 10.6458)
+
+[node name="Log33" parent="Geometry/LowerArea" instance=ExtResource("17_4nugm")]
+transform = Transform3D(0.594659, -2.67763, -0.763516, -1.69145, -1.00896, 1.89028e-07, -0.159338, 0.71747, -2.84948, -2.8377, 0.860315, 10.9647)
 
 [node name="Log23" parent="Geometry/LowerArea" instance=ExtResource("17_4nugm")]
 transform = Transform3D(-0.0868241, -1.45259, -2.55477, -0.984808, 0.512262, 1.58174e-07, 0.150384, 2.51596, -1.475, 3.49124, 0, 8.55181)
@@ -1960,5 +1980,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, -4, -5)
 
 [node name="FloorFlat1x1n3" parent="." instance=ExtResource("18_y0txg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, -4, -6)
+
+[node name="Magnet" parent="." instance=ExtResource("34_48igr")]
+transform = Transform3D(-0.482963, 0.866025, -0.129409, -0.258819, 0, 0.965926, 0.836516, 0.5, 0.224144, -2.51907, -3.12191, 4.78481)
+
+[node name="Fan" parent="." instance=ExtResource("35_o8wnf")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -2.825, -3.425, 4.85)
+
+[node name="Table" parent="." instance=ExtResource("36_qp0j0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, -4, 4.75)
+
+[node name="Chair" parent="." instance=ExtResource("37_nymtp")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, -3.5, -4, 4.75)
+
+[node name="Gnome" parent="." instance=ExtResource("38_wivp1")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, -3.5, -3.55, 4.75)
 
 [connection signal="body_entered" from="Geometry/GoalTile4/GOALTRIGGER" to="Geometry/GoalTile4/GOALTRIGGER" method="_on_body_entered"]
